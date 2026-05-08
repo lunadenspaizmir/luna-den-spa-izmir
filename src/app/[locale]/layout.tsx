@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
-import { Geist } from "next/font/google";
+import type { CSSProperties, ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
@@ -13,10 +12,10 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Header } from "@/components/layout/header/header";
 import { Footer } from "@/components/layout/footer/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const fontVariables = {
+  "--font-geist-sans":
+    'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+} as CSSProperties;
 
 export const metadata: Metadata = {
   title: {
@@ -52,7 +51,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={geistSans.variable}>
+      <body style={fontVariables}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             <Header />

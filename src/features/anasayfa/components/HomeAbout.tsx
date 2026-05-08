@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { Leaf, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Leaf, ShieldCheck, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/primitives/container";
 import { Section } from "@/components/layout/primitives/section";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -53,6 +54,13 @@ export function HomeAbout() {
             <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
               {t("description")}
             </p>
+
+            <Button asChild className="mt-7 h-11 px-5">
+              <Link href="/hakkimizda">
+                {t("cta")}
+                <ArrowRight className="size-4" />
+              </Link>
+            </Button>
 
             <Separator className="my-8" />
 

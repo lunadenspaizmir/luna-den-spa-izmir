@@ -34,6 +34,7 @@
       "title": "A premium spa experience that renews your body and mind",
       "description": "Luna Den Spa offers a peaceful escape in the city with a relaxing atmosphere and carefully prepared care options.",
       "imageAlt": "Luna Den Spa about us visual",
+      "cta": "About us details",
       "highlights": {
         "expert": {
           "title": "Expert therapists",
@@ -53,6 +54,7 @@
       "badge": "Services",
       "intro": "Rest your body at Luna Den Spa with care and relaxation options designed to feel good.",
       "popularTitle": "Popular Services",
+      "cta": "View all services",
       "detail": "View details",
       "items": {
         "massage": {
@@ -88,6 +90,20 @@
           "title": "The same premium experience",
           "description": "Enjoy Luna Den Spa’s calm, hygienic, and relaxing atmosphere at every branch."
         }
+      }
+    },
+    "contact": {
+      "primary": {
+        "eyebrow": "Appointments and branch details",
+        "title": "Contact the Luna Den Spa branch closest to your location.",
+        "description": "Choose the most convenient branch and quickly get information about services, availability, and reservation details.",
+        "cta": "View our branches"
+      },
+      "secondary": {
+        "eyebrow": "Partnership",
+        "title": "Would you like to collaborate with Luna Den Spa?",
+        "description": "Contact us for corporate requests and partnership conversations.",
+        "cta": "Contact us"
       }
     }
   }

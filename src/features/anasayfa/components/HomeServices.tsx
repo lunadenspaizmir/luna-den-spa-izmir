@@ -47,6 +47,13 @@ export function HomeServices() {
           <p className="mt-5 text-3xl font-semibold leading-tight text-foreground md:text-5xl">
             {t("intro")}
           </p>
+
+          <Button asChild className="mt-7 h-11 px-5">
+            <Link href="/hizmetlerimiz">
+              {t("cta")}
+              <ArrowRight className="size-4" />
+            </Link>
+          </Button>
         </div>
 
         <div>

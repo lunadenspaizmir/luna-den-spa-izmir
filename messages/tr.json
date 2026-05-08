@@ -34,6 +34,7 @@
       "title": "Bedeninizi ve zihninizi yenileyen premium spa deneyimi",
       "description": "Luna Den Spa, rahatlatıcı atmosferi ve özenle hazırlanan bakım seçenekleriyle misafirlerine şehir içinde dingin bir kaçış alanı sunar.",
       "imageAlt": "Luna Den Spa hakkımızda görseli",
+      "cta": "Hakkımızda detayları",
       "highlights": {
         "expert": {
           "title": "Uzman terapistler",
@@ -53,6 +54,7 @@
       "badge": "Hizmetlerimiz",
       "intro": "Size iyi gelecek bakım ve rahatlama seçenekleriyle Luna Den Spa’da bedeninizi dinlendirin.",
       "popularTitle": "Popüler Hizmetlerimiz",
+      "cta": "Tüm hizmetleri incele",
       "detail": "Detayları incele",
       "items": {
         "massage": {
@@ -88,6 +90,20 @@
           "title": "Aynı premium deneyim",
           "description": "Her şubede Luna Den Spa’nın sakin, hijyenik ve rahatlatıcı atmosferini yaşayın."
         }
+      }
+    },
+    "contact": {
+      "primary": {
+        "eyebrow": "Randevu ve şube bilgileri",
+        "title": "Konumunuza en yakın Luna Den Spa şubesiyle iletişime geçin.",
+        "description": "Size uygun şubeyi seçerek hizmetler, müsaitlik ve rezervasyon detayları hakkında hızlıca bilgi alın.",
+        "cta": "Şubelerimizi görüntüle"
+      },
+      "secondary": {
+        "eyebrow": "İş ortaklığı",
+        "title": "Luna Den Spa ile iş birliği yapmak ister misiniz?",
+        "description": "Kurumsal talepler ve iş ortaklığı görüşmeleri için bizimle iletişime geçin.",
+        "cta": "İletişime geç"
       }
     }
   }
