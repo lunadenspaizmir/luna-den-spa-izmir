@@ -68,6 +68,27 @@
           "description": "Zihinsel dinginliği destekleyen, kişiye özel rahatlama seansları."
         }
       }
+    },
+    "branches": {
+      "badge": "Şubelerimiz",
+      "intro": "Luna Den Spa deneyimine size en uygun lokasyonda ulaşın.",
+      "title": "Şube bilgileri",
+      "imageAlt": "Luna Den Spa şubelerimiz görseli",
+      "detail": "Şubeleri incele",
+      "items": {
+        "location": {
+          "title": "Size yakın lokasyonlar",
+          "description": "Adres ve ulaşım bilgilerini şubelerimiz sayfasında kolayca inceleyin."
+        },
+        "reservation": {
+          "title": "Kolay rezervasyon",
+          "description": "Tercih ettiğiniz şube için hızlıca iletişime geçin ve planınızı oluşturun."
+        },
+        "experience": {
+          "title": "Aynı premium deneyim",
+          "description": "Her şubede Luna Den Spa’nın sakin, hijyenik ve rahatlatıcı atmosferini yaşayın."
+        }
+      }
     }
   }
 }

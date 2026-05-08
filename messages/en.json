@@ -68,6 +68,27 @@
           "description": "Personalized relaxation sessions that support mental calm."
         }
       }
+    },
+    "branches": {
+      "badge": "Branches",
+      "intro": "Reach the Luna Den Spa experience at the location that suits you best.",
+      "title": "Branch information",
+      "imageAlt": "Luna Den Spa branches visual",
+      "detail": "View branches",
+      "items": {
+        "location": {
+          "title": "Nearby locations",
+          "description": "Review address and transportation details easily on our branches page."
+        },
+        "reservation": {
+          "title": "Easy reservation",
+          "description": "Contact your preferred branch quickly and plan your visit."
+        },
+        "experience": {
+          "title": "The same premium experience",
+          "description": "Enjoy Luna Den Spa’s calm, hygienic, and relaxing atmosphere at every branch."
+        }
+      }
     }
   }
 }
