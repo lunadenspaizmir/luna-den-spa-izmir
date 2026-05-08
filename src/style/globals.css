@@ -1,0 +1,167 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #f7f1e8;
+  --foreground: #2a241c;
+
+  --card: #fff9f0;
+  --card-foreground: #2a241c;
+
+  --popover: #fff9f0;
+  --popover-foreground: #2a241c;
+
+  --primary: #816436;
+  --primary-foreground: #fff9f0;
+
+  --secondary: #efe3d2;
+  --secondary-foreground: #2a241c;
+
+  --muted: #efe3d2;
+  --muted-foreground: #6e6252;
+
+  --accent: #87967a;
+  --accent-foreground: #fff9f0;
+
+  --destructive: #9f3a38;
+  --destructive-foreground: #fff9f0;
+
+  --border: #e4d6c4;
+  --input: #e4d6c4;
+  --ring: #816436;
+
+  --radius: 0.875rem;
+
+  --chart-1: #816436;
+  --chart-2: #87967a;
+  --chart-3: #bfa36a;
+  --chart-4: #5f4725;
+  --chart-5: #6e6252;
+
+  --sidebar: #fff9f0;
+  --sidebar-foreground: #2a241c;
+  --sidebar-primary: #816436;
+  --sidebar-primary-foreground: #fff9f0;
+  --sidebar-accent: #efe3d2;
+  --sidebar-accent-foreground: #2a241c;
+  --sidebar-border: #e4d6c4;
+  --sidebar-ring: #816436;
+}
+
+.dark {
+  --background: #0f0d0a;
+  --foreground: #f4ede3;
+
+  --card: #1a1712;
+  --card-foreground: #f4ede3;
+
+  --popover: #1a1712;
+  --popover-foreground: #f4ede3;
+
+  --primary: #c5a46a;
+  --primary-foreground: #16120c;
+
+  --secondary: #221e17;
+  --secondary-foreground: #f4ede3;
+
+  --muted: #221e17;
+  --muted-foreground: #b8aa96;
+
+  --accent: #94a889;
+  --accent-foreground: #0f0d0a;
+
+  --destructive: #d06b68;
+  --destructive-foreground: #0f0d0a;
+
+  --border: #3a3024;
+  --input: #3a3024;
+  --ring: #c5a46a;
+
+  --chart-1: #c5a46a;
+  --chart-2: #94a889;
+  --chart-3: #d8ba7c;
+  --chart-4: #9b7a42;
+  --chart-5: #b8aa96;
+
+  --sidebar: #1a1712;
+  --sidebar-foreground: #f4ede3;
+  --sidebar-primary: #c5a46a;
+  --sidebar-primary-foreground: #16120c;
+  --sidebar-accent: #221e17;
+  --sidebar-accent-foreground: #f4ede3;
+  --sidebar-border: #3a3024;
+  --sidebar-ring: #c5a46a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}

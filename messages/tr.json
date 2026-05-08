@@ -1,0 +1,33 @@
+{
+  "navigation": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetlerimiz",
+    "branches": "Şubelerimiz",
+    "contact": "İletişim"
+  },
+  "theme": {
+    "light": "Aydınlık tema",
+    "dark": "Karanlık tema",
+    "system": "Sistem teması",
+    "toggle": "Tema değiştir"
+  },
+  "language": {
+    "tr": "Türkçe",
+    "en": "English",
+    "change": "Dil değiştir"
+  },
+  "footer": {
+    "description": "Luna Den Spa masaj, spa ve wellness hizmetleriyle rahatlatıcı ve premium bir deneyim sunar.",
+    "quickLinks": "Hızlı linkler",
+    "copyright": "© 2024 Luna Den Spa. Tüm hakları saklıdır."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Luna Den Spa & Wellness",
+      "title": "Kendinizi şımartmanın en sağlıklı yolu",
+      "branches": "Şubelerimiz",
+      "contact": "İletişim"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "branches": "Branches",
+    "contact": "Contact"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme",
+    "toggle": "Change theme"
+  },
+  "language": {
+    "tr": "Türkçe",
+    "en": "English",
+    "change": "Change language"
+  },
+  "footer": {
+    "description": "Luna Den Spa offers a relaxing and premium experience with massage, spa, and wellness services.",
+    "quickLinks": "Quick links",
+    "copyright": "© 2024 Luna Den Spa. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Luna Den Spa & Wellness",
+      "title": "The healthiest way to pamper yourself",
+      "branches": "Branches",
+      "contact": "Contact"
+    }
+  }
+}
