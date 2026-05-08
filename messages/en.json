@@ -28,6 +28,46 @@
       "title": "The healthiest way to pamper yourself",
       "branches": "Branches",
       "contact": "Contact"
+    },
+    "about": {
+      "badge": "About Us",
+      "title": "A premium spa experience that renews your body and mind",
+      "description": "Luna Den Spa offers a peaceful escape in the city with a relaxing atmosphere and carefully prepared care options.",
+      "imageAlt": "Luna Den Spa about us visual",
+      "highlights": {
+        "expert": {
+          "title": "Expert therapists",
+          "description": "Trusted treatments from an experienced team."
+        },
+        "calm": {
+          "title": "Calm and hygienic setting",
+          "description": "Clean, peaceful spaces focused on relaxation."
+        },
+        "personal": {
+          "title": "Personalized care experience",
+          "description": "Spa rituals shaped around your needs."
+        }
+      }
+    },
+    "services": {
+      "badge": "Services",
+      "intro": "Rest your body at Luna Den Spa with care and relaxation options designed to feel good.",
+      "popularTitle": "Popular Services",
+      "detail": "View details",
+      "items": {
+        "massage": {
+          "title": "Massage Therapies",
+          "description": "Therapies focused on easing muscle tension and relaxing the body."
+        },
+        "spa": {
+          "title": "Spa Rituals",
+          "description": "A holistic experience with a warm atmosphere, calm textures, and renewing care steps."
+        },
+        "wellness": {
+          "title": "Wellness Treatments",
+          "description": "Personalized relaxation sessions that support mental calm."
+        }
+      }
     }
   }
 }

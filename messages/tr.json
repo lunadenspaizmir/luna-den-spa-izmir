@@ -28,6 +28,46 @@
       "title": "Kendinizi şımartmanın en sağlıklı yolu",
       "branches": "Şubelerimiz",
       "contact": "İletişim"
+    },
+    "about": {
+      "badge": "Hakkımızda",
+      "title": "Bedeninizi ve zihninizi yenileyen premium spa deneyimi",
+      "description": "Luna Den Spa, rahatlatıcı atmosferi ve özenle hazırlanan bakım seçenekleriyle misafirlerine şehir içinde dingin bir kaçış alanı sunar.",
+      "imageAlt": "Luna Den Spa hakkımızda görseli",
+      "highlights": {
+        "expert": {
+          "title": "Uzman terapistler",
+          "description": "Deneyimli ekiplerle güven veren uygulamalar."
+        },
+        "calm": {
+          "title": "Sakin ve hijyenik ortam",
+          "description": "Dinlenmeye odaklanan temiz ve huzurlu alanlar."
+        },
+        "personal": {
+          "title": "Kişiye özel bakım deneyimi",
+          "description": "İhtiyacınıza göre şekillenen spa ritüelleri."
+        }
+      }
+    },
+    "services": {
+      "badge": "Hizmetlerimiz",
+      "intro": "Size iyi gelecek bakım ve rahatlama seçenekleriyle Luna Den Spa’da bedeninizi dinlendirin.",
+      "popularTitle": "Popüler Hizmetlerimiz",
+      "detail": "Detayları incele",
+      "items": {
+        "massage": {
+          "title": "Masaj Terapileri",
+          "description": "Kas gerginliğini azaltmaya ve bedeni rahatlatmaya odaklanan terapiler."
+        },
+        "spa": {
+          "title": "Spa Ritüelleri",
+          "description": "Sıcak atmosfer, sakin dokular ve yenileyici bakım adımlarıyla bütünsel deneyim."
+        },
+        "wellness": {
+          "title": "Wellness Bakımları",
+          "description": "Zihinsel dinginliği destekleyen, kişiye özel rahatlama seansları."
+        }
+      }
     }
   }
 }
