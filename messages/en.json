@@ -117,5 +117,46 @@
         "description": "Call your preferred Izmir branch directly."
       }
     }
+  },
+  "servicesPage": {
+    "badge": "Services",
+    "title": "Massage and spa experiences that relax your body in Izmir",
+    "description": "At Luna Den Spa, you can relax with massage options shaped around your needs and enjoy a calm, professional care experience in Izmir.",
+    "listTitle": "Massage Services",
+    "listDescription": "Open the relevant massage title to review the service description.",
+    "images": {
+      "primaryAlt": "Luna Den Spa services visual",
+      "secondaryAlt": "Luna Den Spa massage services visual"
+    },
+    "items": {
+      "swedish": {
+        "title": "Swedish (Classic) Massage",
+        "description": "One of the most commonly preferred massage types, applied with relaxing touches to help loosen the muscles and support blood circulation."
+      },
+      "bali": {
+        "title": "Bali Massage",
+        "description": "Inspired by Far Eastern techniques, this special therapy supports body and mind balance with rhythmic touches and pressure techniques for deep relaxation."
+      },
+      "deepTissue": {
+        "title": "Deep Tissue Massage",
+        "description": "This therapy works on the deeper layers of muscle and connective tissue, helping reduce intense muscle tension and ease chronic discomfort."
+      },
+      "medical": {
+        "title": "Medical Massage",
+        "description": "A targeted and therapeutic massage performed by expert therapists for musculoskeletal discomfort."
+      },
+      "aromatherapy": {
+        "title": "Aromatherapy Massage",
+        "description": "This holistic therapy is performed with natural and special botanical oils, helping provide mental and physical relaxation while awakening the senses."
+      },
+      "thaiMix": {
+        "title": "Thai Mix Massage",
+        "description": "A dynamic therapy combining Thai and classic massage techniques, bringing flexibility and lightness to the body through stretching and pressure techniques."
+      },
+      "sultan": {
+        "title": "Sultan Massage",
+        "description": "A special experience where two therapists work in sync, offering deep relaxation, maximum comfort, and a unique luxury spa experience."
+      }
+    }
   }
 }

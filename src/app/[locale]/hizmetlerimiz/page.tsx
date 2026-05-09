@@ -1,8 +1,5 @@
-export default function Home() {
-    return (
-     <div>
-      anasayfa
-     </div>
-    );
-  }
-  
+import ServicesPageWrapper from "@/features/hizmetlerimiz/containers/ServicesPageWrapper";
+
+export default function ServicesPage() {
+  return <ServicesPageWrapper />;
+}

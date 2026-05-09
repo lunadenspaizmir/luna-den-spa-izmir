@@ -117,5 +117,46 @@
         "description": "Tercih ettiğiniz İzmir şubesini doğrudan arayın."
       }
     }
+  },
+  "servicesPage": {
+    "badge": "Hizmetlerimiz",
+    "title": "İzmir’de bedeninizi dinlendiren masaj ve spa deneyimleri",
+    "description": "Luna Den Spa’da ihtiyaçlarınıza göre şekillenen masaj seçenekleriyle rahatlayabilir, İzmir’de sakin ve profesyonel bir bakım deneyimi yaşayabilirsiniz.",
+    "listTitle": "Masaj Hizmetlerimiz",
+    "listDescription": "Hizmet açıklamalarını incelemek için ilgili masaj başlığını açabilirsiniz.",
+    "images": {
+      "primaryAlt": "Luna Den Spa hizmetlerimiz görseli",
+      "secondaryAlt": "Luna Den Spa masaj hizmetleri görseli"
+    },
+    "items": {
+      "swedish": {
+        "title": "İsveç (Klasik) Masajı",
+        "description": "Kasları gevşetmeye ve kan dolaşımını desteklemeye yönelik, rahatlatıcı dokunuşlarla uygulanan, en yaygın tercih edilen masaj türlerinden biridir."
+      },
+      "bali": {
+        "title": "Bali Masajı",
+        "description": "Uzak Doğu tekniklerinden ilham alan bu özel terapi; ritmik dokunuşlar ve basınç teknikleriyle beden ve zihin dengesini destekleyerek derin bir rahatlama sağlar."
+      },
+      "deepTissue": {
+        "title": "Derin Doku Masajı",
+        "description": "Kas ve bağ dokularının derin katmanlarına etki eden bu terapi; yoğun kas gerginliklerini azaltmaya ve kronik ağrıları hafifletmeye yardımcı olur."
+      },
+      "medical": {
+        "title": "Medikal Masaj",
+        "description": "Uzman terapistler tarafından uygulanan, kas-iskelet sistemi kaynaklı rahatsızlıklara yönelik, hedef odaklı ve terapötik bir masaj uygulamasıdır."
+      },
+      "aromatherapy": {
+        "title": "Aromaterapi Masajı",
+        "description": "Doğal ve özel bitkisel yağlar eşliğinde uygulanan bu bütünsel terapi; zihinsel ve fiziksel rahatlama sağlayarak duyularınızı canlandırır."
+      },
+      "thaiMix": {
+        "title": "Thai Mix Masajı",
+        "description": "Thai ve klasik masaj tekniklerinin birleşimiyle uygulanan bu dinamik terapi; esneme ve bası teknikleri sayesinde vücuda esneklik ve hafiflik kazandırır."
+      },
+      "sultan": {
+        "title": "Sultan Masajı",
+        "description": "İki terapistin senkronize şekilde çalıştığı bu özel deneyim; derin gevşeme, maksimum konfor ve benzersiz bir lüks spa deneyimi sunar."
+      }
+    }
   }
 }
