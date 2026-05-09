@@ -5,95 +5,101 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #f7f1e8;
-  --foreground: #2a241c;
+  --background: #f6efe4;
+  --foreground: #211b14;
 
-  --card: #fff9f0;
-  --card-foreground: #2a241c;
+  --card: #fff8ee;
+  --card-foreground: #211b14;
 
-  --popover: #fff9f0;
-  --popover-foreground: #2a241c;
+  --popover: #fff8ee;
+  --popover-foreground: #211b14;
 
-  --primary: #816436;
-  --primary-foreground: #fff9f0;
+  --primary: #6b4618;
+  --primary-foreground: #fff8ee;
 
-  --secondary: #efe3d2;
-  --secondary-foreground: #2a241c;
+  --secondary: #eadbca;
+  --secondary-foreground: #211b14;
 
-  --muted: #efe3d2;
-  --muted-foreground: #6e6252;
+  --muted: #eadbca;
+  --muted-foreground: #6b5d4c;
 
-  --accent: #87967a;
-  --accent-foreground: #fff9f0;
+  --accent: #7f8f73;
+  --accent-foreground: #fff8ee;
 
-  --destructive: #9f3a38;
-  --destructive-foreground: #fff9f0;
+  --destructive: #9d3d37;
+  --destructive-foreground: #fff8ee;
 
-  --border: #e4d6c4;
-  --input: #e4d6c4;
-  --ring: #816436;
+  --border: #d9c7b2;
+  --input: #d9c7b2;
+  --ring: #6b4618;
+
+  --image-overlay: #2b2117;
+  --hero-foreground: #fff8ee;
 
   --radius: 0.875rem;
 
-  --chart-1: #816436;
-  --chart-2: #87967a;
-  --chart-3: #bfa36a;
-  --chart-4: #5f4725;
-  --chart-5: #6e6252;
+  --chart-1: #6b4618;
+  --chart-2: #7f8f73;
+  --chart-3: #caa15a;
+  --chart-4: #59401f;
+  --chart-5: #6b5d4c;
 
-  --sidebar: #fff9f0;
-  --sidebar-foreground: #2a241c;
-  --sidebar-primary: #816436;
-  --sidebar-primary-foreground: #fff9f0;
-  --sidebar-accent: #efe3d2;
-  --sidebar-accent-foreground: #2a241c;
-  --sidebar-border: #e4d6c4;
-  --sidebar-ring: #816436;
+  --sidebar: #fff8ee;
+  --sidebar-foreground: #211b14;
+  --sidebar-primary: #6b4618;
+  --sidebar-primary-foreground: #fff8ee;
+  --sidebar-accent: #eadbca;
+  --sidebar-accent-foreground: #211b14;
+  --sidebar-border: #d9c7b2;
+  --sidebar-ring: #6b4618;
 }
 
 .dark {
-  --background: #0f0d0a;
-  --foreground: #f4ede3;
+  --background: #0f0c08;
+  --foreground: #f6efe4;
 
-  --card: #1a1712;
-  --card-foreground: #f4ede3;
+  --card: #19130d;
+  --card-foreground: #f6efe4;
 
-  --popover: #1a1712;
-  --popover-foreground: #f4ede3;
+  --popover: #19130d;
+  --popover-foreground: #f6efe4;
 
-  --primary: #c5a46a;
-  --primary-foreground: #16120c;
+  --primary: #d0a75d;
+  --primary-foreground: #120e09;
 
-  --secondary: #221e17;
-  --secondary-foreground: #f4ede3;
+  --secondary: #241c14;
+  --secondary-foreground: #f6efe4;
 
-  --muted: #221e17;
-  --muted-foreground: #b8aa96;
+  --muted: #241c14;
+  --muted-foreground: #bba992;
 
-  --accent: #94a889;
-  --accent-foreground: #0f0d0a;
+  --accent: #95a982;
+  --accent-foreground: #0f0c08;
 
-  --destructive: #d06b68;
-  --destructive-foreground: #0f0d0a;
+  --destructive: #d46c63;
+  --destructive-foreground: #120e09;
 
-  --border: #3a3024;
-  --input: #3a3024;
-  --ring: #c5a46a;
+  --border: #3a2c1d;
+  --input: #3a2c1d;
+  --ring: #d0a75d;
 
-  --chart-1: #c5a46a;
-  --chart-2: #94a889;
-  --chart-3: #d8ba7c;
-  --chart-4: #9b7a42;
-  --chart-5: #b8aa96;
+  --image-overlay: #120e09;
+  --hero-foreground: #fff8ee;
 
-  --sidebar: #1a1712;
-  --sidebar-foreground: #f4ede3;
-  --sidebar-primary: #c5a46a;
-  --sidebar-primary-foreground: #16120c;
-  --sidebar-accent: #221e17;
-  --sidebar-accent-foreground: #f4ede3;
-  --sidebar-border: #3a3024;
-  --sidebar-ring: #c5a46a;
+  --chart-1: #d0a75d;
+  --chart-2: #95a982;
+  --chart-3: #e0bd74;
+  --chart-4: #a77b39;
+  --chart-5: #bba992;
+
+  --sidebar: #19130d;
+  --sidebar-foreground: #f6efe4;
+  --sidebar-primary: #d0a75d;
+  --sidebar-primary-foreground: #120e09;
+  --sidebar-accent: #241c14;
+  --sidebar-accent-foreground: #f6efe4;
+  --sidebar-border: #3a2c1d;
+  --sidebar-ring: #d0a75d;
 }
 
 @theme inline {
@@ -124,6 +130,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  --color-image-overlay: var(--image-overlay);
+  --color-hero-foreground: var(--hero-foreground);
 
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);

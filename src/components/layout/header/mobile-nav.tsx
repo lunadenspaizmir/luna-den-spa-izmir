@@ -12,10 +12,6 @@ import { navigationItems } from "@/data/navigation";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
-const mobileNavigationItems = navigationItems.filter(
-  (item) => item.href !== "/"
-);
-
 export function MobileNav() {
   const t = useTranslations("navigation");
   const pathname = usePathname();
@@ -100,7 +96,7 @@ export function MobileNav() {
           <Container className="py-3">
             <nav aria-label="Mobil menü">
               <ul className="flex flex-col [&>li+li]:border-t [&>li+li]:border-border/70">
-                {mobileNavigationItems.map((item) => {
+                {navigationItems.map((item) => {
                   const isActive = pathname === item.href;
 
                   return (

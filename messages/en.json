@@ -158,5 +158,88 @@
         "description": "A special experience where two therapists work in sync, offering deep relaxation, maximum comfort, and a unique luxury spa experience."
       }
     }
+  },
+  "branchesPage": {
+    "badge": "Branches",
+    "title": "Choose the Luna Den Spa branch closest to you in Izmir.",
+    "description": "Review our active branch for appointment, contact, and location details, and follow our upcoming locations.",
+    "status": {
+      "open": "Open",
+      "comingSoon": "Coming soon"
+    },
+    "cta": {
+      "open": "View branch details",
+      "comingSoon": "Opening soon"
+    },
+    "items": {
+      "balcovaEgePark": {
+        "description": "At our Balçova Ege Park branch, you can reach WhatsApp, phone, and location details for massage, spa, and wellness services.",
+        "imageAlt": "Luna Den Spa Balçova Ege Park branch"
+      },
+      "gaziemir": {
+        "description": "Preparations for our Gaziemir branch are in progress. A new Luna Den Spa experience in Izmir will be with you very soon.",
+        "imageAlt": "Luna Den Spa Gaziemir upcoming branch visual"
+      },
+      "cesme": {
+        "description": "Preparations for our Çeşme branch are in progress. Our relaxing spa and massage experience will be with you very soon.",
+        "imageAlt": "Luna Den Spa Çeşme upcoming branch visual"
+      }
+    }
+  },
+  "branchDetailPage": {
+    "actions": {
+      "whatsapp": "Book via WhatsApp",
+      "call": "Call by phone",
+      "directions": "Get directions",
+      "instagram": "Instagram"
+    },
+    "balcovaEgePark": {
+      "heroDescription": "At our Luna Den Spa branch inside Balçova Ege Park AVM, you can quickly contact us for massage, spa, hammam, and wellness services and easily create your appointment via WhatsApp or phone.",
+      "locationDescription": "Luna Den Spa serves guests on the 2nd floor inside Ege Park AVM. After entering through the main mall entrance, follow the directional signs and use the elevator to reach the 2nd floor."
+    },
+    "location": {
+      "title": "Location and access",
+      "mapTitle": "Luna Den Spa Balçova Ege Park map location"
+    },
+    "workingHours": {
+      "title": "Working hours",
+      "weekday": {
+        "label": "Weekdays",
+        "days": "Monday - Friday"
+      },
+      "weekend": {
+        "label": "Weekend",
+        "days": "Saturday - Sunday"
+      }
+    },
+    "contact": {
+      "title": "Quick appointment",
+      "description": "You can receive a quick response from our Balçova Ege Park branch through WhatsApp or a phone call."
+    },
+    "services": {
+      "title": "Services available at this branch",
+      "description": "At our Balçova Ege Park branch, you can benefit from massage and spa services shaped around your needs."
+    },
+    "gallery": {
+      "title": "Photos from our branch",
+      "imageAlt": "branch photo"
+    },
+    "finalCta": {
+      "title": "Create an appointment for our Balçova Ege Park branch",
+      "description": "Contact our branch directly to get information about massage and spa services, learn available times, or create an appointment."
+    }
+  },
+  "errorPage": {
+    "eyebrow": "Error",
+    "title": "An unexpected problem occurred",
+    "description": "Something went wrong while loading the page. You can try again or return to the homepage.",
+    "retry": "Try again",
+    "home": "Back to homepage"
+  },
+  "notFoundPage": {
+    "title": "Page not found",
+    "description": "The page you are looking for may have been moved, removed, or not created yet.",
+    "home": "Back to homepage",
+    "branches": "View branches"
   }
 }

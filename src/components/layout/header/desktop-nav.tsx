@@ -6,8 +6,6 @@ import { navigationItems } from "@/data/navigation";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
-const headerNavigationItems = navigationItems.filter((item) => item.href !== "/");
-
 export function DesktopNav() {
   const t = useTranslations("navigation");
   const pathname = usePathname();
@@ -18,7 +16,7 @@ export function DesktopNav() {
       className="hidden items-center justify-center justify-self-center lg:flex"
     >
       <ul className="flex items-center gap-1 rounded-full border border-border bg-background/80 p-1 shadow-sm backdrop-blur">
-        {headerNavigationItems.map((item) => {
+        {navigationItems.map((item) => {
           const isActive = pathname === item.href;
 
           return (

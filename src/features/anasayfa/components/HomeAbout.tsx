@@ -90,7 +90,7 @@ export function HomeAbout() {
                 sizes="(min-width: 1024px) 42vw, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-[#3b2818]/10" />
+              <div className="absolute inset-0 bg-image-overlay/10" />
             </CardContent>
           </Card>
         </div>

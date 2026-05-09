@@ -24,11 +24,14 @@ export const routing = defineRouting({
       en: "/branches",
     },
 
+    "/subelerimiz/[slug]": {
+      tr: "/subelerimiz/[slug]",
+      en: "/branches/[slug]",
+    },
+
     "/iletisim": {
       tr: "/iletisim",
       en: "/contact",
     },
-
-    "/[slug]": "/[slug]",
   },
 });

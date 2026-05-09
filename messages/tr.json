@@ -158,5 +158,88 @@
         "description": "İki terapistin senkronize şekilde çalıştığı bu özel deneyim; derin gevşeme, maksimum konfor ve benzersiz bir lüks spa deneyimi sunar."
       }
     }
+  },
+  "branchesPage": {
+    "badge": "Şubelerimiz",
+    "title": "İzmir’de size en yakın Luna Den Spa şubesini seçin.",
+    "description": "Randevu, iletişim ve konum bilgileri için aktif şubemizi inceleyebilir; yakında açılacak lokasyonlarımızı takip edebilirsiniz.",
+    "status": {
+      "open": "Açık",
+      "comingSoon": "Yakında"
+    },
+    "cta": {
+      "open": "Şube detaylarını incele",
+      "comingSoon": "Yakında hizmetinizdeyiz"
+    },
+    "items": {
+      "balcovaEgePark": {
+        "description": "Balçova Ege Park şubemizde masaj, spa ve wellness hizmetleri için WhatsApp, telefon ve konum bilgilerine ulaşabilirsiniz.",
+        "imageAlt": "Luna Den Spa Balçova Ege Park şubesi"
+      },
+      "gaziemir": {
+        "description": "Gaziemir şubemiz için hazırlıklarımız devam ediyor. Çok yakında İzmir’de yeni bir Luna Den Spa deneyimiyle hizmetinizdeyiz.",
+        "imageAlt": "Luna Den Spa Gaziemir yakında açılacak şube görseli"
+      },
+      "cesme": {
+        "description": "Çeşme şubemiz için hazırlıklarımız devam ediyor. Rahatlatıcı spa ve masaj deneyimimizle çok yakında hizmetinizdeyiz.",
+        "imageAlt": "Luna Den Spa Çeşme yakında açılacak şube görseli"
+      }
+    }
+  },
+  "branchDetailPage": {
+    "actions": {
+      "whatsapp": "WhatsApp ile randevu al",
+      "call": "Telefonla ara",
+      "directions": "Yol tarifi al",
+      "instagram": "Instagram"
+    },
+    "balcovaEgePark": {
+      "heroDescription": "Balçova Ege Park AVM içerisinde yer alan Luna Den Spa şubemizde masaj, spa, hamam ve wellness hizmetleri için hızlıca iletişime geçebilir, randevunuzu WhatsApp veya telefon üzerinden kolaylıkla oluşturabilirsiniz.",
+      "locationDescription": "Luna Den Spa, Ege Park AVM içerisinde, 2. katta hizmet vermektedir. AVM ana girişinden içeri girdikten sonra yönlendirme tabelalarını takip ederek asansör ile 2. kata ulaşabilirsiniz."
+    },
+    "location": {
+      "title": "Konum ve ulaşım",
+      "mapTitle": "Luna Den Spa Balçova Ege Park harita konumu"
+    },
+    "workingHours": {
+      "title": "Çalışma saatleri",
+      "weekday": {
+        "label": "Hafta içi",
+        "days": "Pazartesi - Cuma"
+      },
+      "weekend": {
+        "label": "Hafta sonu",
+        "days": "Cumartesi - Pazar"
+      }
+    },
+    "contact": {
+      "title": "Hızlı randevu",
+      "description": "WhatsApp veya telefon araması ile Balçova Ege Park şubemizden hızlı geri dönüş alabilirsiniz."
+    },
+    "services": {
+      "title": "Bu şubede sunulan hizmetler",
+      "description": "Balçova Ege Park şubemizde ihtiyaçlarınıza göre şekillenen masaj ve spa hizmetlerinden yararlanabilirsiniz."
+    },
+    "gallery": {
+      "title": "Şubemizden görseller",
+      "imageAlt": "şube görseli"
+    },
+    "finalCta": {
+      "title": "Balçova Ege Park şubemiz için randevu oluşturun",
+      "description": "Masaj ve spa hizmetleri hakkında bilgi almak, uygun saatleri öğrenmek veya randevu oluşturmak için şubemizle doğrudan iletişime geçebilirsiniz."
+    }
+  },
+  "errorPage": {
+    "eyebrow": "Hata",
+    "title": "Beklenmeyen bir sorun oluştu",
+    "description": "Sayfa yüklenirken bir hata meydana geldi. Tekrar deneyebilir veya anasayfaya dönebilirsiniz.",
+    "retry": "Tekrar dene",
+    "home": "Anasayfaya dön"
+  },
+  "notFoundPage": {
+    "title": "Sayfa bulunamadı",
+    "description": "Aradığınız sayfa taşınmış, kaldırılmış veya hiç oluşturulmamış olabilir.",
+    "home": "Anasayfaya dön",
+    "branches": "Şubelerimizi gör"
   }
 }

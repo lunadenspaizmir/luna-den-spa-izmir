@@ -23,16 +23,16 @@ export function HomeHero() {
         className="object-cover"
       />
 
-      <div className="absolute inset-0 bg-[#3b2818]/45" />
+      <div className="absolute inset-0 bg-image-overlay/55" />
       <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
 
       <Container className="relative z-10 flex min-h-svh items-center pt-24">
-        <div className="max-w-3xl py-20 text-white">
-          <p className="text-sm font-medium uppercase tracking-[0.28em] text-white/80">
+        <div className="max-w-3xl py-20 text-hero-foreground">
+          <p className="text-sm font-medium uppercase tracking-[0.28em] text-hero-foreground/80">
             {t("eyebrow")}
           </p>
 
-          <h1 className="mt-5 text-4xl font-semibold leading-tight text-white md:text-6xl">
+          <h1 className="mt-5 text-4xl font-semibold leading-tight text-hero-foreground md:text-6xl">
             {t("title")}
           </h1>
 
@@ -45,7 +45,7 @@ export function HomeHero() {
               asChild
               size="lg"
               variant="outline"
-              className="h-11 border-white/70 bg-white/10 px-6 text-white backdrop-blur hover:bg-white/20 hover:text-white"
+              className="h-11 border-hero-foreground/70 bg-hero-foreground/10 px-6 text-hero-foreground backdrop-blur hover:bg-hero-foreground/20 hover:text-hero-foreground"
             >
               <Link href="/iletisim">{t("contact")}</Link>
             </Button>

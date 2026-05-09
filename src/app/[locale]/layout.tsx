@@ -18,6 +18,7 @@ const fontVariables = {
 } as CSSProperties;
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lunadenspaizmir.com.tr"),
   title: {
     default: "Luna Den Spa",
     template: "%s | Luna Den Spa",

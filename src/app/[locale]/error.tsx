@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 
 type ErrorPageProps = {
   error: Error & { digest?: string };
@@ -9,6 +12,8 @@ type ErrorPageProps = {
 };
 
 export default function ErrorPage({ error, reset }: ErrorPageProps) {
+  const t = useTranslations("errorPage");
+
   useEffect(() => {
     console.error(error);
   }, [error]);
@@ -17,33 +22,29 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
     <main className="min-h-screen bg-background text-foreground">
       <section className="mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-6 text-center">
         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">
-          Hata
+          {t("eyebrow")}
         </p>
 
         <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">
-          Beklenmeyen bir sorun oluştu
+          {t("title")}
         </h1>
 
         <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-          Sayfa yüklenirken bir hata meydana geldi. Tekrar deneyebilir veya
-          anasayfaya dönebilirsiniz.
+          {t("description")}
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <button
+          <Button
             type="button"
             onClick={reset}
-            className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+            className="h-11 px-6"
           >
-            Tekrar Dene
-          </button>
+            {t("retry")}
+          </Button>
 
-          <Link
-            href="/"
-            className="inline-flex h-11 items-center justify-center rounded-md border border-border px-6 text-sm font-medium transition hover:bg-muted"
-          >
-            Anasayfaya Dön
-          </Link>
+          <Button asChild variant="outline" className="h-11 px-6">
+            <Link href="/">{t("home")}</Link>
+          </Button>
         </div>
       </section>
     </main>
