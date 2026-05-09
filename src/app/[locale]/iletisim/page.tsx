@@ -1,8 +1,5 @@
-export default function Home() {
-    return (
-     <div>
-      anasayfa
-     </div>
-    );
-  }
-  
+import ContactPageWrapper from "@/features/iletisim/containers/ContactPageWrapper";
+
+export default function ContactPage() {
+  return <ContactPageWrapper />;
+}

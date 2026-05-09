@@ -18,21 +18,21 @@
     "change": "Dil değiştir"
   },
   "footer": {
-    "description": "Luna Den Spa masaj, spa ve wellness hizmetleriyle rahatlatıcı ve premium bir deneyim sunar.",
+    "description": "Luna Den Spa, İzmir şubelerinde masaj, spa ve wellness hizmetleriyle rahatlatıcı ve premium bir deneyim sunar.",
     "quickLinks": "Hızlı linkler",
     "copyright": "© 2024 Luna Den Spa. Tüm hakları saklıdır."
   },
   "home": {
     "hero": {
       "eyebrow": "Luna Den Spa & Wellness",
-      "title": "Kendinizi şımartmanın en sağlıklı yolu",
+      "title": "İzmir’de kendinizi şımartmanın en sağlıklı yolu",
       "branches": "Şubelerimiz",
       "contact": "İletişim"
     },
     "about": {
       "badge": "Hakkımızda",
-      "title": "Bedeninizi ve zihninizi yenileyen premium spa deneyimi",
-      "description": "Luna Den Spa, rahatlatıcı atmosferi ve özenle hazırlanan bakım seçenekleriyle misafirlerine şehir içinde dingin bir kaçış alanı sunar.",
+      "title": "İzmir’de bedeninizi ve zihninizi yenileyen premium spa deneyimi",
+      "description": "Luna Den Spa, İzmir şubelerinde rahatlatıcı atmosferi ve özenle hazırlanan bakım seçenekleriyle misafirlerine şehir içinde dingin bir kaçış alanı sunar.",
       "imageAlt": "Luna Den Spa hakkımızda görseli",
       "cta": "Hakkımızda detayları",
       "highlights": {
@@ -52,7 +52,7 @@
     },
     "services": {
       "badge": "Hizmetlerimiz",
-      "intro": "Size iyi gelecek bakım ve rahatlama seçenekleriyle Luna Den Spa’da bedeninizi dinlendirin.",
+      "intro": "İzmir’de size iyi gelecek bakım ve rahatlama seçenekleriyle Luna Den Spa’da bedeninizi dinlendirin.",
       "popularTitle": "Popüler Hizmetlerimiz",
       "cta": "Tüm hizmetleri incele",
       "detail": "Detayları incele",
@@ -73,14 +73,14 @@
     },
     "branches": {
       "badge": "Şubelerimiz",
-      "intro": "Luna Den Spa deneyimine size en uygun lokasyonda ulaşın.",
-      "title": "Şube bilgileri",
+      "intro": "İzmir’deki Luna Den Spa deneyimine size en uygun şubede ulaşın.",
+      "title": "İzmir şube bilgileri",
       "imageAlt": "Luna Den Spa şubelerimiz görseli",
       "detail": "Şubeleri incele",
       "items": {
         "location": {
-          "title": "Size yakın lokasyonlar",
-          "description": "Adres ve ulaşım bilgilerini şubelerimiz sayfasında kolayca inceleyin."
+          "title": "İzmir’de size yakın lokasyonlar",
+          "description": "İzmir şubelerimizin adres ve ulaşım bilgilerini şubelerimiz sayfasında kolayca inceleyin."
         },
         "reservation": {
           "title": "Kolay rezervasyon",
@@ -88,22 +88,33 @@
         },
         "experience": {
           "title": "Aynı premium deneyim",
-          "description": "Her şubede Luna Den Spa’nın sakin, hijyenik ve rahatlatıcı atmosferini yaşayın."
+          "description": "İzmir’deki her şubede Luna Den Spa’nın sakin, hijyenik ve rahatlatıcı atmosferini yaşayın."
         }
       }
     },
     "contact": {
       "primary": {
-        "eyebrow": "Randevu ve şube bilgileri",
-        "title": "Konumunuza en yakın Luna Den Spa şubesiyle iletişime geçin.",
-        "description": "Size uygun şubeyi seçerek hizmetler, müsaitlik ve rezervasyon detayları hakkında hızlıca bilgi alın.",
-        "cta": "Şubelerimizi görüntüle"
+        "eyebrow": "İzmir şube ve randevu bilgileri",
+        "title": "İzmir’de size en uygun Luna Den Spa şubesiyle iletişime geçin.",
+        "description": "Size uygun İzmir şubesini seçerek hizmetler, müsaitlik ve rezervasyon detayları hakkında hızlıca bilgi alın.",
+        "cta": "İzmir şubelerini görüntüle"
+      }
+    }
+  },
+  "contactPage": {
+    "badge": "İletişim",
+    "title": "Luna Den Spa ile iletişim için İzmir şubenizi seçin.",
+    "description": "Randevu ve bilgi almak için size en uygun İzmir şubesinin iletişim bilgilerine ulaşabilirsiniz.",
+    "note": "Her şubenin WhatsApp ve telefon bilgileri kendi sayfasında yer alır. Size yakın şubeyi seçerek doğrudan iletişime geçebilirsiniz.",
+    "cta": "İzmir şubelerini görüntüle",
+    "options": {
+      "whatsapp": {
+        "title": "WhatsApp ile hızlı iletişim",
+        "description": "İlgili şube üzerinden randevu ve müsaitlik bilgisi alın."
       },
-      "secondary": {
-        "eyebrow": "İş ortaklığı",
-        "title": "Luna Den Spa ile iş birliği yapmak ister misiniz?",
-        "description": "Kurumsal talepler ve iş ortaklığı görüşmeleri için bizimle iletişime geçin.",
-        "cta": "İletişime geç"
+      "phone": {
+        "title": "Telefonla görüşme",
+        "description": "Tercih ettiğiniz İzmir şubesini doğrudan arayın."
       }
     }
   }

@@ -18,21 +18,21 @@
     "change": "Change language"
   },
   "footer": {
-    "description": "Luna Den Spa offers a relaxing and premium experience with massage, spa, and wellness services.",
+    "description": "Luna Den Spa offers a relaxing and premium experience through its Izmir branches with massage, spa, and wellness services.",
     "quickLinks": "Quick links",
     "copyright": "© 2024 Luna Den Spa. All rights reserved."
   },
   "home": {
     "hero": {
       "eyebrow": "Luna Den Spa & Wellness",
-      "title": "The healthiest way to pamper yourself",
+      "title": "The healthiest way to pamper yourself in Izmir",
       "branches": "Branches",
       "contact": "Contact"
     },
     "about": {
       "badge": "About Us",
-      "title": "A premium spa experience that renews your body and mind",
-      "description": "Luna Den Spa offers a peaceful escape in the city with a relaxing atmosphere and carefully prepared care options.",
+      "title": "A premium spa experience in Izmir that renews your body and mind",
+      "description": "Luna Den Spa offers a peaceful escape in Izmir through its relaxing atmosphere and carefully prepared care options.",
       "imageAlt": "Luna Den Spa about us visual",
       "cta": "About us details",
       "highlights": {
@@ -52,7 +52,7 @@
     },
     "services": {
       "badge": "Services",
-      "intro": "Rest your body at Luna Den Spa with care and relaxation options designed to feel good.",
+      "intro": "Rest your body in Izmir with Luna Den Spa care and relaxation options designed to feel good.",
       "popularTitle": "Popular Services",
       "cta": "View all services",
       "detail": "View details",
@@ -73,14 +73,14 @@
     },
     "branches": {
       "badge": "Branches",
-      "intro": "Reach the Luna Den Spa experience at the location that suits you best.",
-      "title": "Branch information",
+      "intro": "Reach the Luna Den Spa experience in Izmir at the branch that suits you best.",
+      "title": "Izmir branch information",
       "imageAlt": "Luna Den Spa branches visual",
       "detail": "View branches",
       "items": {
         "location": {
-          "title": "Nearby locations",
-          "description": "Review address and transportation details easily on our branches page."
+          "title": "Nearby locations in Izmir",
+          "description": "Review address and transportation details for our Izmir branches easily on our branches page."
         },
         "reservation": {
           "title": "Easy reservation",
@@ -88,22 +88,33 @@
         },
         "experience": {
           "title": "The same premium experience",
-          "description": "Enjoy Luna Den Spa’s calm, hygienic, and relaxing atmosphere at every branch."
+          "description": "Enjoy Luna Den Spa’s calm, hygienic, and relaxing atmosphere at every Izmir branch."
         }
       }
     },
     "contact": {
       "primary": {
-        "eyebrow": "Appointments and branch details",
-        "title": "Contact the Luna Den Spa branch closest to your location.",
-        "description": "Choose the most convenient branch and quickly get information about services, availability, and reservation details.",
-        "cta": "View our branches"
+        "eyebrow": "Izmir branch and appointment details",
+        "title": "Contact the Luna Den Spa branch in Izmir that suits you best.",
+        "description": "Choose the most convenient Izmir branch and quickly get information about services, availability, and reservation details.",
+        "cta": "View Izmir branches"
+      }
+    }
+  },
+  "contactPage": {
+    "badge": "Contact",
+    "title": "Choose your Izmir branch to contact Luna Den Spa.",
+    "description": "For appointments and information, you can reach the contact details of the Izmir branch that suits you best.",
+    "note": "Each branch page includes its own WhatsApp and phone details. Select the branch closest to you and contact it directly.",
+    "cta": "View Izmir branches",
+    "options": {
+      "whatsapp": {
+        "title": "Quick contact via WhatsApp",
+        "description": "Get appointment and availability details through the relevant branch."
       },
-      "secondary": {
-        "eyebrow": "Partnership",
-        "title": "Would you like to collaborate with Luna Den Spa?",
-        "description": "Contact us for corporate requests and partnership conversations.",
-        "cta": "Contact us"
+      "phone": {
+        "title": "Call by phone",
+        "description": "Call your preferred Izmir branch directly."
       }
     }
   }

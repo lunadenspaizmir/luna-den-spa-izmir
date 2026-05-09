@@ -84,7 +84,7 @@ export function HomeAbout() {
           <Card className="relative min-h-104 rounded-lg p-0">
             <CardContent className="relative min-h-104 overflow-hidden p-0">
               <Image
-                src="/anasayfa/hakkımızda.jpg"
+                src="/anasayfa/anasayfa-hakkımızda.jpg"
                 alt={t("imageAlt")}
                 fill
                 sizes="(min-width: 1024px) 42vw, 100vw"

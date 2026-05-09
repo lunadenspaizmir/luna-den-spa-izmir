@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Luna Den Spa",
   },
   description:
-    "Luna Den Spa masaj, spa ve wellness hizmetleriyle rahatlatıcı ve premium bir deneyim sunar.",
+    "Luna Den Spa, İzmir şubelerinde masaj, spa ve wellness hizmetleriyle rahatlatıcı ve premium bir deneyim sunar.",
 };
 
 type LocaleLayoutProps = Readonly<{
