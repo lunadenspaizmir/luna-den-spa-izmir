@@ -19,12 +19,12 @@ export function Header() {
           className="inline-flex w-fit items-center"
         >
           <Image
-            src="/logo/luna-den-spa-logo.png"
+            src="/logo/logo.webp"
             alt={siteConfig.name}
-            width={260}
-            height={77}
+            width={1580}
+            height={1360}
             priority
-            className="h-auto w-40 object-contain sm:w-52 lg:w-60"
+            className="h-16 w-auto object-contain sm:h-20"
           />
         </Link>
 
