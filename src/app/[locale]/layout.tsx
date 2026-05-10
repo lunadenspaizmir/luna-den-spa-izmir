@@ -12,6 +12,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { PageTransition } from "@/components/providers/page-transition";
 import { Header } from "@/components/layout/header/header";
 import { Footer } from "@/components/layout/footer/footer";
+import { siteConfig } from "@/data/site";
 
 const fontVariables = {
   "--font-geist-sans":
@@ -19,7 +20,7 @@ const fontVariables = {
 } as CSSProperties;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.lunadenspaizmir.com.tr"),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "Luna Den Spa",
     template: "%s | Luna Den Spa",
