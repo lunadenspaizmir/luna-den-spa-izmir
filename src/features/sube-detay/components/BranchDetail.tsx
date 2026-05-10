@@ -62,6 +62,9 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                       href={branch.whatsappHref}
                       target="_blank"
                       rel="noreferrer"
+                      data-conversion="whatsapp"
+                      data-conversion-location="branch-detail-hero"
+                      data-branch={branch.slug}
                     >
                       <MessageCircle className="size-4" />
                       {t("actions.whatsapp")}
@@ -71,7 +74,12 @@ export function BranchDetail({ branch }: BranchDetailProps) {
 
                 {branch.phoneHref ? (
                   <Button asChild variant="outline" className="h-11 px-5">
-                    <a href={branch.phoneHref}>
+                    <a
+                      href={branch.phoneHref}
+                      data-conversion="phone"
+                      data-conversion-location="branch-detail-hero"
+                      data-branch={branch.slug}
+                    >
                       <Phone className="size-4" />
                       {branch.phone}
                     </a>
@@ -201,6 +209,9 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                         href={branch.whatsappHref}
                         target="_blank"
                         rel="noreferrer"
+                        data-conversion="whatsapp"
+                        data-conversion-location="branch-detail-contact-card"
+                        data-branch={branch.slug}
                       >
                         <MessageCircle className="size-4" />
                         {t("actions.whatsapp")}
@@ -209,7 +220,12 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                   ) : null}
                   {branch.phoneHref ? (
                     <Button asChild variant="outline" className="h-11 w-full">
-                      <a href={branch.phoneHref}>
+                      <a
+                        href={branch.phoneHref}
+                        data-conversion="phone"
+                        data-conversion-location="branch-detail-contact-card"
+                        data-branch={branch.slug}
+                      >
                         <Phone className="size-4" />
                         {t("actions.call")}
                       </a>
@@ -310,6 +326,9 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                     href={branch.whatsappHref}
                     target="_blank"
                     rel="noreferrer"
+                    data-conversion="whatsapp"
+                    data-conversion-location="branch-detail-final-cta"
+                    data-branch={branch.slug}
                   >
                     <MessageCircle className="size-4" />
                     {t("actions.whatsapp")}
@@ -322,7 +341,12 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                   variant="outline"
                   className="h-11 border-primary-foreground/25 bg-transparent px-5 text-primary-foreground hover:bg-primary-foreground/10"
                 >
-                  <a href={branch.phoneHref}>
+                  <a
+                    href={branch.phoneHref}
+                    data-conversion="phone"
+                    data-conversion-location="branch-detail-final-cta"
+                    data-branch={branch.slug}
+                  >
                     <Phone className="size-4" />
                     {branch.phone}
                   </a>

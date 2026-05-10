@@ -19,7 +19,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
   }, [error]);
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       <section className="mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-6 text-center">
         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">
           {t("eyebrow")}
@@ -47,6 +47,6 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
           </Button>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

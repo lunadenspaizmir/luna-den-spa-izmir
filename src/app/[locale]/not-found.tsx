@@ -7,7 +7,7 @@ export default function NotFound() {
   const t = useTranslations("notFoundPage");
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       <section className="mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-6 text-center">
         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">
           404
@@ -31,6 +31,6 @@ export default function NotFound() {
           </Button>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
