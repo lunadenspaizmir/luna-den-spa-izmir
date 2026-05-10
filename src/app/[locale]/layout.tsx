@@ -9,6 +9,7 @@ import "@/style/globals.css";
 
 import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { PageTransition } from "@/components/providers/page-transition";
 import { Header } from "@/components/layout/header/header";
 import { Footer } from "@/components/layout/footer/footer";
 
@@ -56,7 +57,9 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             <Header />
-            <main id="main-content">{children}</main>
+            <main id="main-content">
+              <PageTransition>{children}</PageTransition>
+            </main>
             <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
