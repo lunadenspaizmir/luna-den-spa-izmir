@@ -43,8 +43,16 @@ const staticRoutes: ReadonlyArray<StaticRoute> = [
   },
 ];
 
+function ensureLeadingSlash(path: string) {
+  return path.startsWith("/") ? path : `/${path}`;
+}
+
 function absoluteUrl(path: string) {
-  return new URL(path, siteConfig.url).toString();
+  if (/^https?:\/\//i.test(path)) {
+    return path;
+  }
+
+  return new URL(ensureLeadingSlash(path), siteConfig.url).toString();
 }
 
 function createLocalizedEntry(
@@ -55,29 +63,32 @@ function createLocalizedEntry(
 ): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
+  const trUrl = absoluteUrl(trPath);
+  const enUrl = absoluteUrl(enPath);
+
+  const languages = {
+    tr: trUrl,
+    en: enUrl,
+    "x-default": trUrl,
+  };
+
   return [
     {
-      url: absoluteUrl(trPath),
+      url: trUrl,
       lastModified,
       changeFrequency,
       priority,
       alternates: {
-        languages: {
-          tr: absoluteUrl(trPath),
-          en: absoluteUrl(enPath),
-        },
+        languages,
       },
     },
     {
-      url: absoluteUrl(enPath),
+      url: enUrl,
       lastModified,
       changeFrequency,
       priority,
       alternates: {
-        languages: {
-          tr: absoluteUrl(trPath),
-          en: absoluteUrl(enPath),
-        },
+        languages,
       },
     },
   ];

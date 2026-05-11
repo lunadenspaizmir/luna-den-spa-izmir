@@ -13,6 +13,7 @@ import { PageTransition } from "@/components/providers/page-transition";
 import { Header } from "@/components/layout/header/header";
 import { Footer } from "@/components/layout/footer/footer";
 import { siteConfig } from "@/data/site";
+import { GoogleAdsConversions } from "@/components/analytics/google-ads-conversions";
 
 const fontVariables = {
   "--font-geist-sans":
@@ -62,6 +63,7 @@ export default async function LocaleLayout({
               <PageTransition>{children}</PageTransition>
             </main>
             <Footer />
+            <GoogleAdsConversions />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

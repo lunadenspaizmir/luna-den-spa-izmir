@@ -61,7 +61,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                     <a
                       href={branch.whatsappHref}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       data-conversion="whatsapp"
                       data-conversion-location="branch-detail-hero"
                       data-branch={branch.slug}
