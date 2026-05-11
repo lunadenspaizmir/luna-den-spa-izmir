@@ -61,7 +61,6 @@ export const branches: ReadonlyArray<Branch> = [
     ],
     gallery: [
       "/subelerimiz/balcova-ege-park/balcova-ege-park-1.webp",
-      "/subelerimiz/balcova-ege-park/balcova-ege-park-2.webp",
       "/subelerimiz/balcova-ege-park/balcova-ege-park-3.webp",
       "/subelerimiz/balcova-ege-park/balcova-ege-park-4.webp",
       "/subelerimiz/balcova-ege-park/balcova-ege-park-5.webp",
