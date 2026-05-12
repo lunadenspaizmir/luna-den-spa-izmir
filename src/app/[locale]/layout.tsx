@@ -30,9 +30,11 @@ export const metadata: Metadata = {
     "Luna Den Spa, İzmir şubelerinde masaj, spa ve wellness hizmetleriyle rahatlatıcı ve premium bir deneyim sunar.",
   icons: {
     icon: [
-      { url: "/favicon.ico" },
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "48x48" },
+      { url: "/favicon-192.png", type: "image/png", sizes: "192x192" },
       { url: "/icon.png", type: "image/png", sizes: "512x512" },
     ],
+    shortcut: [{ url: "/favicon.ico" }],
     apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
 };
