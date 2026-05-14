@@ -14,7 +14,7 @@ export type Branch = {
   name: string;
   fullName: string;
   district: string;
-  image: string;
+  image?: string;
   status: BranchStatus;
   translationKey: string;
   phone?: string;
@@ -92,6 +92,36 @@ export const branches: ReadonlyArray<Branch> = [
     ],
   },
   {
+    slug: "alacati-beach-resort-spa",
+    name: "Alaçatı Beach Resort & Spa",
+    fullName: "Alaçatı Beach Resort & Spa",
+    district: "Alaçatı",
+    image: "/subelerimiz/alacati-beach-resort-spa.avif",
+    status: "open",
+    translationKey: "alacatiBeachResortSpa",
+    phone: "+90 232 716 0000",
+    phoneHref: "tel:+902327160000",
+    instagramHref: "https://www.instagram.com/alacatibeachresort/",
+    mapsUrl: "https://maps.app.goo.gl/AuNEwZVmykxvjaHJ6",
+    mapsEmbedUrl:
+      "https://www.google.com/maps?q=Alacati%20Mahallesi%20No%3A11%2C%20%C3%87ark%20Plaj%C4%B1%2C%20Liman%20Mevkii%2C%20Ala%C3%A7at%C4%B1%2C%2035930%20%C4%B0zmir&output=embed",
+    gallery: [
+      "/subelerimiz/alacati-beach-resort-spa/alacati-beach-resort-spa-1.avif",
+      "/subelerimiz/alacati-beach-resort-spa/alacati-beach-resort-spa-2.avif",
+    ],
+    highlights: [
+      "Telefonla hızlı geri dönüş",
+      "Alaçatı’da kolay ulaşım",
+    ],
+    searchTopics: [
+      "Alaçatı spa",
+      "Alaçatı masaj",
+      "Alaçatı wellness",
+      "Çeşme spa",
+      "İzmir Alaçatı spa",
+    ],
+  },
+  {
     slug: "gaziemir",
     name: "Gaziemir",
     fullName: "Luna Den Spa Gaziemir",
@@ -99,15 +129,6 @@ export const branches: ReadonlyArray<Branch> = [
     image: "/subelerimiz/mock-spa.jpg",
     status: "comingSoon",
     translationKey: "gaziemir",
-  },
-  {
-    slug: "cesme",
-    name: "Çeşme",
-    fullName: "Luna Den Spa Çeşme",
-    district: "Çeşme",
-    image: "/subelerimiz/mock-spa.jpg",
-    status: "comingSoon",
-    translationKey: "cesme",
   },
 ];
 

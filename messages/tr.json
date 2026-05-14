@@ -180,9 +180,9 @@
         "description": "Gaziemir şubemiz için hazırlıklarımız devam ediyor. Çok yakında İzmir’de yeni bir Luna Den Spa deneyimiyle hizmetinizdeyiz.",
         "imageAlt": "Luna Den Spa Gaziemir yakında açılacak şube görseli"
       },
-      "cesme": {
-        "description": "Çeşme şubemiz için hazırlıklarımız devam ediyor. Rahatlatıcı spa ve masaj deneyimimizle çok yakında hizmetinizdeyiz.",
-        "imageAlt": "Luna Den Spa Çeşme yakında açılacak şube görseli"
+      "alacatiBeachResortSpa": {
+        "description": "Alaçatı Beach Resort & Spa lokasyonunda iletişim ve randevu bilgilerine ulaşabilir, Alaçatı’daki rahatlatıcı spa deneyimi için bizimle hızlıca görüşebilirsiniz.",
+        "imageAlt": "Alaçatı Beach Resort & Spa şubesi"
       }
     }
   },
@@ -197,9 +197,13 @@
       "heroDescription": "Balçova Ege Park AVM içerisinde yer alan Luna Den Spa şubemizde masaj, spa, hamam ve wellness hizmetleri için hızlıca iletişime geçebilir, randevunuzu WhatsApp veya telefon üzerinden kolaylıkla oluşturabilirsiniz.",
       "locationDescription": "Luna Den Spa, Ege Park AVM içerisinde, 2. katta hizmet vermektedir. AVM ana girişinden içeri girdikten sonra yönlendirme tabelalarını takip ederek asansör ile 2. kata ulaşabilirsiniz."
     },
+    "alacatiBeachResortSpa": {
+      "heroDescription": "Alaçatı Beach Resort & Spa, Çark Plajı ve Liman Mevkii çevresinde sakin, özenli ve konforlu bir spa deneyimi arayan misafirler için iletişim ve randevu bilgilerini tek noktada sunar.",
+      "locationDescription": "Alaçatı Beach Resort & Spa; Alacati Mahallesi No:11, Çark Plajı, Liman Mevkii, Alaçatı, 35930 İzmir adresinde yer almaktadır."
+    },
     "location": {
       "title": "Konum ve ulaşım",
-      "mapTitle": "Luna Den Spa Balçova Ege Park harita konumu"
+      "mapTitle": "Şube harita konumu"
     },
     "workingHours": {
       "title": "Çalışma saatleri",
@@ -214,18 +218,18 @@
     },
     "contact": {
       "title": "Hızlı randevu",
-      "description": "WhatsApp veya telefon araması ile Balçova Ege Park şubemizden hızlı geri dönüş alabilirsiniz."
+      "description": "WhatsApp veya telefon araması ile ilgili şubemizden hızlı geri dönüş alabilirsiniz."
     },
     "services": {
       "title": "Bu şubede sunulan hizmetler",
-      "description": "Balçova Ege Park şubemizde ihtiyaçlarınıza göre şekillenen masaj ve spa hizmetlerinden yararlanabilirsiniz."
+      "description": "İlgili şubemizde ihtiyaçlarınıza göre şekillenen masaj ve spa hizmetlerinden yararlanabilirsiniz."
     },
     "gallery": {
       "title": "Şubemizden görseller",
       "imageAlt": "şube görseli"
     },
     "finalCta": {
-      "title": "Balçova Ege Park şubemiz için randevu oluşturun",
+      "title": "Randevu ve bilgi almak için bizimle iletişime geçin",
       "description": "Masaj ve spa hizmetleri hakkında bilgi almak, uygun saatleri öğrenmek veya randevu oluşturmak için şubemizle doğrudan iletişime geçebilirsiniz."
     }
   },

@@ -42,14 +42,22 @@ export function BranchesOverview() {
             const branchCard = (
               <Card className="h-full rounded-lg p-0 transition hover:-translate-y-1 hover:shadow-md">
                 <div className="relative min-h-72 overflow-hidden">
-                  <Image
-                    src={branch.image}
-                    alt={t(`items.${branch.translationKey}.imageAlt`)}
-                    fill
-                    sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-cover transition duration-500 group-hover/card:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-primary/10" />
+                  {branch.image ? (
+                    <>
+                      <Image
+                        src={branch.image}
+                        alt={t(`items.${branch.translationKey}.imageAlt`)}
+                        fill
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                        className="object-cover transition duration-500 group-hover/card:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-primary/10" />
+                    </>
+                  ) : (
+                    <div className="flex min-h-72 items-center justify-center bg-muted/60 text-muted-foreground">
+                      <MapPin className="size-10" />
+                    </div>
+                  )}
                   <Badge
                     variant={isOpen ? "default" : "secondary"}
                     className="absolute left-4 top-4 h-8 px-3"

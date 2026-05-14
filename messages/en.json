@@ -180,9 +180,9 @@
         "description": "Preparations for our Gaziemir branch are in progress. A new Luna Den Spa experience in Izmir will be with you very soon.",
         "imageAlt": "Luna Den Spa Gaziemir upcoming branch visual"
       },
-      "cesme": {
-        "description": "Preparations for our Çeşme branch are in progress. Our relaxing spa and massage experience will be with you very soon.",
-        "imageAlt": "Luna Den Spa Çeşme upcoming branch visual"
+      "alacatiBeachResortSpa": {
+        "description": "At the Alaçatı Beach Resort & Spa location, you can access contact and appointment details and quickly reach us for a relaxing spa experience in Alaçatı.",
+        "imageAlt": "Alaçatı Beach Resort & Spa branch"
       }
     }
   },
@@ -197,9 +197,13 @@
       "heroDescription": "At our Luna Den Spa branch inside Balçova Ege Park AVM, you can quickly contact us for massage, spa, hammam, and wellness services and easily create your appointment via WhatsApp or phone.",
       "locationDescription": "Luna Den Spa serves guests on the 2nd floor inside Ege Park AVM. After entering through the main mall entrance, follow the directional signs and use the elevator to reach the 2nd floor."
     },
+    "alacatiBeachResortSpa": {
+      "heroDescription": "Alaçatı Beach Resort & Spa brings contact and appointment details together for guests looking for a calm, attentive, and comfortable spa experience near Çark Beach and Liman Mevkii.",
+      "locationDescription": "Alaçatı Beach Resort & Spa is located at Alacati Mahallesi No:11, Çark Plajı, Liman Mevkii, Alaçatı, 35930 İzmir."
+    },
     "location": {
       "title": "Location and access",
-      "mapTitle": "Luna Den Spa Balçova Ege Park map location"
+      "mapTitle": "Branch map location"
     },
     "workingHours": {
       "title": "Working hours",
@@ -214,18 +218,18 @@
     },
     "contact": {
       "title": "Quick appointment",
-      "description": "You can receive a quick response from our Balçova Ege Park branch through WhatsApp or a phone call."
+      "description": "You can receive a quick response from the relevant branch through WhatsApp or a phone call."
     },
     "services": {
       "title": "Services available at this branch",
-      "description": "At our Balçova Ege Park branch, you can benefit from massage and spa services shaped around your needs."
+      "description": "At the relevant branch, you can benefit from massage and spa services shaped around your needs."
     },
     "gallery": {
       "title": "Photos from our branch",
       "imageAlt": "branch photo"
     },
     "finalCta": {
-      "title": "Create an appointment for our Balçova Ege Park branch",
+      "title": "Contact us for appointments and information",
       "description": "Contact our branch directly to get information about massage and spa services, learn available times, or create an appointment."
     }
   },
