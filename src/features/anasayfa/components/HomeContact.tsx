@@ -27,10 +27,10 @@ export function HomeContact() {
             fill
             aria-hidden="true"
             sizes="100vw"
-            className="scale-105 object-cover opacity-70 blur-[1px] dark:opacity-45"
+            className="scale-105 object-cover opacity-70 blur-[1px]"
           />
-          <div className="absolute inset-0 bg-linear-to-r from-card/95 via-card/75 to-card/35 dark:from-background/95 dark:via-background/75 dark:to-background/40" />
-          <div className="absolute inset-0 bg-primary/5 dark:bg-primary/10" />
+          <div className="absolute inset-0 bg-linear-to-r from-card/95 via-card/75 to-card/35" />
+          <div className="absolute inset-0 bg-primary/5" />
 
           <div className="relative z-10 grid gap-8 p-6 md:p-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <CardHeader className="gap-4 p-0">

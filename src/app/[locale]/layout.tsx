@@ -8,7 +8,6 @@ import { getMessages } from "next-intl/server";
 import "@/style/globals.css";
 
 import { routing } from "@/i18n/routing";
-import { ThemeProvider } from "@/components/providers/theme-provider";
 import { PageTransition } from "@/components/providers/page-transition";
 import { Header } from "@/components/layout/header/header";
 import { Footer } from "@/components/layout/footer/footer";
@@ -63,17 +62,15 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale}>
       <body style={fontVariables}>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>
-            <Header />
-            <main id="main-content">
-              <PageTransition>{children}</PageTransition>
-            </main>
-            <Footer />
-            <GoogleAdsConversions />
-          </ThemeProvider>
+          <Header />
+          <main id="main-content">
+            <PageTransition>{children}</PageTransition>
+          </main>
+          <Footer />
+          <GoogleAdsConversions />
         </NextIntlClientProvider>
       </body>
     </html>

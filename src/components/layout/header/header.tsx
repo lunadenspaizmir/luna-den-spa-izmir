@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { LanguageSwitcher } from "@/components/layout/controls/language-switcher";
-import { ThemeToggle } from "@/components/layout/controls/theme-toggle";
 import { Container } from "@/components/layout/primitives/container";
 import { siteConfig } from "@/data/site";
 import { Link } from "@/i18n/navigation";
@@ -33,7 +32,6 @@ export function Header() {
         <div className="flex items-center justify-end gap-2">
           <div className="hidden items-center gap-2 lg:flex">
             <LanguageSwitcher />
-            <ThemeToggle />
           </div>
           <MobileNav />
         </div>

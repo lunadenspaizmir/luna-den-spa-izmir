@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { LanguageSwitcher } from "@/components/layout/controls/language-switcher";
-import { ThemeToggle } from "@/components/layout/controls/theme-toggle";
 import { Container } from "@/components/layout/primitives/container";
 import { Button } from "@/components/ui/button";
 import { navigationItems } from "@/data/navigation";
@@ -121,7 +120,6 @@ export function MobileNav() {
 
             <div className="mt-3 flex items-center justify-center gap-3 border-t border-border/70 pt-3">
               <LanguageSwitcher className="justify-center" />
-              <ThemeToggle />
             </div>
           </Container>
         </div>
