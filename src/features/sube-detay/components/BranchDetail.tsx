@@ -27,6 +27,10 @@ type BranchDetailProps = Readonly<{
   branch: Branch;
 }>;
 
+type ConversionType = "whatsapp" | "phone";
+
+const trackedGoogleAdsBranchSlug = "balcova-ege-park";
+
 export function BranchDetail({ branch }: BranchDetailProps) {
   const t = useTranslations("branchDetailPage");
   const serviceTranslations = useTranslations("servicesPage.items");
@@ -34,6 +38,23 @@ export function BranchDetail({ branch }: BranchDetailProps) {
   const gallery = branch.gallery ?? [];
   const hasWorkingHours = Boolean(branch.workingHours?.length);
   const hasServices = Boolean(branch.services?.length);
+  const shouldTrackGoogleAdsConversions =
+    branch.slug === trackedGoogleAdsBranchSlug;
+
+  function getConversionTrackingProps(
+    type: ConversionType,
+    location: string
+  ) {
+    if (!shouldTrackGoogleAdsConversions) {
+      return {};
+    }
+
+    return {
+      "data-conversion": type,
+      "data-conversion-location": location,
+      "data-branch": branch.slug,
+    };
+  }
 
   return (
     <>
@@ -70,9 +91,10 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                       href={branch.whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      data-conversion="whatsapp"
-                      data-conversion-location="branch-detail-hero"
-                      data-branch={branch.slug}
+                      {...getConversionTrackingProps(
+                        "whatsapp",
+                        "branch-detail-hero"
+                      )}
                     >
                       <MessageCircle className="size-4" />
                       {t("actions.whatsapp")}
@@ -84,9 +106,10 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                   <Button asChild variant="outline" className="h-11 px-5">
                     <a
                       href={branch.phoneHref}
-                      data-conversion="phone"
-                      data-conversion-location="branch-detail-hero"
-                      data-branch={branch.slug}
+                      {...getConversionTrackingProps(
+                        "phone",
+                        "branch-detail-hero"
+                      )}
                     >
                       <Phone className="size-4" />
                       {branch.phone}
@@ -221,9 +244,10 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                         href={branch.whatsappHref}
                         target="_blank"
                         rel="noreferrer"
-                        data-conversion="whatsapp"
-                        data-conversion-location="branch-detail-contact-card"
-                        data-branch={branch.slug}
+                        {...getConversionTrackingProps(
+                          "whatsapp",
+                          "branch-detail-contact-card"
+                        )}
                       >
                         <MessageCircle className="size-4" />
                         {t("actions.whatsapp")}
@@ -234,9 +258,10 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                     <Button asChild variant="outline" className="h-11 w-full">
                       <a
                         href={branch.phoneHref}
-                        data-conversion="phone"
-                        data-conversion-location="branch-detail-contact-card"
-                        data-branch={branch.slug}
+                        {...getConversionTrackingProps(
+                          "phone",
+                          "branch-detail-contact-card"
+                        )}
                       >
                         <Phone className="size-4" />
                         {t("actions.call")}
@@ -346,9 +371,10 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                     href={branch.whatsappHref}
                     target="_blank"
                     rel="noreferrer"
-                    data-conversion="whatsapp"
-                    data-conversion-location="branch-detail-final-cta"
-                    data-branch={branch.slug}
+                    {...getConversionTrackingProps(
+                      "whatsapp",
+                      "branch-detail-final-cta"
+                    )}
                   >
                     <MessageCircle className="size-4" />
                     {t("actions.whatsapp")}
@@ -363,9 +389,10 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                 >
                   <a
                     href={branch.phoneHref}
-                    data-conversion="phone"
-                    data-conversion-location="branch-detail-final-cta"
-                    data-branch={branch.slug}
+                    {...getConversionTrackingProps(
+                      "phone",
+                      "branch-detail-final-cta"
+                    )}
                   >
                     <Phone className="size-4" />
                     {branch.phone}

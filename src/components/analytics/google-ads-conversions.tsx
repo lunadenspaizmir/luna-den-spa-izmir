@@ -17,10 +17,28 @@ const conversionLabels = {
   phone: process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_LABEL,
 } as const;
 
+const trackedBranchSlug = "balcova-ege-park";
+const trackedPathname = "/subelerimiz/balcova-ege-park";
+
 type ConversionType = keyof typeof conversionLabels;
 
 function isConversionType(value: string): value is ConversionType {
   return value === "whatsapp" || value === "phone";
+}
+
+function normalizePathname(pathname: string) {
+  if (pathname === "/") {
+    return pathname;
+  }
+
+  return pathname.replace(/\/+$/, "");
+}
+
+function isTrackedConversionLink(link: HTMLAnchorElement) {
+  return (
+    link.dataset.branch === trackedBranchSlug &&
+    normalizePathname(window.location.pathname) === trackedPathname
+  );
 }
 
 function reportConversion(
@@ -60,6 +78,10 @@ export function GoogleAdsConversions() {
       const link = target.closest<HTMLAnchorElement>("a[data-conversion]");
 
       if (!link) {
+        return;
+      }
+
+      if (!isTrackedConversionLink(link)) {
         return;
       }
 
