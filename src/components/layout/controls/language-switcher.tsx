@@ -1,11 +1,9 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { useParams } from "next/navigation";
 import { useTransition } from "react";
 
 import { Button } from "@/components/ui/button";
-import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
@@ -15,18 +13,11 @@ type LanguageSwitcherProps = Readonly<{
 
 export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   const locale = useLocale();
-  const pathname = usePathname();
-  const params = useParams();
-  const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
   function changeLocale(nextLocale: (typeof routing.locales)[number]) {
     startTransition(() => {
-      router.replace(
-        // @ts-expect-error ---
-        { pathname, params },
-        { locale: nextLocale }
-      );
+      window.location.assign(getLocalizedPath(window.location.href, nextLocale));
     });
   }
 
@@ -52,4 +43,95 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
       ))}
     </div>
   );
+}
+
+function getLocalizedPath(
+  href: string,
+  nextLocale: (typeof routing.locales)[number]
+) {
+  const url = new URL(href);
+  const pathname = normalizePathname(url.pathname);
+  const nextPathname = mapPathnameToLocale(pathname, nextLocale);
+
+  return `${nextPathname}${url.search}${url.hash}`;
+}
+
+function normalizePathname(pathname: string) {
+  if (pathname === "/") {
+    return pathname;
+  }
+
+  return pathname.replace(/\/+$/, "");
+}
+
+function stripDefaultLocalePrefix(pathname: string) {
+  if (pathname === "/tr") {
+    return "/";
+  }
+
+  if (pathname.startsWith("/tr/")) {
+    return pathname.slice(3) || "/";
+  }
+
+  return pathname;
+}
+
+function mapPathnameToLocale(
+  pathname: string,
+  nextLocale: (typeof routing.locales)[number]
+) {
+  const normalizedPathname = stripDefaultLocalePrefix(pathname);
+
+  const staticRoutes = [
+    ["/", "/en"],
+    ["/hakkimizda", "/en/about"],
+    ["/hizmetlerimiz", "/en/services"],
+    ["/subelerimiz", "/en/branches"],
+    ["/iletisim", "/en/contact"],
+  ] as const;
+
+  for (const [trPathname, enPathname] of staticRoutes) {
+    if (
+      normalizedPathname === trPathname ||
+      normalizedPathname === enPathname ||
+      normalizedPathname === enPathname.replace("/about", "/hakkimizda") ||
+      normalizedPathname === enPathname.replace("/services", "/hizmetlerimiz") ||
+      normalizedPathname === enPathname.replace("/branches", "/subelerimiz") ||
+      normalizedPathname === enPathname.replace("/contact", "/iletisim")
+    ) {
+      return nextLocale === "tr" ? trPathname : enPathname;
+    }
+  }
+
+  const branchSlug = getBranchSlug(normalizedPathname);
+
+  if (branchSlug) {
+    return nextLocale === "tr"
+      ? `/subelerimiz/${branchSlug}`
+      : `/en/branches/${branchSlug}`;
+  }
+
+  return nextLocale === "tr" ? "/" : "/en";
+}
+
+function getBranchSlug(pathname: string) {
+  const prefixes = [
+    "/subelerimiz/",
+    "/en/branches/",
+    "/en/subelerimiz/",
+  ] as const;
+
+  for (const prefix of prefixes) {
+    if (!pathname.startsWith(prefix)) {
+      continue;
+    }
+
+    const slug = pathname.slice(prefix.length).split("/")[0];
+
+    if (slug) {
+      return slug;
+    }
+  }
+
+  return null;
 }
