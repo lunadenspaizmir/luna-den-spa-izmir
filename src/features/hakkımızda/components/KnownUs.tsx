@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/primitives/container";
 import { Section } from "@/components/layout/primitives/section";
@@ -6,27 +7,23 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function KnownUs() {
+  const t = useTranslations("aboutPage.hero");
+
   return (
     <Section className="bg-background">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
           <div>
             <Badge variant="outline" className="h-11 rounded-full px-5 text-sm">
-              İzmir’de Luna Den Spa
+              {t("badge")}
             </Badge>
 
             <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-foreground md:text-5xl">
-              İzmir’de lüksü ve dinginliği bir arada sunan özel spa deneyimi
+              {t("title")}
             </h1>
 
             <p className="mt-6 max-w-3xl text-base leading-8 text-muted-foreground md:text-lg">
-              Lüksü ve dinginliği bir arada sunan Luna Den Spa, şehir hayatına
-              incelikle düşünülmüş bir mola vermek isteyenleri İzmir
-              şubelerinde bekliyor. İzmir’de hem medikal bakımlarıyla, hem
-              doğal bakımlarıyla öne çıkan Luna Den Spa’da, misafirler için
-              özel olarak hazırlanmış yağlarla yapılan masajların, taze
-              ürünlerle uygulanan cilt ve vücut bakımlarının yanı sıra lüks ve
-              geleneksel Türk hamamı hizmetini de deneyimleyebilirsiniz.
+              {t("description")}
             </p>
           </div>
 
@@ -34,7 +31,7 @@ export function KnownUs() {
             <CardContent className="relative min-h-104 overflow-hidden p-0">
               <Image
                 src="/hakkimizda/hakkimizda-hakkimizda.webp"
-                alt="Luna Den Spa hakkımızda görseli"
+                alt={t("imageAlt")}
                 fill
                 sizes="(min-width: 1024px) 42vw, 100vw"
                 className="object-cover"

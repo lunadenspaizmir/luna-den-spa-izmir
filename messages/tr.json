@@ -95,6 +95,31 @@
       }
     }
   },
+  "aboutPage": {
+    "hero": {
+      "badge": "İzmir’de Luna Den Spa",
+      "title": "İzmir’de lüksü ve dinginliği bir arada sunan özel spa deneyimi",
+      "description": "Lüksü ve dinginliği bir arada sunan Luna Den Spa, şehir hayatına incelikle düşünülmüş bir mola vermek isteyenleri İzmir şubelerinde bekliyor. İzmir’de hem medikal bakımlarıyla hem doğal bakımlarıyla öne çıkan Luna Den Spa’da, misafirler için özel olarak hazırlanmış yağlarla yapılan masajların, taze ürünlerle uygulanan cilt ve vücut bakımlarının yanı sıra lüks ve geleneksel Türk hamamı hizmetini de deneyimleyebilirsiniz.",
+      "imageAlt": "Luna Den Spa hakkımızda görseli"
+    },
+    "why": {
+      "badge": "İzmir’de Neden Luna Den Spa?",
+      "title": "İzmir şubelerimizde her detayında konfor, hijyen ve profesyonellik",
+      "description": "İzmir’de masajları, farklı ihtiyaçlara göre vücut ve yüz bakımları, vücut maskesi seçenekleri, özel içeriklerle hazırlanan banyo terapileri ve bu rahatlatıcı deneyimi sevdiklerinizle birlikte yaşamanızı sağlayan çift kişilik paketler bunlardan sadece bazıları.",
+      "itemDescription": "İzmir’deki Luna Den Spa deneyiminin sürdürülebilir ve güven veren standartlarla ilerlemesi için her adımı özenle planlıyoruz.",
+      "items": {
+        "quality": {
+          "title": "Luna Den Spa olarak İzmir şubelerimizde misafir memnuniyeti için kalite standartlarımızı en üst seviyede tutuyoruz"
+        },
+        "safety": {
+          "title": "İzmir masaj salonu deneyimi için alınması gereken tüm tedbirleri alıyor, alanında uzman eğitimli masaj terapistleri ile çalışıyoruz"
+        },
+        "contact": {
+          "title": "Kolay iletişim için ilgili İzmir şubelerimizdeki WhatsApp ve telefon numaraları üzerinden randevunuzu kolaylıkla oluşturabilirsiniz"
+        }
+      }
+    }
+  },
   "contactPage": {
     "badge": "İletişim",
     "title": "Luna Den Spa ile iletişim için İzmir şubenizi seçin.",

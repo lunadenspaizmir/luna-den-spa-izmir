@@ -95,6 +95,31 @@
       }
     }
   },
+  "aboutPage": {
+    "hero": {
+      "badge": "Luna Den Spa in Izmir",
+      "title": "A refined spa experience in Izmir where luxury meets calm",
+      "description": "Luna Den Spa welcomes guests at its Izmir branches with a thoughtfully designed pause from city life. Alongside massage treatments prepared with special oils, skin and body care with fresh products, and both medical and natural care options, you can also experience luxurious traditional Turkish hammam services.",
+      "imageAlt": "Luna Den Spa about us visual"
+    },
+    "why": {
+      "badge": "Why Luna Den Spa in Izmir?",
+      "title": "Comfort, hygiene, and professionalism in every detail at our Izmir branches",
+      "description": "Massage experiences in Izmir, body and facial care shaped around different needs, body mask options, bath therapies prepared with special ingredients, and couples packages that let you share the relaxing experience are only some of what we offer.",
+      "itemDescription": "We carefully plan every step so the Luna Den Spa experience in Izmir continues with consistent, trusted standards.",
+      "items": {
+        "quality": {
+          "title": "At Luna Den Spa, we keep our quality standards at the highest level for guest satisfaction across our Izmir branches"
+        },
+        "safety": {
+          "title": "We take every required precaution for an Izmir massage salon experience and work with trained expert massage therapists"
+        },
+        "contact": {
+          "title": "You can easily create your appointment through the WhatsApp and phone numbers of our relevant Izmir branches"
+        }
+      }
+    }
+  },
   "contactPage": {
     "badge": "Contact",
     "title": "Choose your Izmir branch to contact Luna Den Spa.",

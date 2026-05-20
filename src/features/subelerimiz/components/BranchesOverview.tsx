@@ -117,6 +117,7 @@ export function BranchesOverview() {
               <Link
                 key={branch.slug}
                 href={branchHref}
+                prefetch={false}
                 className="block h-full rounded-lg focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
               >
                 {branchCard}

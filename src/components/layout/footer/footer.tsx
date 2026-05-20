@@ -29,6 +29,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
+                    prefetch={false}
                     className="transition hover:text-foreground"
                   >
                     {tNavigation(item.titleKey)}

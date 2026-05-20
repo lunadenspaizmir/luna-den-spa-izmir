@@ -23,6 +23,7 @@ export function DesktopNav() {
             <li key={item.href}>
               <Link
                 href={item.href}
+                prefetch={false}
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
                   "inline-flex h-9 items-center rounded-full px-4 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground",

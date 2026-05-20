@@ -14,6 +14,7 @@ export function Header() {
       <Container className="grid h-24 grid-cols-[auto_1fr] items-center gap-4 lg:grid-cols-[auto_1fr_auto]">
         <Link
           href="/"
+          prefetch={false}
           aria-label={`${siteConfig.name} anasayfa`}
           className="inline-flex w-fit items-center"
         >

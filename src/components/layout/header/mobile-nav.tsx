@@ -102,6 +102,7 @@ export function MobileNav() {
                     <li key={item.href}>
                       <Link
                         href={item.href}
+                        prefetch={false}
                         aria-current={isActive ? "page" : undefined}
                         onClick={closeMenu}
                         className={cn(
