@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 
 import AboutPageWrapper from "@/features/hakkımızda/containers/AboutPageWrapper";
 import { buildPageMetadata, localizedPath, normalizeLocale } from "@/lib/metadata";
@@ -30,6 +31,9 @@ export async function generateMetadata({
   });
 }
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: AboutPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return <AboutPageWrapper />;
 }

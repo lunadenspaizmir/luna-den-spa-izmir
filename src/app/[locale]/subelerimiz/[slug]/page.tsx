@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
 
 import BranchDetailPageWrapper from "@/features/sube-detay/containers/BranchDetailPageWrapper";
 import { branches, getBranchBySlug } from "@/data/branches";
@@ -66,7 +67,9 @@ export async function generateMetadata({
 export default async function BranchDetailPage({
   params,
 }: BranchDetailPageProps) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+
   const branch = getBranchBySlug(slug);
 
   if (!branch || branch.status !== "open") {

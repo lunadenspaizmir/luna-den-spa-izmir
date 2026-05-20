@@ -1,0 +1,17 @@
+# Cloudflare Pages rewrites for static Next.js export.
+# next-intl proxy is disabled in `output: "export"`, so these rules map
+# public localized URLs to the generated static files.
+
+/ /tr 200
+
+/hakkimizda /tr/hakkimizda 200
+/hizmetlerimiz /tr/hizmetlerimiz 200
+/subelerimiz /tr/subelerimiz 200
+/subelerimiz/:slug /tr/subelerimiz/:slug 200
+/iletisim /tr/iletisim 200
+
+/en/about /en/hakkimizda 200
+/en/services /en/hizmetlerimiz 200
+/en/branches /en/subelerimiz 200
+/en/branches/:slug /en/subelerimiz/:slug 200
+/en/contact /en/iletisim 200

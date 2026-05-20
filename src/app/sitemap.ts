@@ -3,6 +3,8 @@ import type { MetadataRoute } from "next";
 import { branches } from "@/data/branches";
 import { siteConfig } from "@/data/site";
 
+export const dynamic = "force-static";
+
 type StaticRoute = Readonly<{
   tr: string;
   en: string;

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 
 import HomePageWrapper from "@/features/anasayfa/containers/HomePageWrapper";
 import { buildPageMetadata, localizedPath, normalizeLocale } from "@/lib/metadata";
@@ -30,6 +31,9 @@ export async function generateMetadata({
   });
 }
 
-export default function HomePage() {
+export default async function HomePage({ params }: PageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return <HomePageWrapper />;
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 
 import ContactPageWrapper from "@/features/iletisim/containers/ContactPageWrapper";
 import { buildPageMetadata, localizedPath, normalizeLocale } from "@/lib/metadata";
@@ -29,6 +30,9 @@ export async function generateMetadata({
   });
 }
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: ContactPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return <ContactPageWrapper />;
 }

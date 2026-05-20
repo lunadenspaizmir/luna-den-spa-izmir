@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 
 import BranchesPageWrapper from "@/features/subelerimiz/containers/BranchesPageWrapper";
 import { buildPageMetadata, localizedPath, normalizeLocale } from "@/lib/metadata";
@@ -30,6 +31,9 @@ export async function generateMetadata({
   });
 }
 
-export default function BranchesPage() {
+export default async function BranchesPage({ params }: BranchesPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return <BranchesPageWrapper />;
 }

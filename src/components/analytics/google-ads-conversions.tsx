@@ -18,7 +18,12 @@ const conversionLabels = {
 } as const;
 
 const trackedBranchSlug = "balcova-ege-park";
-const trackedPathname = "/subelerimiz/balcova-ege-park";
+const trackedPathnames = new Set([
+  "/subelerimiz/balcova-ege-park",
+  "/tr/subelerimiz/balcova-ege-park",
+  "/en/branches/balcova-ege-park",
+  "/en/subelerimiz/balcova-ege-park",
+]);
 
 type ConversionType = keyof typeof conversionLabels;
 
@@ -37,7 +42,7 @@ function normalizePathname(pathname: string) {
 function isTrackedConversionLink(link: HTMLAnchorElement) {
   return (
     link.dataset.branch === trackedBranchSlug &&
-    normalizePathname(window.location.pathname) === trackedPathname
+    trackedPathnames.has(normalizePathname(window.location.pathname))
   );
 }
 
