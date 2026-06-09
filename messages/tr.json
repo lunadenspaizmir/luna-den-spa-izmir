@@ -198,14 +198,6 @@
       "gaziemir": {
         "description": "Gaziemir şubemiz için hazırlıklarımız devam ediyor. Çok yakında İzmir’de yeni bir Luna Den Spa deneyimiyle hizmetinizdeyiz.",
         "imageAlt": "Luna Den Spa Gaziemir yakında açılacak şube görseli"
-      },
-      "alacatiBeachResortSpa": {
-        "description": "Alaçatı Beach Resort & Spa lokasyonunda iletişim ve randevu bilgilerine ulaşabilir, Alaçatı’daki rahatlatıcı spa deneyimi için bizimle hızlıca görüşebilirsiniz.",
-        "imageAlt": "Alaçatı Beach Resort & Spa şubesi"
-      },
-      "alacatiSoliportHotelSpa": {
-        "description": "SoliPort Hotel & Spa Alaçatı lokasyonunda spa ve rahatlama deneyimi için telefon, WhatsApp, Instagram ve konum bilgilerine hızlıca ulaşabilirsiniz.",
-        "imageAlt": "SoliPort Hotel & Spa Alaçatı şubesi"
       }
     }
   },
@@ -219,14 +211,6 @@
     "balcovaEgePark": {
       "heroDescription": "Balçova Ege Park AVM içerisinde yer alan Luna Den Spa şubemizde masaj, spa, hamam ve wellness hizmetleri için hızlıca iletişime geçebilir, randevunuzu WhatsApp veya telefon üzerinden kolaylıkla oluşturabilirsiniz.",
       "locationDescription": "Luna Den Spa, Ege Park AVM içerisinde, 2. katta hizmet vermektedir. AVM ana girişinden içeri girdikten sonra yönlendirme tabelalarını takip ederek asansör ile 2. kata ulaşabilirsiniz."
-    },
-    "alacatiBeachResortSpa": {
-      "heroDescription": "Alaçatı Beach Resort & Spa, Çark Plajı ve Liman Mevkii çevresinde sakin, özenli ve konforlu bir spa deneyimi arayan misafirler için iletişim ve randevu bilgilerini tek noktada sunar.",
-      "locationDescription": "Alaçatı Beach Resort & Spa; Alacati Mahallesi No:11, Çark Plajı, Liman Mevkii, Alaçatı, 35930 İzmir adresinde yer almaktadır."
-    },
-    "alacatiSoliportHotelSpa": {
-      "heroDescription": "SoliPort Hotel & Spa Alaçatı, Alaçatı’da konforlu bir otel atmosferinde sakin, özenli ve yenileyici spa deneyimi arayan misafirler için iletişim ve randevu bilgilerini tek noktada sunar.",
-      "locationDescription": "SoliPort Hotel & Spa Alaçatı lokasyonu için yol tarifi bağlantısını kullanarak güncel harita konumuna ulaşabilirsiniz."
     },
     "location": {
       "title": "Konum ve ulaşım",

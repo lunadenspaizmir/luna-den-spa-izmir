@@ -5,8 +5,6 @@ const outputDir = "out";
 
 const branchSlugs = [
   "balcova-ege-park",
-  "alacati-beach-resort-spa",
-  "alacati-soliport-hotel-spa",
 ];
 
 const routeCopies = [

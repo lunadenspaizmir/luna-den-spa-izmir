@@ -198,14 +198,6 @@
       "gaziemir": {
         "description": "Preparations for our Gaziemir branch are in progress. A new Luna Den Spa experience in Izmir will be with you very soon.",
         "imageAlt": "Luna Den Spa Gaziemir upcoming branch visual"
-      },
-      "alacatiBeachResortSpa": {
-        "description": "At the Alaçatı Beach Resort & Spa location, you can access contact and appointment details and quickly reach us for a relaxing spa experience in Alaçatı.",
-        "imageAlt": "Alaçatı Beach Resort & Spa branch"
-      },
-      "alacatiSoliportHotelSpa": {
-        "description": "At the SoliPort Hotel & Spa Alaçatı location, you can quickly access phone, WhatsApp, Instagram, and location details for a relaxing spa experience.",
-        "imageAlt": "SoliPort Hotel & Spa Alaçatı branch"
       }
     }
   },
@@ -219,14 +211,6 @@
     "balcovaEgePark": {
       "heroDescription": "At our Luna Den Spa branch inside Balçova Ege Park AVM, you can quickly contact us for massage, spa, hammam, and wellness services and easily create your appointment via WhatsApp or phone.",
       "locationDescription": "Luna Den Spa serves guests on the 2nd floor inside Ege Park AVM. After entering through the main mall entrance, follow the directional signs and use the elevator to reach the 2nd floor."
-    },
-    "alacatiBeachResortSpa": {
-      "heroDescription": "Alaçatı Beach Resort & Spa brings contact and appointment details together for guests looking for a calm, attentive, and comfortable spa experience near Çark Beach and Liman Mevkii.",
-      "locationDescription": "Alaçatı Beach Resort & Spa is located at Alacati Mahallesi No:11, Çark Plajı, Liman Mevkii, Alaçatı, 35930 İzmir."
-    },
-    "alacatiSoliportHotelSpa": {
-      "heroDescription": "SoliPort Hotel & Spa Alaçatı brings contact and appointment details together for guests looking for a calm, attentive, and renewing spa experience in a comfortable hotel setting in Alaçatı.",
-      "locationDescription": "Use the directions link for SoliPort Hotel & Spa Alaçatı to reach the current map location."
     },
     "location": {
       "title": "Location and access",

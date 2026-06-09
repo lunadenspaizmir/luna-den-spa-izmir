@@ -32,7 +32,7 @@ export function BranchesOverview() {
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
           {branches.map((branch) => {
             const isOpen = branch.status === "open";
             const branchHref = {
