@@ -10,8 +10,9 @@ import { MobileNav } from "./mobile-nav";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
-      <Container className="grid h-24 grid-cols-[auto_1fr] items-center gap-4 lg:grid-cols-[auto_1fr_auto]">
+    <header className="sticky top-0 z-40 border-b border-primary/15 bg-background/92 backdrop-blur-md">
+      <div aria-hidden="true" className="h-0.5 bg-primary/80" />
+      <Container className="grid h-20 grid-cols-[auto_1fr] items-center gap-4 lg:h-24 lg:grid-cols-[auto_1fr_auto]">
         <Link
           href="/"
           prefetch={false}
@@ -24,7 +25,7 @@ export function Header() {
             width={1580}
             height={1360}
             priority
-            className="h-16 w-auto object-contain sm:h-20"
+            className="h-14 w-auto object-contain lg:h-20"
           />
         </Link>
 

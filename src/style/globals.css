@@ -108,7 +108,15 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-display), Georgia, "Times New Roman", serif;
+
+  --animate-marquee: marquee 36s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @layer base {
@@ -117,10 +125,29 @@
   }
 
   html {
-    @apply font-sans;
+    @apply scroll-smooth font-sans;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
   }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+@utility arch-frame {
+  border-radius: calc(infinity * 1px) calc(infinity * 1px)
+    calc(var(--radius) + 8px) calc(var(--radius) + 8px);
+}
+
+@utility eyebrow {
+  @apply text-xs font-sans font-semibold uppercase tracking-[0.32em];
 }

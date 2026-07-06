@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { CSSProperties, ReactNode } from "react";
+import { Cormorant_Garamond } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
@@ -13,6 +14,14 @@ import { Header } from "@/components/layout/header/header";
 import { Footer } from "@/components/layout/footer/footer";
 import { siteConfig } from "@/data/site";
 import { GoogleAdsConversions } from "@/components/analytics/google-ads-conversions";
+
+const displayFont = Cormorant_Garamond({
+  subsets: ["latin", "latin-ext"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 const fontVariables = {
   "--font-geist-sans":
@@ -64,7 +73,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={displayFont.variable}>
       <body style={fontVariables}>
         <NextIntlClientProvider messages={messages}>
           <Header />

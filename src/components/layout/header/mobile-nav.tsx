@@ -106,9 +106,8 @@ export function MobileNav() {
                         aria-current={isActive ? "page" : undefined}
                         onClick={closeMenu}
                         className={cn(
-                          "flex h-12 items-center justify-center rounded-md px-3 text-center text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground",
-                          isActive &&
-                            "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
+                          "flex h-12 items-center justify-center rounded-md px-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground transition hover:bg-muted hover:text-foreground",
+                          isActive && "text-primary hover:text-primary"
                         )}
                       >
                         {t(item.titleKey)}

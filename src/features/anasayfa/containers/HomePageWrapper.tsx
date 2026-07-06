@@ -1,3 +1,4 @@
+import { BrandMarquee } from "@/features/anasayfa/components/BrandMarquee";
 import { HomeAbout } from "@/features/anasayfa/components/HomeAbout";
 import { HomeBranches } from "@/features/anasayfa/components/HomeBranches";
 import { HomeContact } from "@/features/anasayfa/components/HomeContact";
@@ -8,6 +9,7 @@ export default function HomePageWrapper() {
   return (
     <>
       <HomeHero />
+      <BrandMarquee />
       <HomeAbout />
       <HomeServices />
       <HomeBranches />

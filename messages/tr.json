@@ -202,6 +202,7 @@
     }
   },
   "branchDetailPage": {
+    "backToBranches": "Tüm şubelerimiz",
     "actions": {
       "whatsapp": "WhatsApp ile randevu al",
       "call": "Telefonla ara",

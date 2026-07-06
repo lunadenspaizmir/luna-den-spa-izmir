@@ -1,29 +1,13 @@
 import Image from "next/image";
-import { ArrowRight, Building2, CalendarCheck, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/primitives/container";
 import { Section } from "@/components/layout/primitives/section";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Link } from "@/i18n/navigation";
 
-const branches = [
-  {
-    key: "location",
-    icon: MapPin,
-  },
-  {
-    key: "reservation",
-    icon: CalendarCheck,
-  },
-  {
-    key: "experience",
-    icon: Building2,
-  },
-] as const;
+const branches = ["location", "reservation", "experience"] as const;
 
 export function HomeBranches() {
   const t = useTranslations("home.branches");
@@ -31,59 +15,58 @@ export function HomeBranches() {
   return (
     <Section className="bg-background">
       <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-          <Card className="relative min-h-104 rounded-lg p-0">
-            <CardContent className="relative min-h-104 overflow-hidden p-0">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1fr] lg:gap-20">
+          <div className="relative order-last mx-auto w-full max-w-md lg:order-first lg:max-w-none">
+            <div
+              aria-hidden="true"
+              className="arch-frame absolute inset-0 translate-x-4 translate-y-4 border border-primary/25"
+            />
+            <div className="arch-frame relative aspect-4/5 overflow-hidden">
               <Image
                 src="/anasayfa/anasayfa-hizmetlerimiz.jpg"
                 alt={t("imageAlt")}
                 fill
-                sizes="(min-width: 1024px) 42vw, 100vw"
+                sizes="(min-width: 1024px) 38vw, (min-width: 640px) 28rem, 100vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-image-overlay/10" />
-            </CardContent>
-          </Card>
+            </div>
+          </div>
 
           <div>
-            <Badge
-              asChild
-              variant="outline"
-              className="h-14 rounded-full border-primary/25 bg-background px-7 text-lg font-medium text-foreground shadow-sm transition hover:border-primary/45 hover:bg-secondary"
+            <Link
+              href="/subelerimiz"
+              className="eyebrow inline-flex items-center gap-3 text-primary transition hover:opacity-75"
             >
-              <Link href="/subelerimiz">{t("badge")}</Link>
-            </Badge>
+              <span aria-hidden="true" className="h-px w-10 bg-primary/50" />
+              {t("badge")}
+            </Link>
 
-            <p className="mt-5 max-w-2xl text-3xl font-semibold leading-tight text-foreground md:text-5xl">
+            <p className="mt-6 max-w-2xl font-heading text-3xl font-medium leading-snug tracking-tight text-foreground md:text-5xl md:leading-[1.15]">
               {t("intro")}
             </p>
 
-            <Separator className="my-8" />
-
-            <h2 className="text-xl font-semibold text-foreground md:text-2xl">
+            <h2 className="mt-10 text-2xl font-semibold text-foreground md:text-3xl">
               {t("title")}
             </h2>
 
-            <div className="mt-5 grid gap-5">
-              {branches.map((branch) => (
-                <div key={branch.key} className="flex gap-4">
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <branch.icon className="size-5" />
-                  </div>
-
-                  <div>
-                    <h3 className="font-medium text-foreground">
-                      {t(`items.${branch.key}.title`)}
-                    </h3>
-                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                      {t(`items.${branch.key}.description`)}
-                    </p>
-                  </div>
+            <div className="mt-6 grid gap-6">
+              {branches.map((key) => (
+                <div
+                  key={key}
+                  className="border-l-2 border-primary/25 pl-5 transition-colors hover:border-primary/60"
+                >
+                  <h3 className="text-xl font-semibold text-foreground md:text-2xl">
+                    {t(`items.${key}.title`)}
+                  </h3>
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                    {t(`items.${key}.description`)}
+                  </p>
                 </div>
               ))}
             </div>
 
-            <Button asChild className="mt-8 h-11 px-5">
+            <Button asChild className="mt-9 h-12 rounded-full px-7">
               <Link href="/subelerimiz">
                 {t("detail")}
                 <ArrowRight className="size-4" />

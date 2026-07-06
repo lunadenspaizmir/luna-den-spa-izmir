@@ -15,7 +15,7 @@ export function DesktopNav() {
       aria-label="Ana menü"
       className="hidden items-center justify-center justify-self-center lg:flex"
     >
-      <ul className="flex items-center gap-1 rounded-full border border-border bg-background/80 p-1 shadow-sm backdrop-blur">
+      <ul className="flex items-center gap-8">
         {navigationItems.map((item) => {
           const isActive = pathname === item.href;
 
@@ -26,11 +26,18 @@ export function DesktopNav() {
                 prefetch={false}
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  "inline-flex h-9 items-center rounded-full px-4 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground",
-                  isActive && "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
+                  "group relative inline-flex h-10 items-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground",
+                  isActive && "text-primary hover:text-primary"
                 )}
               >
                 {t(item.titleKey)}
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    "absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100",
+                    isActive && "scale-x-100"
+                  )}
+                />
               </Link>
             </li>
           );

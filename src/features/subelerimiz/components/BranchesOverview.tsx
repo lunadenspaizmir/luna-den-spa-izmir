@@ -1,38 +1,38 @@
 import Image from "next/image";
-import { ArrowRight, Clock, MapPin } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/primitives/container";
 import { Section } from "@/components/layout/primitives/section";
-import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { branches } from "@/data/branches";
+import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 
 export function BranchesOverview() {
   const t = useTranslations("branchesPage");
 
   return (
-    <Section className="bg-background">
+    <Section
+      spacing="none"
+      className="bg-background pt-8 pb-20 md:pt-12 md:pb-28 lg:pt-16"
+    >
       <Container>
-        <div className="mx-auto mb-10 max-w-3xl text-center">
-          <h1 className="text-3xl font-semibold leading-tight text-foreground md:text-5xl">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <p className="eyebrow flex items-center justify-center gap-3 text-primary">
+            <span aria-hidden="true" className="h-px w-10 bg-primary/50" />
+            İzmir
+            <span aria-hidden="true" className="h-px w-10 bg-primary/50" />
+          </p>
+
+          <h1 className="mt-6 text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl">
             {t("title")}
           </h1>
-          <p className="mt-5 text-base leading-8 text-muted-foreground md:text-lg">
+          <p className="mt-6 text-base leading-8 text-muted-foreground md:text-lg">
             {t("description")}
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
+        <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
           {branches.map((branch) => {
             const isOpen = branch.status === "open";
             const branchHref = {
@@ -40,77 +40,76 @@ export function BranchesOverview() {
               params: { slug: branch.slug },
             } as const;
             const branchCard = (
-              <Card className="h-full rounded-lg p-0 transition hover:-translate-y-1 hover:shadow-md">
-                <div className="relative min-h-72 overflow-hidden">
-                  {branch.image ? (
-                    <>
-                      <Image
-                        src={branch.image}
-                        alt={t(`items.${branch.translationKey}.imageAlt`)}
-                        fill
-                        sizes="(min-width: 768px) 33vw, 100vw"
-                        className="object-cover transition duration-500 group-hover/card:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-primary/10" />
-                    </>
-                  ) : (
-                    <div className="flex min-h-72 items-center justify-center bg-muted/60 text-muted-foreground">
-                      <MapPin className="size-10" />
-                    </div>
-                  )}
-                  <Badge
-                    variant={isOpen ? "default" : "secondary"}
-                    className="absolute left-4 top-4 h-8 px-3"
+              <article
+                className={cn(
+                  "flex h-full flex-col overflow-hidden rounded-3xl border border-primary/15 bg-card transition duration-300",
+                  isOpen &&
+                    "group-hover:-translate-y-1 group-hover:border-primary/35 group-hover:shadow-lg"
+                )}
+              >
+                <div className="relative m-3 mb-0 overflow-hidden rounded-2xl">
+                  <div className="relative aspect-4/3">
+                    {branch.image ? (
+                      <>
+                        <Image
+                          src={branch.image}
+                          alt={t(`items.${branch.translationKey}.imageAlt`)}
+                          fill
+                          sizes="(min-width: 768px) 33vw, 100vw"
+                          className="object-cover transition duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-primary/10" />
+                      </>
+                    ) : (
+                      <div className="flex h-full items-center justify-center bg-muted/60 text-muted-foreground">
+                        <MapPin className="size-10" />
+                      </div>
+                    )}
+                  </div>
+
+                  <span
+                    className={cn(
+                      "absolute left-4 top-4 rounded-full border border-primary/20 bg-background/90 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] backdrop-blur",
+                      isOpen ? "text-primary" : "text-muted-foreground"
+                    )}
                   >
                     {isOpen ? t("status.open") : t("status.comingSoon")}
-                  </Badge>
+                  </span>
                 </div>
 
-                <CardHeader className="px-5 pt-5">
-                  <div className="flex items-start gap-3">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                      {isOpen ? (
-                        <MapPin className="size-5" />
-                      ) : (
-                        <Clock className="size-5" />
-                      )}
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl">{branch.name}</CardTitle>
-                      <CardDescription className="mt-1">
-                        {branch.district}, İzmir
-                      </CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
+                <div className="flex flex-1 flex-col px-6 pb-6 pt-5">
+                  <p className="eyebrow text-primary">
+                    {branch.district}, İzmir
+                  </p>
+                  <h2 className="mt-2 font-heading text-3xl font-semibold tracking-tight text-foreground">
+                    {branch.name}
+                  </h2>
 
-                <CardContent className="px-5">
-                  <p className="text-base leading-7 text-muted-foreground">
+                  <p className="mt-3 text-base leading-7 text-muted-foreground">
                     {t(`items.${branch.translationKey}.description`)}
                   </p>
-                </CardContent>
 
-                <CardFooter className="mt-auto border-t bg-muted/30 p-5">
-                  {isOpen ? (
-                    <span
-                      className={buttonVariants({
-                        className: "h-11 w-full px-5",
-                      })}
-                    >
-                      {t("cta.open")}
-                      <ArrowRight className="size-4" />
-                    </span>
-                  ) : (
-                    <Button
-                      disabled
-                      variant="secondary"
-                      className="h-11 w-full"
-                    >
-                      {t("cta.comingSoon")}
-                    </Button>
-                  )}
-                </CardFooter>
-              </Card>
+                  <div className="mt-auto flex items-center justify-between border-t border-border pt-5">
+                    {isOpen ? (
+                      <>
+                        <span className="text-sm font-medium text-primary">
+                          {t("cta.open")}
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          className="flex size-10 items-center justify-center rounded-full border border-primary/25 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground"
+                        >
+                          <ArrowRight className="size-4" />
+                        </span>
+                      </>
+                    ) : (
+                      <span className="text-sm font-medium text-muted-foreground">
+                        {t("cta.comingSoon")}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </article>
             );
 
             return isOpen ? (
@@ -118,7 +117,7 @@ export function BranchesOverview() {
                 key={branch.slug}
                 href={branchHref}
                 prefetch={false}
-                className="block h-full rounded-lg focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+                className="group block h-full rounded-3xl focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
               >
                 {branchCard}
               </Link>

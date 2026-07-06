@@ -1,27 +1,23 @@
 import Image from "next/image";
 import {
+  ArrowLeft,
   ArrowRight,
   Camera,
-  Check,
   Clock,
   MapPin,
   MessageCircle,
+  Moon,
   Phone,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/primitives/container";
 import { Section } from "@/components/layout/primitives/section";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import type { Branch } from "@/data/branches";
+import { Link } from "@/i18n/navigation";
+
+import { BranchGalleryShowcase } from "./BranchGalleryShowcase";
 
 type BranchDetailProps = Readonly<{
   branch: Branch;
@@ -41,10 +37,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
   const shouldTrackGoogleAdsConversions =
     branch.slug === trackedGoogleAdsBranchSlug;
 
-  function getConversionTrackingProps(
-    type: ConversionType,
-    location: string
-  ) {
+  function getConversionTrackingProps(type: ConversionType, location: string) {
     if (!shouldTrackGoogleAdsConversions) {
       return {};
     }
@@ -58,42 +51,55 @@ export function BranchDetail({ branch }: BranchDetailProps) {
 
   return (
     <>
-      <Section className="bg-background">
+      <Section
+        spacing="none"
+        className="bg-background pt-8 pb-14 md:pt-10 md:pb-20 lg:pt-12"
+      >
         <Container>
           <div
             className={
               heroImage
-                ? "grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16"
+                ? "grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20"
                 : "mx-auto max-w-3xl"
             }
           >
             <div>
-              <Badge
-                variant="outline"
-                className="h-11 rounded-full px-5 text-sm"
+              <Link
+                href="/subelerimiz"
+                className="group mb-7 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition hover:text-primary"
               >
-                <MapPin className="size-4" />
-                {branch.district}, İzmir
-              </Badge>
+                <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
+                {t("backToBranches")}
+              </Link>
 
-              <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-foreground md:text-5xl">
+              <p className="eyebrow flex items-center gap-3 text-primary">
+                <MapPin aria-hidden="true" className="size-4" />
+                {branch.district}, İzmir
+              </p>
+
+              <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight text-foreground md:text-6xl">
                 {branch.fullName}
               </h1>
 
-              <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
+              <div
+                aria-hidden="true"
+                className="mt-8 h-px w-24 bg-primary/40"
+              />
+
+              <p className="mt-8 max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
                 {t(`${branch.translationKey}.heroDescription`)}
               </p>
 
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 {branch.whatsappHref ? (
-                  <Button asChild className="h-11 px-5">
+                  <Button asChild className="h-12 rounded-full px-7">
                     <a
                       href={branch.whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
                       {...getConversionTrackingProps(
                         "whatsapp",
-                        "branch-detail-hero"
+                        "branch-detail-hero",
                       )}
                     >
                       <MessageCircle className="size-4" />
@@ -103,12 +109,16 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                 ) : null}
 
                 {branch.phoneHref ? (
-                  <Button asChild variant="outline" className="h-11 px-5">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="h-12 rounded-full border-primary/30 bg-transparent px-7 hover:border-primary/50 hover:bg-secondary/60"
+                  >
                     <a
                       href={branch.phoneHref}
                       {...getConversionTrackingProps(
                         "phone",
-                        "branch-detail-hero"
+                        "branch-detail-hero",
                       )}
                     >
                       <Phone className="size-4" />
@@ -118,7 +128,11 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                 ) : null}
 
                 {branch.instagramHref ? (
-                  <Button asChild variant="outline" className="h-11 px-5">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="h-12 rounded-full border-primary/30 bg-transparent px-7 hover:border-primary/50 hover:bg-secondary/60"
+                  >
                     <a
                       href={branch.instagramHref}
                       target="_blank"
@@ -133,120 +147,117 @@ export function BranchDetail({ branch }: BranchDetailProps) {
             </div>
 
             {heroImage ? (
-              <Card className="relative min-h-96 rounded-lg p-0">
-                <CardContent className="relative min-h-96 overflow-hidden p-0">
-                  <Image
-                    src={heroImage}
-                    alt={branch.fullName}
-                    fill
-                    priority
-                    sizes="(min-width: 1024px) 48vw, 100vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-primary/10" />
-                </CardContent>
-              </Card>
+              <div className="relative">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl border border-primary/25"
+                />
+                <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-card p-3">
+                  <div className="relative aspect-16/11 overflow-hidden rounded-2xl">
+                    <Image
+                      src={heroImage}
+                      alt={branch.fullName}
+                      fill
+                      priority
+                      sizes="(min-width: 1024px) 44vw, 100vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-image-overlay/10" />
+                  </div>
+                </div>
+              </div>
             ) : null}
           </div>
         </Container>
       </Section>
 
-      <Section className="bg-secondary/40">
+      <Section className="border-y border-border bg-secondary/30">
         <Container>
-          <div className="grid gap-5 lg:grid-cols-3">
-            <Card className="rounded-lg lg:col-span-2">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <MapPin className="size-5" />
-                  </div>
-                  <CardTitle className="text-2xl">
-                    {t("location.title")}
-                  </CardTitle>
+          <div className="grid gap-8 lg:grid-cols-3">
+            <div className="rounded-3xl border border-primary/15 bg-card p-6 md:p-8 lg:col-span-2">
+              <h2 className="flex items-center gap-3 text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                <MapPin aria-hidden="true" className="size-5 text-primary" />
+                {t("location.title")}
+              </h2>
+              <p className="mt-4 text-base leading-7 text-muted-foreground">
+                {t(`${branch.translationKey}.locationDescription`)}
+              </p>
+
+              {branch.mapsEmbedUrl ? (
+                <div className="mt-6 overflow-hidden rounded-2xl border border-border">
+                  <iframe
+                    title={t("location.mapTitle")}
+                    src={branch.mapsEmbedUrl}
+                    className="h-80 w-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
-                <CardDescription className="mt-3 text-base leading-7">
-                  {t(`${branch.translationKey}.locationDescription`)}
-                </CardDescription>
-              </CardHeader>
+              ) : null}
 
-              <CardContent>
-                {branch.mapsEmbedUrl ? (
-                  <div className="overflow-hidden rounded-lg border border-border">
-                    <iframe
-                      title={t("location.mapTitle")}
-                      src={branch.mapsEmbedUrl}
-                      className="h-80 w-full border-0"
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
-                  </div>
-                ) : null}
+              {branch.mapsUrl ? (
+                <Button
+                  asChild
+                  variant="outline"
+                  className="mt-6 h-11 rounded-full border-primary/30 bg-transparent px-6 hover:border-primary/50 hover:bg-secondary/60"
+                >
+                  <a href={branch.mapsUrl} target="_blank" rel="noreferrer">
+                    {t("actions.directions")}
+                    <ArrowRight className="size-4" />
+                  </a>
+                </Button>
+              ) : null}
+            </div>
 
-                {branch.mapsUrl ? (
-                  <Button asChild variant="outline" className="mt-4 h-11 px-5">
-                    <a href={branch.mapsUrl} target="_blank" rel="noreferrer">
-                      {t("actions.directions")}
-                      <ArrowRight className="size-4" />
-                    </a>
-                  </Button>
-                ) : null}
-              </CardContent>
-            </Card>
-
-            <div className="grid gap-5">
+            <div className="grid gap-8 self-start">
               {hasWorkingHours ? (
-                <Card className="rounded-lg">
-                  <CardHeader>
-                    <div className="flex items-center gap-3">
-                      <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                        <Clock className="size-5" />
-                      </div>
-                      <CardTitle className="text-2xl">
-                        {t("workingHours.title")}
-                      </CardTitle>
-                    </div>
-                  </CardHeader>
+                <div className="rounded-3xl border border-primary/15 bg-card p-6 md:p-8">
+                  <h2 className="flex items-center gap-3 text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                    <Clock aria-hidden="true" className="size-5 text-primary" />
+                    {t("workingHours.title")}
+                  </h2>
 
-                  <CardContent className="grid gap-3">
+                  <div className="mt-4">
                     {branch.workingHours?.map((item) => (
                       <div
                         key={item.key}
-                        className="rounded-lg border border-border bg-background p-4"
+                        className="flex items-center justify-between gap-4 border-b border-border py-4 last:border-b-0 last:pb-0"
                       >
-                        <p className="font-medium text-foreground">
-                          {t(`workingHours.${item.key}.label`)}
-                        </p>
-                        <p className="mt-1 text-sm text-muted-foreground">
-                          {t(`workingHours.${item.key}.days`)}
-                        </p>
-                        <p className="mt-2 text-lg font-semibold text-primary">
+                        <div>
+                          <p className="font-medium text-foreground">
+                            {t(`workingHours.${item.key}.label`)}
+                          </p>
+                          <p className="mt-0.5 text-sm text-muted-foreground">
+                            {t(`workingHours.${item.key}.days`)}
+                          </p>
+                        </div>
+                        <p className="font-heading text-2xl font-semibold tabular-nums text-primary">
                           {item.hours}
                         </p>
                       </div>
                     ))}
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               ) : null}
 
-              <Card className="rounded-lg">
-                <CardHeader>
-                  <CardTitle className="text-2xl">
-                    {t("contact.title")}
-                  </CardTitle>
-                  <CardDescription className="text-base leading-7">
-                    {t("contact.description")}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-3">
+              <div className="rounded-3xl border border-primary/15 bg-card p-6 md:p-8">
+                <h2 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                  {t("contact.title")}
+                </h2>
+                <p className="mt-3 text-base leading-7 text-muted-foreground">
+                  {t("contact.description")}
+                </p>
+
+                <div className="mt-6 grid gap-3">
                   {branch.whatsappHref ? (
-                    <Button asChild className="h-11 w-full">
+                    <Button asChild className="h-12 w-full rounded-full">
                       <a
                         href={branch.whatsappHref}
                         target="_blank"
                         rel="noreferrer"
                         {...getConversionTrackingProps(
                           "whatsapp",
-                          "branch-detail-contact-card"
+                          "branch-detail-contact-card",
                         )}
                       >
                         <MessageCircle className="size-4" />
@@ -255,12 +266,16 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                     </Button>
                   ) : null}
                   {branch.phoneHref ? (
-                    <Button asChild variant="outline" className="h-11 w-full">
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="h-12 w-full rounded-full border-primary/30 bg-transparent hover:border-primary/50 hover:bg-secondary/60"
+                    >
                       <a
                         href={branch.phoneHref}
                         {...getConversionTrackingProps(
                           "phone",
-                          "branch-detail-contact-card"
+                          "branch-detail-contact-card",
                         )}
                       >
                         <Phone className="size-4" />
@@ -269,7 +284,11 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                     </Button>
                   ) : null}
                   {branch.instagramHref ? (
-                    <Button asChild variant="outline" className="h-11 w-full">
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="h-12 w-full rounded-full border-primary/30 bg-transparent hover:border-primary/50 hover:bg-secondary/60"
+                    >
                       <a
                         href={branch.instagramHref}
                         target="_blank"
@@ -280,8 +299,8 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                       </a>
                     </Button>
                   ) : null}
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
           </div>
         </Container>
@@ -291,61 +310,62 @@ export function BranchDetail({ branch }: BranchDetailProps) {
         <Section className="bg-background">
           <Container>
             {hasServices ? (
-              <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-                <div>
-                  <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+              <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-20">
+                <div className="lg:sticky lg:top-32">
+                  <h2 className="flex items-center gap-3 text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl">
+                    <Moon aria-hidden="true" className="size-5 text-primary" />
                     {t("services.title")}
                   </h2>
-                  <p className="mt-4 max-w-2xl text-base leading-8 text-muted-foreground">
+                  <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground">
                     {t("services.description")}
                   </p>
                 </div>
 
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {branch.services?.map((serviceKey) => (
-                    <Card key={serviceKey} className="rounded-lg">
-                      <CardHeader>
-                        <div className="flex items-start gap-3">
-                          <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                            <Check className="size-4" />
-                          </div>
-                          <CardTitle className="text-base">
-                            {serviceTranslations(`${serviceKey}.title`)}
-                          </CardTitle>
-                        </div>
-                      </CardHeader>
-                    </Card>
+                <ul className="grid border-t border-border sm:grid-cols-2 sm:gap-x-10">
+                  {branch.services?.map((serviceKey, index) => (
+                    <li
+                      key={serviceKey}
+                      className="group flex items-baseline gap-4 border-b border-border py-4 transition-colors hover:border-primary/40"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="font-heading text-xl font-medium italic text-primary/50 transition-colors group-hover:text-primary"
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-base font-medium text-foreground transition-transform duration-300 group-hover:translate-x-1">
+                        {serviceTranslations(`${serviceKey}.title`)}
+                      </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             ) : null}
 
             {gallery.length > 0 ? (
-              <div className={hasServices ? "mt-14" : ""}>
-                <h2 className="text-3xl font-semibold text-foreground md:text-4xl">
-                  {t("gallery.title")}
-                </h2>
+              <div className={hasServices ? "mt-20" : ""}>
+                <div className="flex items-end justify-between gap-4">
+                  <h2 className="flex items-center gap-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+                    <Camera
+                      aria-hidden="true"
+                      className="size-5 text-primary"
+                    />
+                    {t("gallery.title")}
+                  </h2>
+                  <span
+                    aria-hidden="true"
+                    className="font-heading text-2xl font-medium italic text-primary/50"
+                  >
+                    {String(gallery.length).padStart(2, "0")}
+                  </span>
+                </div>
 
-                <div className="-mx-6 mt-6 flex gap-4 overflow-x-auto px-6 pb-2 sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0 lg:pb-0">
-                  {gallery.map((image, index) => (
-                    <Card
-                      key={image}
-                      className="relative min-h-72 w-[82vw] shrink-0 rounded-lg p-0 sm:w-[44vw] lg:w-auto"
-                    >
-                      <CardContent className="relative min-h-72 overflow-hidden p-0">
-                        <Image
-                          src={image}
-                          alt={`${branch.fullName} ${t("gallery.imageAlt")} ${
-                            index + 1
-                          }`}
-                          fill
-                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-primary/10" />
-                      </CardContent>
-                    </Card>
-                  ))}
+                <div className="mt-8">
+                  <BranchGalleryShowcase
+                    images={gallery}
+                    branchName={branch.fullName}
+                    imageAltLabel={t("gallery.imageAlt")}
+                  />
                 </div>
               </div>
             ) : null}
@@ -353,27 +373,53 @@ export function BranchDetail({ branch }: BranchDetailProps) {
         </Section>
       ) : null}
 
-      <Section className="bg-background">
-        <Container>
-          <Card className="rounded-lg bg-primary text-primary-foreground">
-            <CardHeader>
-              <CardTitle className="text-2xl text-primary-foreground md:text-3xl">
-                {t("finalCta.title")}
-              </CardTitle>
-              <CardDescription className="max-w-3xl text-base leading-7 text-primary-foreground/75">
-                {t("finalCta.description")}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-col gap-3 sm:flex-row">
+      <Section
+        spacing="none"
+        className="relative isolate overflow-hidden bg-image-overlay text-hero-foreground"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-40 top-1/2 size-130 -translate-y-1/2 rounded-full bg-primary/30 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-40 -top-40 size-100 rounded-full bg-primary/20 blur-3xl"
+        />
+
+        <Container className="grid items-center gap-12 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20 lg:py-24">
+          <div>
+            <p className="eyebrow flex items-center gap-3 text-hero-foreground/80">
+              <Moon aria-hidden="true" className="size-4" />
+              Luna Den Spa
+            </p>
+
+            <h2 className="mt-6 max-w-2xl font-heading text-4xl font-medium leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+              {t("finalCta.title")}
+            </h2>
+
+            <div
+              aria-hidden="true"
+              className="mt-8 h-px w-24 bg-hero-foreground/35"
+            />
+
+            <p className="mt-8 max-w-xl text-base leading-8 text-hero-foreground/80">
+              {t("finalCta.description")}
+            </p>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               {branch.whatsappHref ? (
-                <Button asChild variant="secondary" className="h-11 px-5">
+                <Button
+                  asChild
+                  variant="secondary"
+                  className="h-12 rounded-full px-7"
+                >
                   <a
                     href={branch.whatsappHref}
                     target="_blank"
                     rel="noreferrer"
                     {...getConversionTrackingProps(
                       "whatsapp",
-                      "branch-detail-final-cta"
+                      "branch-detail-final-cta",
                     )}
                   >
                     <MessageCircle className="size-4" />
@@ -385,13 +431,13 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                 <Button
                   asChild
                   variant="outline"
-                  className="h-11 border-primary-foreground/25 bg-transparent px-5 text-primary-foreground hover:bg-primary-foreground/10"
+                  className="h-12 rounded-full border-hero-foreground/40 bg-transparent px-7 text-hero-foreground hover:bg-hero-foreground/10 hover:text-hero-foreground"
                 >
                   <a
                     href={branch.phoneHref}
                     {...getConversionTrackingProps(
                       "phone",
-                      "branch-detail-final-cta"
+                      "branch-detail-final-cta",
                     )}
                   >
                     <Phone className="size-4" />
@@ -403,7 +449,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                 <Button
                   asChild
                   variant="outline"
-                  className="h-11 border-primary-foreground/25 bg-transparent px-5 text-primary-foreground hover:bg-primary-foreground/10"
+                  className="h-12 rounded-full border-hero-foreground/40 bg-transparent px-7 text-hero-foreground hover:bg-hero-foreground/10 hover:text-hero-foreground"
                 >
                   <a
                     href={branch.instagramHref}
@@ -415,8 +461,26 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                   </a>
                 </Button>
               ) : null}
-            </CardContent>
-          </Card>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
+            <div
+              aria-hidden="true"
+              className="arch-frame absolute inset-0 translate-x-4 translate-y-4 border border-hero-foreground/30"
+            />
+            <div className="arch-frame relative aspect-4/5 overflow-hidden">
+              <Image
+                src="/hero/hero.png"
+                alt=""
+                aria-hidden="true"
+                fill
+                sizes="(min-width: 1024px) 34vw, 24rem"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-image-overlay/15" />
+            </div>
+          </div>
         </Container>
       </Section>
     </>
