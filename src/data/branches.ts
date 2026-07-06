@@ -105,3 +105,31 @@ export const branches: ReadonlyArray<Branch> = [
 export function getBranchBySlug(slug: string) {
   return branches.find((branch) => branch.slug === slug);
 }
+
+export const openBranches = branches.filter(
+  (branch) => branch.status === "open"
+);
+
+export const comingSoonBranches = branches.filter(
+  (branch) => branch.status === "comingSoon"
+);
+
+export const trackedGoogleAdsBranchSlug = "balcova-ege-park";
+
+type ConversionType = "whatsapp" | "phone";
+
+export function getBranchConversionProps(
+  slug: string,
+  type: ConversionType,
+  location: string
+) {
+  if (slug !== trackedGoogleAdsBranchSlug) {
+    return {};
+  }
+
+  return {
+    "data-conversion": type,
+    "data-conversion-location": location,
+    "data-branch": slug,
+  } as const;
+}

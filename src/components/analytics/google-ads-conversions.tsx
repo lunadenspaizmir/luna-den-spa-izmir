@@ -49,7 +49,7 @@ function isTrackedConversionLink(link: HTMLAnchorElement) {
 function reportConversion(
   type: ConversionType,
   metadata: Record<string, string | undefined>,
-  callback?: () => void
+  callback?: () => void,
 ) {
   const label = conversionLabels[type];
 

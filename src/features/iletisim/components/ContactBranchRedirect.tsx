@@ -1,21 +1,11 @@
-import { ArrowRight, MessageCircle, Moon, Phone } from "lucide-react";
+import { ArrowRight, Moon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/primitives/container";
 import { Section } from "@/components/layout/primitives/section";
 import { Button } from "@/components/ui/button";
+import { BranchContactList } from "@/features/subelerimiz/components/BranchContactList";
 import { Link } from "@/i18n/navigation";
-
-const contactOptions = [
-  {
-    key: "whatsapp",
-    icon: MessageCircle,
-  },
-  {
-    key: "phone",
-    icon: Phone,
-  },
-] as const;
 
 export function ContactBranchRedirect() {
   const t = useTranslations("contactPage");
@@ -42,29 +32,17 @@ export function ContactBranchRedirect() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-2xl border-t border-border">
-          {contactOptions.map((option) => (
-            <div
-              key={option.key}
-              className="grid grid-cols-[auto_1fr] items-start gap-5 border-b border-border py-6"
-            >
-              <span className="flex size-11 items-center justify-center rounded-full border border-primary/25 text-primary">
-                <option.icon className="size-5" />
-              </span>
-              <div>
-                <h2 className="text-xl font-semibold text-foreground">
-                  {t(`options.${option.key}.title`)}
-                </h2>
-                <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                  {t(`options.${option.key}.description`)}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <BranchContactList
+          conversionLocation="contact-page"
+          className="mt-12"
+        />
 
         <div className="mt-10 flex justify-center">
-          <Button asChild size="lg" className="h-12 rounded-full px-8">
+          <Button
+            asChild
+            variant="outline"
+            className="h-12 rounded-full border-primary/30 bg-transparent px-7 hover:border-primary/50 hover:bg-secondary/60"
+          >
             <Link href="/subelerimiz">
               {t("cta")}
               <ArrowRight className="size-4" />

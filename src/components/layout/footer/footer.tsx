@@ -7,7 +7,9 @@ import { navigationItems } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 import { Link } from "@/i18n/navigation";
 
-const footerNavigationItems = navigationItems.filter((item) => item.href !== "/");
+const footerNavigationItems = navigationItems.filter(
+  (item) => item.href !== "/",
+);
 
 export function Footer() {
   const tNavigation = useTranslations("navigation");

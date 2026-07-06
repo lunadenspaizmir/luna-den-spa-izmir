@@ -17,7 +17,9 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
 
   function changeLocale(nextLocale: (typeof routing.locales)[number]) {
     startTransition(() => {
-      window.location.assign(getLocalizedPath(window.location.href, nextLocale));
+      window.location.assign(
+        getLocalizedPath(window.location.href, nextLocale),
+      );
     });
   }
 
@@ -25,7 +27,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
     <div
       className={cn(
         "inline-flex rounded-full border border-border bg-background p-1",
-        className
+        className,
       )}
     >
       {routing.locales.map((item) => (
@@ -47,7 +49,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
 
 function getLocalizedPath(
   href: string,
-  nextLocale: (typeof routing.locales)[number]
+  nextLocale: (typeof routing.locales)[number],
 ) {
   const url = new URL(href);
   const pathname = normalizePathname(url.pathname);
@@ -78,7 +80,7 @@ function stripDefaultLocalePrefix(pathname: string) {
 
 function mapPathnameToLocale(
   pathname: string,
-  nextLocale: (typeof routing.locales)[number]
+  nextLocale: (typeof routing.locales)[number],
 ) {
   const normalizedPathname = stripDefaultLocalePrefix(pathname);
 
@@ -95,7 +97,8 @@ function mapPathnameToLocale(
       normalizedPathname === trPathname ||
       normalizedPathname === enPathname ||
       normalizedPathname === enPathname.replace("/about", "/hakkimizda") ||
-      normalizedPathname === enPathname.replace("/services", "/hizmetlerimiz") ||
+      normalizedPathname ===
+        enPathname.replace("/services", "/hizmetlerimiz") ||
       normalizedPathname === enPathname.replace("/branches", "/subelerimiz") ||
       normalizedPathname === enPathname.replace("/contact", "/iletisim")
     ) {

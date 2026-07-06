@@ -4,12 +4,6 @@ import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/primitives/container";
 import { Section } from "@/components/layout/primitives/section";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 const services = [
   "swedish",
@@ -84,41 +78,57 @@ export function ServicesOverview() {
 
       <Section className="border-t border-border bg-secondary/30">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <div className="lg:sticky lg:top-32 lg:self-start">
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div className="max-w-2xl">
               <h2 className="flex items-center gap-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
                 <Moon aria-hidden="true" className="size-5 text-primary" />
                 {t("listTitle")}
               </h2>
-              <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground">
+              <p className="mt-5 text-base leading-8 text-muted-foreground">
                 {t("listDescription")}
               </p>
             </div>
 
-            <Accordion type="single" collapsible className="w-full border-t border-border">
-              {services.map((key, index) => (
-                <AccordionItem key={key} value={`service-${index}`}>
-                  <AccordionTrigger className="py-6">
-                    <span className="flex items-baseline gap-5">
-                      <span
-                        aria-hidden="true"
-                        className="font-heading text-2xl font-medium italic text-primary/50"
-                      >
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="font-heading text-2xl font-medium tracking-tight text-foreground md:text-3xl">
-                        {t(`items.${key}.title`)}
-                      </span>
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <p className="pl-12 text-base leading-8 text-muted-foreground">
-                      {t(`items.${key}.description`)}
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <span
+              aria-hidden="true"
+              className="font-heading text-2xl font-medium italic text-primary/45"
+            >
+              01 — {String(services.length).padStart(2, "0")}
+            </span>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {services.map((key, index) => (
+              <article
+                key={key}
+                className="group relative flex flex-col overflow-hidden rounded-3xl border border-primary/12 bg-card p-7 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
+              >
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-6 -top-8 font-heading text-8xl font-medium italic text-primary/6 transition-colors duration-300 group-hover:text-primary/10"
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <div className="flex items-center gap-3">
+                  <span className="flex size-10 items-center justify-center rounded-full border border-primary/20 font-heading text-base font-medium italic text-primary">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="h-px flex-1 bg-border transition-colors duration-300 group-hover:bg-primary/30"
+                  />
+                </div>
+
+                <h3 className="mt-5 font-heading text-2xl font-medium tracking-tight text-foreground md:text-[1.75rem]">
+                  {t(`items.${key}.title`)}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                  {t(`items.${key}.description`)}
+                </p>
+              </article>
+            ))}
           </div>
         </Container>
       </Section>

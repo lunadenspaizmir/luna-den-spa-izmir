@@ -34,11 +34,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button
-            type="button"
-            onClick={reset}
-            className="h-11 px-6"
-          >
+          <Button type="button" onClick={reset} className="h-11 px-6">
             {t("retry")}
           </Button>
 

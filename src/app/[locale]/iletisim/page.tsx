@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 
 import ContactPageWrapper from "@/features/iletisim/containers/ContactPageWrapper";
-import { buildPageMetadata, localizedPath, normalizeLocale } from "@/lib/metadata";
+import {
+  buildPageMetadata,
+  localizedPath,
+  normalizeLocale,
+} from "@/lib/metadata";
 
 type ContactPageProps = Readonly<{
   params: Promise<{

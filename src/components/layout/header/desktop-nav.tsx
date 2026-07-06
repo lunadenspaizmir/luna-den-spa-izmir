@@ -27,7 +27,7 @@ export function DesktopNav() {
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
                   "group relative inline-flex h-10 items-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground",
-                  isActive && "text-primary hover:text-primary"
+                  isActive && "text-primary hover:text-primary",
                 )}
               >
                 {t(item.titleKey)}
@@ -35,7 +35,7 @@ export function DesktopNav() {
                   aria-hidden="true"
                   className={cn(
                     "absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100",
-                    isActive && "scale-x-100"
+                    isActive && "scale-x-100",
                   )}
                 />
               </Link>

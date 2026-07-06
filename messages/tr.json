@@ -11,6 +11,15 @@
     "en": "English",
     "change": "Dil değiştir"
   },
+  "header": {
+    "phone": {
+      "appointment": "Randevu / İletişim",
+      "triggerLabel": "Telefon ile iletişim",
+      "call": "Telefonla ara",
+      "whatsapp": "WhatsApp",
+      "comingSoon": "Yakında"
+    }
+  },
   "footer": {
     "description": "Luna Den Spa, İzmir şubelerinde masaj, spa ve wellness hizmetleriyle rahatlatıcı ve premium bir deneyim sunar.",
     "quickLinks": "Hızlı linkler",

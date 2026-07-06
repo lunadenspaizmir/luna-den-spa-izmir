@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { BranchPhoneMenu } from "@/components/layout/controls/branch-phone-menu";
 import { LanguageSwitcher } from "@/components/layout/controls/language-switcher";
 import { Container } from "@/components/layout/primitives/container";
 import { siteConfig } from "@/data/site";
@@ -32,6 +33,7 @@ export function Header() {
         <DesktopNav />
 
         <div className="flex items-center justify-end gap-2">
+          <BranchPhoneMenu />
           <div className="hidden items-center gap-2 lg:flex">
             <LanguageSwitcher />
           </div>

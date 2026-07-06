@@ -58,7 +58,7 @@ export async function generateMetadata({
     path: localizedPath(
       locale,
       `/subelerimiz/${branch.slug}`,
-      `/branches/${branch.slug}`
+      `/branches/${branch.slug}`,
     ),
     image: branch.image,
   });

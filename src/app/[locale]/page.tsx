@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 
 import HomePageWrapper from "@/features/anasayfa/containers/HomePageWrapper";
-import { buildPageMetadata, localizedPath, normalizeLocale } from "@/lib/metadata";
+import {
+  buildPageMetadata,
+  localizedPath,
+  normalizeLocale,
+} from "@/lib/metadata";
 
 type PageProps = Readonly<{
   params: Promise<{

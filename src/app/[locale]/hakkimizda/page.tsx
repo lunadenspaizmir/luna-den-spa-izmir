@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 
 import AboutPageWrapper from "@/features/hakkımızda/containers/AboutPageWrapper";
-import { buildPageMetadata, localizedPath, normalizeLocale } from "@/lib/metadata";
+import {
+  buildPageMetadata,
+  localizedPath,
+  normalizeLocale,
+} from "@/lib/metadata";
 
 type AboutPageProps = Readonly<{
   params: Promise<{

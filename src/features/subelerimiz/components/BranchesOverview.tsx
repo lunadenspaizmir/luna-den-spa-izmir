@@ -44,7 +44,7 @@ export function BranchesOverview() {
                 className={cn(
                   "flex h-full flex-col overflow-hidden rounded-3xl border border-primary/15 bg-card transition duration-300",
                   isOpen &&
-                    "group-hover:-translate-y-1 group-hover:border-primary/35 group-hover:shadow-lg"
+                    "group-hover:-translate-y-1 group-hover:border-primary/35 group-hover:shadow-lg",
                 )}
               >
                 <div className="relative m-3 mb-0 overflow-hidden rounded-2xl">
@@ -70,7 +70,7 @@ export function BranchesOverview() {
                   <span
                     className={cn(
                       "absolute left-4 top-4 rounded-full border border-primary/20 bg-background/90 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] backdrop-blur",
-                      isOpen ? "text-primary" : "text-muted-foreground"
+                      isOpen ? "text-primary" : "text-muted-foreground",
                     )}
                   >
                     {isOpen ? t("status.open") : t("status.comingSoon")}

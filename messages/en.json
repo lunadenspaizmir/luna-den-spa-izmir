@@ -11,6 +11,15 @@
     "en": "English",
     "change": "Change language"
   },
+  "header": {
+    "phone": {
+      "appointment": "Appointment / Contact",
+      "triggerLabel": "Contact by phone",
+      "call": "Call by phone",
+      "whatsapp": "WhatsApp",
+      "comingSoon": "Coming soon"
+    }
+  },
   "footer": {
     "description": "Luna Den Spa offers a relaxing and premium experience through its Izmir branches with massage, spa, and wellness services.",
     "quickLinks": "Quick links",

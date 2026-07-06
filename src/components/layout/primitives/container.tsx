@@ -27,7 +27,7 @@ export function Container({
       className={cn(
         "mx-auto w-full px-6 md:px-8 lg:px-10",
         containerSizes[size],
-        className
+        className,
       )}
     >
       {children}

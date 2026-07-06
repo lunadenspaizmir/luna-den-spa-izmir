@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 
 import BranchesPageWrapper from "@/features/subelerimiz/containers/BranchesPageWrapper";
-import { buildPageMetadata, localizedPath, normalizeLocale } from "@/lib/metadata";
+import {
+  buildPageMetadata,
+  localizedPath,
+  normalizeLocale,
+} from "@/lib/metadata";
 
 type BranchesPageProps = Readonly<{
   params: Promise<{
