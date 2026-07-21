@@ -204,6 +204,10 @@
         "description": "Balçova Ege Park şubemizde masaj, spa ve wellness hizmetleri için WhatsApp, telefon ve konum bilgilerine ulaşabilirsiniz.",
         "imageAlt": "Luna Den Spa Balçova Ege Park şubesi"
       },
+      "cocosTheClubSoltoHotel": {
+        "description": "Alaçatı’daki Cocos The Club Solto Hotel içinde yer alan şubemizde masaj, spa ve wellness hizmetleri için WhatsApp, telefon ve konum bilgilerine ulaşabilirsiniz.",
+        "imageAlt": "Luna Den Spa Cocos The Club Solto Hotel Alaçatı şubesi"
+      },
       "gaziemir": {
         "description": "Gaziemir şubemiz için hazırlıklarımız devam ediyor. Çok yakında İzmir’de yeni bir Luna Den Spa deneyimiyle hizmetinizdeyiz.",
         "imageAlt": "Luna Den Spa Gaziemir yakında açılacak şube görseli"
@@ -221,6 +225,10 @@
     "balcovaEgePark": {
       "heroDescription": "Balçova Ege Park AVM içerisinde yer alan Luna Den Spa şubemizde masaj, spa, hamam ve wellness hizmetleri için hızlıca iletişime geçebilir, randevunuzu WhatsApp veya telefon üzerinden kolaylıkla oluşturabilirsiniz.",
       "locationDescription": "Luna Den Spa, Ege Park AVM içerisinde, 2. katta hizmet vermektedir. AVM ana girişinden içeri girdikten sonra yönlendirme tabelalarını takip ederek asansör ile 2. kata ulaşabilirsiniz."
+    },
+    "cocosTheClubSoltoHotel": {
+      "heroDescription": "Çeşme Alaçatı’da, Cocos The Club Solto Hotel içerisinde yer alan Luna Den Spa şubemizde masaj, spa ve wellness hizmetleri için hızlıca iletişime geçebilir, randevunuzu WhatsApp veya telefon üzerinden kolaylıkla oluşturabilirsiniz.",
+      "locationDescription": "Luna Den Spa, Alaçatı Liman Mevkii’nde, 2. Çark Plajı’nda bulunan Cocos The Club Solto Hotel içerisinde hizmet vermektedir. Açık adres: Alaçatı Mahallesi 8000 Sk. No: 8/A, 35950 Çeşme/İzmir. Yol tarifi için aşağıdaki konum bağlantısını kullanabilirsiniz."
     },
     "location": {
       "title": "Konum ve ulaşım",
