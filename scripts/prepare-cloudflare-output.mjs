@@ -3,9 +3,17 @@ import { dirname, join } from "node:path";
 
 const outputDir = "out";
 
-const branchSlugs = [
-  "balcova-ege-park",
-];
+// Discover published branch detail pages from the exported output instead of
+// hardcoding slugs. `generateStaticParams` only emits open branches, so every
+// `out/tr/subelerimiz/<slug>.html` here is a canonical page that must be copied
+// to its locale-prefix-stripped path. This keeps new branches working on a
+// direct hit / refresh without touching this script.
+const branchSourceDir = join(outputDir, "tr", "subelerimiz");
+const branchSlugs = existsSync(branchSourceDir)
+  ? readdirSync(branchSourceDir)
+      .filter((entry) => entry.endsWith(".html"))
+      .map((entry) => entry.slice(0, -".html".length))
+  : [];
 
 const routeCopies = [
   ["tr", ""],
