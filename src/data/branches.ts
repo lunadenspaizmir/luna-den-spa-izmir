@@ -106,6 +106,16 @@ export const branches: ReadonlyArray<Branch> = [
     mapsUrl: "https://maps.app.goo.gl/ntJ16BAnKYkYUQSS8",
     mapsEmbedUrl:
       "https://www.google.com/maps?q=Luna%20Den%20Spa%20Cocos%20The%20Club%20Solto%20Hotel%20Ala%C3%A7at%C4%B1%20%C3%87e%C5%9Fme&output=embed",
+    workingHours: [
+      {
+        key: "weekday",
+        hours: "09:00-20:00",
+      },
+      {
+        key: "weekend",
+        hours: "09:00-20:00",
+      },
+    ],
     gallery: [
       "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-1.webp",
       "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-2.webp",

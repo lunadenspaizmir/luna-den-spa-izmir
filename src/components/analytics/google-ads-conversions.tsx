@@ -3,14 +3,8 @@
 import Script from "next/script";
 import { useEffect } from "react";
 
-declare global {
-  interface Window {
-    dataLayer?: unknown[];
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+const cocosGoogleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_COCOS_ID;
 
 const conversionLabels = {
   whatsapp: process.env.NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_LABEL,
@@ -136,14 +130,22 @@ export function GoogleAdsConversions() {
     };
   }, []);
 
-  if (!googleAdsId) {
+  // gtag.js kütüphanesi sayfa başına yalnızca bir kez yüklenir; her Google Ads
+  // hesabı için ayrı bir config çağrısı yapılır (Balçova ve Cocos ayrı hesaplar).
+  const configuredGoogleAdsIds = [googleAdsId, cocosGoogleAdsId].filter(
+    (id): id is string => Boolean(id),
+  );
+
+  if (configuredGoogleAdsIds.length === 0) {
     return null;
   }
+
+  const [primaryGoogleAdsId] = configuredGoogleAdsIds;
 
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${primaryGoogleAdsId}`}
         strategy="afterInteractive"
       />
       <Script id="google-ads-init" strategy="afterInteractive">
@@ -151,7 +153,9 @@ export function GoogleAdsConversions() {
           window.dataLayer = window.dataLayer || [];
           window.gtag = window.gtag || function(){window.dataLayer.push(arguments);}
           window.gtag('js', new Date());
-          window.gtag('config', '${googleAdsId}');
+          ${configuredGoogleAdsIds
+            .map((id) => `window.gtag('config', '${id}');`)
+            .join("\n          ")}
         `}
       </Script>
     </>

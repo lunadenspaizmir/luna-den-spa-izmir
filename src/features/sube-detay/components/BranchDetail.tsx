@@ -10,7 +10,9 @@ import {
   Phone,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import type { ElementType } from "react";
 
+import { CocosContactLink } from "@/components/analytics/cocos-contact-link";
 import { Container } from "@/components/layout/primitives/container";
 import { Section } from "@/components/layout/primitives/section";
 import { Button } from "@/components/ui/button";
@@ -26,6 +28,7 @@ type BranchDetailProps = Readonly<{
 type ConversionType = "whatsapp" | "phone";
 
 const trackedGoogleAdsBranchSlug = "balcova-ege-park";
+const cocosGoogleAdsBranchSlug = "cocos-the-club-solto-hotel";
 
 export function BranchDetail({ branch }: BranchDetailProps) {
   const t = useTranslations("branchDetailPage");
@@ -36,6 +39,10 @@ export function BranchDetail({ branch }: BranchDetailProps) {
   const hasServices = Boolean(branch.services?.length);
   const shouldTrackGoogleAdsConversions =
     branch.slug === trackedGoogleAdsBranchSlug;
+  // Cocos şubesinde iletişim bağlantıları, tıklamada Google Ads dönüşümü
+  // gönderen istemci sarmalayıcısı ile render edilir; diğer şubelerde düz <a>.
+  const ContactLink: ElementType =
+    branch.slug === cocosGoogleAdsBranchSlug ? CocosContactLink : "a";
 
   function getConversionTrackingProps(type: ConversionType, location: string) {
     if (!shouldTrackGoogleAdsConversions) {
@@ -93,7 +100,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 {branch.whatsappHref ? (
                   <Button asChild className="h-12 rounded-full px-7">
-                    <a
+                    <ContactLink
                       href={branch.whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -104,7 +111,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                     >
                       <MessageCircle className="size-4" />
                       {t("actions.whatsapp")}
-                    </a>
+                    </ContactLink>
                   </Button>
                 ) : null}
 
@@ -114,7 +121,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                     variant="outline"
                     className="h-12 rounded-full border-primary/30 bg-transparent px-7 hover:border-primary/50 hover:bg-secondary/60"
                   >
-                    <a
+                    <ContactLink
                       href={branch.phoneHref}
                       {...getConversionTrackingProps(
                         "phone",
@@ -123,7 +130,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                     >
                       <Phone className="size-4" />
                       {branch.phone}
-                    </a>
+                    </ContactLink>
                   </Button>
                 ) : null}
 
@@ -251,7 +258,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                 <div className="mt-6 grid gap-3">
                   {branch.whatsappHref ? (
                     <Button asChild className="h-12 w-full rounded-full">
-                      <a
+                      <ContactLink
                         href={branch.whatsappHref}
                         target="_blank"
                         rel="noreferrer"
@@ -262,7 +269,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                       >
                         <MessageCircle className="size-4" />
                         {t("actions.whatsapp")}
-                      </a>
+                      </ContactLink>
                     </Button>
                   ) : null}
                   {branch.phoneHref ? (
@@ -271,7 +278,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                       variant="outline"
                       className="h-12 w-full rounded-full border-primary/30 bg-transparent hover:border-primary/50 hover:bg-secondary/60"
                     >
-                      <a
+                      <ContactLink
                         href={branch.phoneHref}
                         {...getConversionTrackingProps(
                           "phone",
@@ -280,7 +287,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                       >
                         <Phone className="size-4" />
                         {t("actions.call")}
-                      </a>
+                      </ContactLink>
                     </Button>
                   ) : null}
                   {branch.instagramHref ? (
@@ -413,7 +420,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                   variant="secondary"
                   className="h-12 rounded-full px-7"
                 >
-                  <a
+                  <ContactLink
                     href={branch.whatsappHref}
                     target="_blank"
                     rel="noreferrer"
@@ -424,7 +431,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                   >
                     <MessageCircle className="size-4" />
                     {t("actions.whatsapp")}
-                  </a>
+                  </ContactLink>
                 </Button>
               ) : null}
               {branch.phoneHref ? (
@@ -433,7 +440,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                   variant="outline"
                   className="h-12 rounded-full border-hero-foreground/40 bg-transparent px-7 text-hero-foreground hover:bg-hero-foreground/10 hover:text-hero-foreground"
                 >
-                  <a
+                  <ContactLink
                     href={branch.phoneHref}
                     {...getConversionTrackingProps(
                       "phone",
@@ -442,7 +449,7 @@ export function BranchDetail({ branch }: BranchDetailProps) {
                   >
                     <Phone className="size-4" />
                     {branch.phone}
-                  </a>
+                  </ContactLink>
                 </Button>
               ) : null}
               {branch.instagramHref ? (
