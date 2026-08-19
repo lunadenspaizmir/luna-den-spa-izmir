@@ -7,16 +7,18 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { LanguageSwitcher } from "@/components/layout/controls/language-switcher";
 import { Container } from "@/components/layout/primitives/container";
 import { Button } from "@/components/ui/button";
-import { getBranchConversionProps, openBranches } from "@/data/branches";
+import { getBranchConversionProps, primaryBranch } from "@/data/branches";
 import { navigationItems } from "@/data/navigation";
+import { siteConfig } from "@/data/site";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { createWhatsAppUrl } from "@/lib/whatsapp";
 
 export function MobileNav() {
   const t = useTranslations("navigation");
-  const tPhone = useTranslations("header.phone");
+  const tCommon = useTranslations("common");
+  const tHeader = useTranslations("header");
   const pathname = usePathname();
-  const callableBranches = openBranches.filter((branch) => branch.phoneHref);
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -74,12 +76,13 @@ export function MobileNav() {
           type="button"
           variant="outline"
           size="icon"
-          aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
+          className="size-touch rounded-full border-primary/30"
+          aria-label={open ? tHeader("menuClose") : tHeader("menuOpen")}
           aria-expanded={open}
           aria-controls="mobile-navigation"
           onClick={() => setOpen((current) => !current)}
         >
-          {open ? <X className="size-4" /> : <Menu className="size-4" />}
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </Button>
       </div>
 
@@ -88,15 +91,15 @@ export function MobileNav() {
         id="mobile-navigation"
         inert={!open}
         className={cn(
-          "absolute inset-x-0 top-full z-40 grid border-b border-border bg-background/95 shadow-md backdrop-blur transition-[grid-template-rows,opacity,transform] duration-300 ease-out lg:hidden",
+          "absolute inset-x-0 top-full z-40 grid border-b border-border bg-background shadow-elevated transition-[grid-template-rows,opacity,transform] duration-300 ease-out lg:hidden",
           open
             ? "pointer-events-auto grid-rows-[1fr] translate-y-0 opacity-100"
             : "pointer-events-none grid-rows-[0fr] -translate-y-2 opacity-0",
         )}
       >
         <div className="min-h-0 overflow-hidden">
-          <Container className="py-3">
-            <nav aria-label="Mobil menü">
+          <Container className="py-4">
+            <nav aria-label={tHeader("mobileMenuLabel")}>
               <ul className="flex flex-col [&>li+li]:border-t [&>li+li]:border-border/70">
                 {navigationItems.map((item) => {
                   const isActive = pathname === item.href;
@@ -109,8 +112,8 @@ export function MobileNav() {
                         aria-current={isActive ? "page" : undefined}
                         onClick={closeMenu}
                         className={cn(
-                          "flex h-12 items-center justify-center rounded-md px-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground transition hover:bg-muted hover:text-foreground",
-                          isActive && "text-primary hover:text-primary",
+                          "flex min-h-touch items-center rounded-md px-3 py-3 font-heading text-2xl font-medium text-foreground transition hover:bg-secondary/50 hover:text-primary",
+                          isActive && "text-primary",
                         )}
                       >
                         {t(item.titleKey)}
@@ -121,71 +124,48 @@ export function MobileNav() {
               </ul>
             </nav>
 
-            {callableBranches.length > 0 ? (
-              <div className="mt-3 border-t border-border/70 pt-4">
-                <p className="eyebrow px-1 text-primary">
-                  {tPhone("appointment")}
-                </p>
+            <div className="mt-4 grid gap-2.5 border-t border-border/70 pt-4 sm:grid-cols-2">
+              <Button asChild className="h-12 rounded-full text-sm">
+                <a
+                  href={createWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  {...getBranchConversionProps(
+                    primaryBranch.slug,
+                    "whatsapp",
+                    "mobile-menu",
+                  )}
+                >
+                  <MessageCircle className="size-4" />
+                  {tCommon("whatsapp")}
+                </a>
+              </Button>
 
-                <div className="mt-3 grid gap-4">
-                  {callableBranches.map((branch) => (
-                    <div key={branch.slug}>
-                      <p className="flex items-center gap-1.5 text-sm font-medium text-foreground">
-                        <MapPin className="size-3.5 text-primary" />
-                        {branch.name}
-                      </p>
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 rounded-full border-primary/30 text-sm"
+              >
+                <a
+                  href={siteConfig.phone.href}
+                  onClick={closeMenu}
+                  {...getBranchConversionProps(
+                    primaryBranch.slug,
+                    "phone",
+                    "mobile-menu",
+                  )}
+                >
+                  <Phone className="size-4" />
+                  {siteConfig.phone.display}
+                </a>
+              </Button>
+            </div>
 
-                      <div className="mt-2 grid grid-cols-2 gap-2">
-                        {branch.whatsappHref ? (
-                          <Button
-                            asChild
-                            size="sm"
-                            className="h-10 rounded-full"
-                          >
-                            <a
-                              href={branch.whatsappHref}
-                              target="_blank"
-                              rel="noreferrer"
-                              onClick={closeMenu}
-                              {...getBranchConversionProps(
-                                branch.slug,
-                                "whatsapp",
-                                "mobile-menu",
-                              )}
-                            >
-                              <MessageCircle className="size-4" />
-                              {tPhone("whatsapp")}
-                            </a>
-                          </Button>
-                        ) : null}
-
-                        {branch.phoneHref ? (
-                          <Button
-                            asChild
-                            size="sm"
-                            variant="outline"
-                            className="h-10 rounded-full border-primary/30"
-                          >
-                            <a
-                              href={branch.phoneHref}
-                              onClick={closeMenu}
-                              {...getBranchConversionProps(
-                                branch.slug,
-                                "phone",
-                                "mobile-menu",
-                              )}
-                            >
-                              <Phone className="size-4" />
-                              {tPhone("call")}
-                            </a>
-                          </Button>
-                        ) : null}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ) : null}
+            <p className="mt-4 flex items-start gap-2 text-sm leading-6 text-muted-foreground">
+              <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-primary" />
+              {siteConfig.address}
+            </p>
 
             <div className="mt-4 flex items-center justify-center gap-3 border-t border-border/70 pt-4">
               <LanguageSwitcher className="justify-center" />

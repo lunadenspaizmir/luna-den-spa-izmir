@@ -24,13 +24,14 @@ export async function generateMetadata({
     locale,
     title:
       normalizedLocale === "en"
-        ? "Contact | Luna Den Spa Izmir Branches"
-        : "İletişim | Luna Den Spa İzmir Şubeleri",
+        ? "Contact | Balçova Ege Park AVM"
+        : "İletişim | Balçova Ege Park AVM",
     description:
       normalizedLocale === "en"
-        ? "Choose your Luna Den Spa branch in Izmir and contact it directly via WhatsApp or phone for appointments."
-        : "Luna Den Spa İzmir şubeleri için WhatsApp ve telefon üzerinden randevu ve iletişim bilgilerine ulaşın.",
+        ? "Phone, WhatsApp, address, and directions for Luna Den Spa at Balçova Ege Park AVM in Izmir."
+        : "Luna Den Spa Balçova Ege Park AVM şubesi telefon, WhatsApp, adres ve yol tarifi bilgileri.",
     path: localizedPath(locale, "/iletisim", "/contact"),
+    image: "/anasayfa/anasayfa-iletisim.jpg",
   });
 }
 

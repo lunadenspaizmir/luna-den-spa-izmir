@@ -35,8 +35,8 @@ export async function generateMetadata({
       locale,
       title:
         normalizedLocale === "en"
-          ? "Branch Not Found | Luna Den Spa"
-          : "Şube Bulunamadı | Luna Den Spa",
+          ? "Branch Not Found"
+          : "Şube Bulunamadı",
       description:
         normalizedLocale === "en"
           ? "The Luna Den Spa branch you are looking for could not be found."
@@ -49,8 +49,8 @@ export async function generateMetadata({
     locale,
     title:
       normalizedLocale === "en"
-        ? `${branch.fullName} | Massage and Spa in Izmir`
-        : `${branch.fullName} | İzmir Masaj ve Spa Merkezi`,
+        ? `${branch.name} Branch | Massage & Spa in Izmir`
+        : `${branch.name} Şubesi | İzmir Masaj ve Spa`,
     description:
       normalizedLocale === "en"
         ? `${branch.fullName} offers massage, spa, hammam, and wellness services in Izmir. Access WhatsApp, phone, working hours, and location details.`

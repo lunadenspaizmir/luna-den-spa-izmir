@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/primitives/container";
 import { Section } from "@/components/layout/primitives/section";
+import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
@@ -15,23 +16,13 @@ export function HomeAbout() {
   return (
     <Section className="bg-background">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[1fr_0.85fr] lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:gap-20">
           <div>
-            <Link
-              href="/hakkimizda"
-              className="eyebrow inline-flex items-center gap-3 text-primary transition hover:opacity-75"
-            >
-              <span aria-hidden="true" className="h-px w-10 bg-primary/50" />
-              {t("badge")}
-            </Link>
-
-            <h2 className="mt-6 max-w-2xl text-4xl font-semibold leading-[1.08] tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              {t("title")}
-            </h2>
-
-            <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">
-              {t("description")}
-            </p>
+            <SectionHeading
+              eyebrow={t("badge")}
+              title={t("title")}
+              description={t("description")}
+            />
 
             <ol className="mt-10 border-t border-border">
               {highlights.map((key, index) => (
@@ -46,7 +37,7 @@ export function HomeAbout() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <h3 className="text-2xl font-semibold text-foreground">
+                    <h3 className="text-card-title font-semibold leading-snug text-foreground">
                       {t(`highlights.${key}.title`)}
                     </h3>
                     <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
@@ -57,7 +48,7 @@ export function HomeAbout() {
               ))}
             </ol>
 
-            <Button asChild className="mt-9 h-12 rounded-full px-7">
+            <Button asChild className="mt-9 h-12 rounded-full px-7 text-sm">
               <Link href="/hakkimizda">
                 {t("cta")}
                 <ArrowRight className="size-4" />
@@ -72,10 +63,13 @@ export function HomeAbout() {
                   src="/anasayfa/anasayfa-hakkımızda.jpg"
                   alt={t("imageAlt")}
                   fill
-                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  sizes="(min-width: 1024px) 38vw, 100vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-image-overlay/10" />
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-image-overlay/10"
+                />
               </div>
             </div>
           </figure>

@@ -2,6 +2,10 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* ==========================================================================
+   Renk paleti — marka renkleri sabittir, değiştirilmez.
+   ========================================================================== */
+
 :root {
   --background: #f6efe4;
   --foreground: #211b14;
@@ -34,6 +38,10 @@
   --image-overlay: #2b2117;
   --hero-foreground: #fff8ee;
 
+  /* Koyu (primary) zeminler üzerindeki metin ve ayraç tonları. */
+  --on-dark-muted: #e2d3bd;
+  --on-dark-border: rgb(255 248 238 / 0.22);
+
   --radius: 0.875rem;
 
   --chart-1: #6b4618;
@@ -50,6 +58,33 @@
   --sidebar-accent-foreground: #211b14;
   --sidebar-border: #d9c7b2;
   --sidebar-ring: #6b4618;
+
+  /* ========================================================================
+     Tipografi ölçeği — akışkan (clamp) başlık boyutları, tüm sayfalarda
+     aynı ritmi korur ve mobilde ayrı sınıf gerektirmez.
+     ======================================================================== */
+
+  --font-size-hero: clamp(2.5rem, 5.6vw, 4.25rem);
+  --font-size-page-title: clamp(2.125rem, 4.4vw, 3.5rem);
+  --font-size-section-title: clamp(1.875rem, 3.4vw, 2.875rem);
+  --font-size-card-title: clamp(1.5rem, 2.4vw, 1.875rem);
+  --font-size-body-large: 1.0625rem;
+
+  --line-height-display: 1.02;
+  --line-height-heading: 1.1;
+
+  /* ======================================================================
+     Yerleşim ve hareket
+     ====================================================================== */
+
+  --section-spacing: clamp(5rem, 8vw, 7rem);
+  --section-spacing-mobile: 3.5rem;
+  --touch-target: 2.75rem;
+
+  --shadow-soft: 0 1rem 2.5rem rgb(43 33 23 / 0.08);
+  --shadow-raised: 0 1.5rem 4rem rgb(43 33 23 / 0.16);
+
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
@@ -83,6 +118,8 @@
 
   --color-image-overlay: var(--image-overlay);
   --color-hero-foreground: var(--hero-foreground);
+  --color-on-dark-muted: var(--on-dark-muted);
+  --color-on-dark-border: var(--on-dark-border);
 
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -110,11 +147,45 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-display), Georgia, "Times New Roman", serif;
 
-  --animate-marquee: marquee 36s linear infinite;
+  --text-hero: var(--font-size-hero);
+  --text-page-title: var(--font-size-page-title);
+  --text-section-title: var(--font-size-section-title);
+  --text-card-title: var(--font-size-card-title);
+  --text-body-large: var(--font-size-body-large);
 
-  @keyframes marquee {
+  --spacing-section: var(--section-spacing);
+  --spacing-section-mobile: var(--section-spacing-mobile);
+  --spacing-touch: var(--touch-target);
+
+  --shadow-card: var(--shadow-soft);
+  --shadow-elevated: var(--shadow-raised);
+
+  --ease-premium: var(--ease-premium);
+
+  --animate-rise-in: rise-in 700ms var(--ease-premium) both;
+  --animate-media-in: media-in 900ms var(--ease-premium) 120ms both;
+
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+
     to {
-      transform: translateX(-50%);
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes media-in {
+    from {
+      opacity: 0;
+      transform: scale(0.985);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 }
@@ -126,20 +197,49 @@
 
   html {
     @apply scroll-smooth font-sans;
+    min-width: 20rem;
+    /* Yapışkan başlığın altında kalmayan hedef bölümler için. */
+    scroll-padding-top: 7rem;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
+    overflow-x: clip;
+    text-rendering: optimizeLegibility;
   }
 
   h1,
   h2,
   h3 {
     @apply font-heading;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 3px;
   }
 
   ::selection {
     @apply bg-primary text-primary-foreground;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -149,5 +249,5 @@
 }
 
 @utility eyebrow {
-  @apply text-xs font-sans font-semibold uppercase tracking-[0.32em];
+  @apply text-xs font-sans font-semibold uppercase tracking-[0.28em];
 }

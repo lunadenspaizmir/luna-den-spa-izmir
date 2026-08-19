@@ -1,75 +1,105 @@
 import Image from "next/image";
-import { ArrowRight, Moon } from "lucide-react";
+import { ArrowRight, Clock, MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/primitives/container";
-import { Section } from "@/components/layout/primitives/section";
+import { WhatsAppButton } from "@/components/shared/contact-actions";
 import { Button } from "@/components/ui/button";
+import { primaryBranch } from "@/data/branches";
+import { siteConfig } from "@/data/site";
 import { Link } from "@/i18n/navigation";
 
+const weekdayHours = primaryBranch.workingHours?.find(
+  (item) => item.key === "weekday",
+)?.hours;
+
+/**
+ * Anasayfa giriş ekranı: koyu marka panelinde tek bir güçlü mesaj ve tek bir
+ * birincil eylem (WhatsApp randevu). İçerik bilinçli olarak kısa tutulur;
+ * detaylar alt bölümlere bırakılır.
+ */
 export function HomeHero() {
   const t = useTranslations("home.hero");
+  const tCommon = useTranslations("common");
 
   return (
-    <Section
-      spacing="none"
-      className="relative isolate overflow-hidden bg-background"
-    >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-40 right-[-12%] -z-10 size-136 rounded-full bg-secondary/70 blur-3xl"
-      />
+    <section className="bg-background pt-5 pb-8 md:pt-8 md:pb-12">
+      <Container>
+        <div className="grid overflow-hidden rounded-3xl bg-primary text-hero-foreground shadow-elevated lg:min-h-140 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] xl:min-h-152">
+          <div className="relative z-10 flex min-w-0 flex-col justify-center px-6 py-14 motion-safe:animate-rise-in sm:px-10 md:py-18 lg:px-12 xl:px-16">
+            <span
+              aria-hidden="true"
+              className="absolute top-0 left-6 h-1 w-24 bg-accent sm:left-10 lg:left-12 xl:left-16"
+            />
 
-      <Container className="grid items-center gap-12 pt-8 pb-14 md:pt-12 md:pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:pt-16 lg:pb-24">
-        <div className="max-w-2xl">
-          <p className="eyebrow flex items-center gap-3 text-primary">
-            <Moon aria-hidden="true" className="size-4" />
-            {t("eyebrow")}
-          </p>
+            <p className="eyebrow flex items-center gap-2 text-on-dark-muted">
+              <MapPin aria-hidden="true" className="size-4 shrink-0" />
+              {t("eyebrow")}
+            </p>
 
-          <h1 className="mt-6 text-5xl font-semibold leading-[1.02] tracking-tight text-foreground sm:text-6xl md:text-7xl">
-            {t("title")}
-          </h1>
+            <h1 className="mt-6 max-w-2xl text-hero font-semibold leading-[var(--line-height-display)] tracking-tight text-hero-foreground">
+              {t("title")}
+            </h1>
 
-          <div aria-hidden="true" className="mt-9 h-px w-24 bg-primary/40" />
+            <p className="mt-7 max-w-lg text-body-large leading-8 text-on-dark-muted">
+              {t("description")}
+            </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" className="h-12 rounded-full px-8">
-              <Link href="/subelerimiz">
-                {t("branches")}
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <WhatsAppButton
+                tone="dark"
+                location="home-hero"
+                label={tCommon("whatsapp")}
+              />
 
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="h-12 rounded-full border-primary/30 bg-transparent px-8 hover:border-primary/50 hover:bg-secondary/60"
-            >
-              <Link href="/iletisim">{t("contact")}</Link>
-            </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 rounded-full border-on-dark-border bg-transparent px-7 text-sm text-hero-foreground hover:bg-hero-foreground/10 hover:text-hero-foreground"
+              >
+                <Link href="/hizmetlerimiz">
+                  {t("secondaryCta")}
+                  <ArrowRight className="size-4" />
+                </Link>
+              </Button>
+            </div>
+
+            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-2 border-t border-on-dark-border pt-6 text-sm text-on-dark-muted">
+              {weekdayHours ? (
+                <span className="flex items-center gap-2">
+                  <Clock aria-hidden="true" className="size-4" />
+                  <span className="tabular-nums">{weekdayHours}</span>
+                </span>
+              ) : null}
+
+              <a
+                href={siteConfig.phone.href}
+                className="inline-flex min-h-touch items-center font-semibold tabular-nums text-hero-foreground transition-opacity hover:opacity-80"
+              >
+                {siteConfig.phone.display}
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <div
-            aria-hidden="true"
-            className="arch-frame absolute inset-0 -translate-x-4 translate-y-4 border border-primary/25"
-          />
-          <div className="arch-frame relative aspect-4/5 overflow-hidden">
+          <div className="relative min-h-72 motion-safe:animate-media-in sm:min-h-88 lg:min-h-full">
             <Image
               src="/hero/hero.png"
-              alt="Luna Den Spa & Wellness spa alanı"
+              alt={t("imageAlt")}
               fill
               priority
-              sizes="(min-width: 1024px) 44vw, (min-width: 640px) 28rem, 100vw"
+              sizes="(min-width: 1024px) 52vw, 100vw"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-image-overlay/10" />
+
+            <div className="absolute inset-x-4 bottom-4 border-l-2 border-accent bg-card p-5 text-foreground shadow-elevated sm:right-6 sm:left-auto sm:bottom-6 sm:max-w-xs">
+              <p className="eyebrow text-primary">{t("highlight.title")}</p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                {t("highlight.description")}
+              </p>
+            </div>
           </div>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }

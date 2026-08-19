@@ -13,6 +13,7 @@ import { PageTransition } from "@/components/providers/page-transition";
 import { Header } from "@/components/layout/header/header";
 import { Footer } from "@/components/layout/footer/footer";
 import { siteConfig } from "@/data/site";
+import { SkipToContent } from "@/components/layout/skip-to-content";
 import { GoogleAdsConversions } from "@/components/analytics/google-ads-conversions";
 
 const displayFont = Cormorant_Garamond({
@@ -31,11 +32,10 @@ const fontVariables = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Luna Den Spa",
+    default: "Luna Den Spa Balçova Ege Park AVM",
     template: "%s | Luna Den Spa",
   },
-  description:
-    "Luna Den Spa, İzmir şubelerinde masaj, spa ve wellness hizmetleriyle rahatlatıcı ve premium bir deneyim sunar.",
+  description: siteConfig.description,
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon", sizes: "48x48" },
@@ -76,6 +76,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={displayFont.variable}>
       <body style={fontVariables}>
         <NextIntlClientProvider messages={messages}>
+          <SkipToContent />
           <Header />
           <main id="main-content">
             <PageTransition>{children}</PageTransition>

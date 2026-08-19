@@ -3,21 +3,14 @@
 import Script from "next/script";
 import { useEffect } from "react";
 
+import { trackedGoogleAdsBranchSlug } from "@/data/branches";
+
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
-const cocosGoogleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_COCOS_ID;
 
 const conversionLabels = {
   whatsapp: process.env.NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_LABEL,
   phone: process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_LABEL,
 } as const;
-
-const trackedBranchSlug = "balcova-ege-park";
-const trackedPathnames = new Set([
-  "/subelerimiz/balcova-ege-park",
-  "/tr/subelerimiz/balcova-ege-park",
-  "/en/branches/balcova-ege-park",
-  "/en/subelerimiz/balcova-ege-park",
-]);
 
 type ConversionType = keyof typeof conversionLabels;
 
@@ -25,19 +18,12 @@ function isConversionType(value: string): value is ConversionType {
   return value === "whatsapp" || value === "phone";
 }
 
-function normalizePathname(pathname: string) {
-  if (pathname === "/") {
-    return pathname;
-  }
-
-  return pathname.replace(/\/+$/, "");
-}
-
+/**
+ * Site tek şubeye (Balçova Ege Park) ait olduğundan, işaretlenmiş her iletişim
+ * bağlantısı sayfa fark etmeksizin dönüşüm sayılır.
+ */
 function isTrackedConversionLink(link: HTMLAnchorElement) {
-  return (
-    link.dataset.branch === trackedBranchSlug &&
-    trackedPathnames.has(normalizePathname(window.location.pathname))
-  );
+  return link.dataset.branch === trackedGoogleAdsBranchSlug;
 }
 
 function reportConversion(
@@ -130,22 +116,14 @@ export function GoogleAdsConversions() {
     };
   }, []);
 
-  // gtag.js kütüphanesi sayfa başına yalnızca bir kez yüklenir; her Google Ads
-  // hesabı için ayrı bir config çağrısı yapılır (Balçova ve Cocos ayrı hesaplar).
-  const configuredGoogleAdsIds = [googleAdsId, cocosGoogleAdsId].filter(
-    (id): id is string => Boolean(id),
-  );
-
-  if (configuredGoogleAdsIds.length === 0) {
+  if (!googleAdsId) {
     return null;
   }
-
-  const [primaryGoogleAdsId] = configuredGoogleAdsIds;
 
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${primaryGoogleAdsId}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}
         strategy="afterInteractive"
       />
       <Script id="google-ads-init" strategy="afterInteractive">
@@ -153,9 +131,7 @@ export function GoogleAdsConversions() {
           window.dataLayer = window.dataLayer || [];
           window.gtag = window.gtag || function(){window.dataLayer.push(arguments);}
           window.gtag('js', new Date());
-          ${configuredGoogleAdsIds
-            .map((id) => `window.gtag('config', '${id}');`)
-            .join("\n          ")}
+          window.gtag('config', '${googleAdsId}');
         `}
       </Script>
     </>

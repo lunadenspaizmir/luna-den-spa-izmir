@@ -11,31 +11,59 @@
     "en": "English",
     "change": "Dil değiştir"
   },
+  "common": {
+    "skipToContent": "Ana içeriğe geç",
+    "breadcrumbLabel": "Sayfa yolu",
+    "whatsapp": "WhatsApp’tan Randevu Al",
+    "call": "Telefonla Ara",
+    "directions": "Yol Tarifi Al",
+    "instagram": "Instagram"
+  },
   "header": {
-    "phone": {
-      "appointment": "Randevu / İletişim",
-      "triggerLabel": "Telefon ile iletişim",
-      "call": "Telefonla ara",
-      "whatsapp": "WhatsApp",
-      "comingSoon": "Yakında"
+    "homeLink": "{name} anasayfa",
+    "menuOpen": "Menüyü aç",
+    "menuClose": "Menüyü kapat",
+    "mobileMenuLabel": "Mobil ana menü",
+    "appointment": {
+      "trigger": "Randevu Al",
+      "triggerShort": "Randevu",
+      "triggerLabel": "Randevu seçenekleri",
+      "label": "Randevu / İletişim"
     }
   },
   "footer": {
-    "description": "Luna Den Spa, İzmir şubelerinde masaj, spa ve wellness hizmetleriyle rahatlatıcı ve premium bir deneyim sunar.",
-    "quickLinks": "Hızlı linkler",
-    "copyright": "© 2024 Luna Den Spa. Tüm hakları saklıdır."
+    "homeLink": "{name} anasayfa",
+    "description": "Luna Den Spa, Balçova Ege Park AVM’deki şubesinde masaj, spa, Türk hamamı ve wellness hizmetleriyle İzmir’de rahatlatıcı ve premium bir deneyim sunar.",
+    "quickLinks": "Keşfet",
+    "servicesTitle": "Hizmetler",
+    "contactTitle": "İletişim",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "trust": {
+    "label": "Luna Den Spa öne çıkan özellikleri",
+    "items": {
+      "expert": "Uzman terapistler",
+      "hygiene": "Hijyenik ve mahrem alanlar",
+      "appointment": "WhatsApp ile hızlı randevu",
+      "access": "Ege Park AVM’de kolay ulaşım"
+    }
   },
   "home": {
     "hero": {
-      "eyebrow": "Luna Den Spa & Wellness",
+      "eyebrow": "Balçova Ege Park AVM · İzmir",
       "title": "İzmir’de kendinizi şımartmanın en sağlıklı yolu",
-      "branches": "Şubelerimiz",
-      "contact": "İletişim"
+      "description": "Balçova Ege Park AVM’deki şubemizde masaj, spa ve Türk hamamı ritüelleriyle şehrin temposuna sakin bir mola verin.",
+      "secondaryCta": "Hizmetleri İncele",
+      "imageAlt": "Luna Den Spa Balçova Ege Park AVM spa alanı",
+      "highlight": {
+        "title": "Ege Park AVM · 2. Kat",
+        "description": "AVM ana girişinden sonra asansörle 2. kata çıkarak şubemize ulaşabilirsiniz."
+      }
     },
     "about": {
       "badge": "Hakkımızda",
       "title": "İzmir’de bedeninizi ve zihninizi yenileyen premium spa deneyimi",
-      "description": "Luna Den Spa, İzmir şubelerinde rahatlatıcı atmosferi ve özenle hazırlanan bakım seçenekleriyle misafirlerine şehir içinde dingin bir kaçış alanı sunar.",
+      "description": "Luna Den Spa, Balçova Ege Park AVM şubesinde rahatlatıcı atmosferi ve özenle hazırlanan bakım seçenekleriyle misafirlerine şehir içinde dingin bir kaçış alanı sunar.",
       "imageAlt": "Luna Den Spa hakkımızda görseli",
       "cta": "Hakkımızda detayları",
       "highlights": {
@@ -55,8 +83,8 @@
     },
     "services": {
       "badge": "Hizmetlerimiz",
-      "intro": "İzmir’de size iyi gelecek bakım ve rahatlama seçenekleriyle Luna Den Spa’da bedeninizi dinlendirin.",
-      "popularTitle": "Popüler Hizmetlerimiz",
+      "title": "Kendinize ayırdığınız zamanı özenle planlayın.",
+      "description": "Masaj terapilerinden Türk hamamı ritüeline ve wellness bakımlarına uzanan seçenekleri keşfedin.",
       "cta": "Tüm hizmetleri incele",
       "detail": "Detayları incele",
       "items": {
@@ -74,88 +102,137 @@
         }
       }
     },
-    "branches": {
-      "badge": "Şubelerimiz",
-      "intro": "İzmir’deki Luna Den Spa deneyimine size en uygun şubede ulaşın.",
-      "title": "İzmir şube bilgileri",
-      "imageAlt": "Luna Den Spa şubelerimiz görseli",
-      "detail": "Şubeleri incele",
+    "experience": {
+      "badge": "Deneyim Süreci",
+      "title": "Randevudan dinlenmeye, üç sade adım.",
+      "description": "İhtiyacınızı konuşun, size uygun uygulamayı birlikte planlayın ve gerisini sakin atmosfere bırakın.",
       "items": {
-        "location": {
-          "title": "İzmir’de size yakın lokasyonlar",
-          "description": "İzmir şubelerimizin adres ve ulaşım bilgilerini şubelerimiz sayfasında kolayca inceleyin."
+        "choose": {
+          "title": "Hizmetinizi seçin",
+          "description": "Masaj terapileri, spa ritüelleri ve Türk hamamı seçeneklerini inceleyin."
         },
-        "reservation": {
-          "title": "Kolay rezervasyon",
-          "description": "Tercih ettiğiniz şube için hızlıca iletişime geçin ve planınızı oluşturun."
+        "book": {
+          "title": "Randevunuzu oluşturun",
+          "description": "WhatsApp veya telefon üzerinden uygun hizmet ve saati birlikte belirleyin."
         },
-        "experience": {
-          "title": "Aynı premium deneyim",
-          "description": "İzmir’deki her şubede Luna Den Spa’nın sakin, hijyenik ve rahatlatıcı atmosferini yaşayın."
+        "relax": {
+          "title": "Deneyiminize odaklanın",
+          "description": "Şubemize geldiğinizde gerisini sakin atmosfere ve uzman ekibe bırakın."
         }
       }
     },
-    "contact": {
-      "primary": {
-        "eyebrow": "İzmir şube ve randevu bilgileri",
-        "title": "İzmir’de size en uygun Luna Den Spa şubesiyle iletişime geçin.",
-        "description": "Size uygun İzmir şubesini seçerek hizmetler, müsaitlik ve rezervasyon detayları hakkında hızlıca bilgi alın.",
-        "cta": "İzmir şubelerini görüntüle"
+    "gallery": {
+      "badge": "Mekân",
+      "title": "Gelmeden önce şubemizi görün.",
+      "description": "Balçova Ege Park AVM şubemizin masaj odaları ve spa alanlarından gerçek kareler.",
+      "cta": "Şube detayını gör",
+      "imageAlt": "şube görseli"
+    }
+  },
+  "faq": {
+    "badge": "Sık Sorulanlar",
+    "title": "Ziyaretinizden önce merak ettikleriniz.",
+    "description": "Hizmete özel güncel kapsam, süre ve uygunluk bilgisini randevu sırasında teyit edebilirsiniz.",
+    "items": {
+      "appointment": {
+        "question": "Randevu almam gerekiyor mu?",
+        "answer": "Size uygun saati ayırabilmemiz için gelmeden önce WhatsApp veya telefon üzerinden randevu oluşturmanızı öneririz. Balçova Ege Park AVM şubemiz hafta içi 11:00-22:00, hafta sonu 11:00-21:00 saatleri arasında hizmet verir."
+      },
+      "services": {
+        "question": "Hangi masaj seçenekleri sunuluyor?",
+        "answer": "İsveç (klasik) masajı, Bali masajı, derin doku masajı, medikal masaj, aromaterapi masajı, Thai mix masajı ve iki terapistle uygulanan Sultan masajı şubemizde sunulan seçenekler arasında yer alır."
+      },
+      "duration": {
+        "question": "Seanslar ne kadar sürüyor?",
+        "answer": "Süre, seçtiğiniz hizmete ve uygulama planına göre değişir. Net süre bilgisini randevu oluştururken sizinle paylaşıyoruz."
+      },
+      "hammam": {
+        "question": "Türk hamamı hizmeti var mı?",
+        "answer": "Evet. Masaj ve bakım seçeneklerinin yanı sıra lüks ve geleneksel Türk hamamı deneyimini de şubemizde yaşayabilirsiniz."
+      },
+      "couples": {
+        "question": "Çift olarak gelebilir miyiz?",
+        "answer": "Bu rahatlatıcı deneyimi sevdiklerinizle birlikte yaşamanızı sağlayan çift kişilik paketlerimiz bulunuyor. Uygun saat planlaması için randevu sırasında belirtmeniz yeterli."
+      },
+      "location": {
+        "question": "Şubeye nasıl ulaşırım?",
+        "answer": "Luna Den Spa, Balçova’daki Ege Park AVM içerisinde 2. katta hizmet vermektedir. AVM ana girişinden içeri girdikten sonra yönlendirme tabelalarını takip ederek asansörle 2. kata ulaşabilirsiniz."
+      },
+      "firstVisit": {
+        "question": "İlk ziyaretimde nasıl hazırlanmalıyım?",
+        "answer": "Özel bir hazırlık yapmanıza gerek yok. Seçtiğiniz hizmete göre bilmeniz gereken tüm detayları randevu öncesinde ekibimiz sizinle paylaşır."
       }
     }
+  },
+  "location": {
+    "badge": "Konum & İletişim",
+    "title": "Balçova Ege Park AVM’de sakinliğe kısa bir mola.",
+    "addressLabel": "Adres",
+    "phoneLabel": "Telefon",
+    "mapTitle": "Şube harita konumu"
+  },
+  "finalCta": {
+    "badge": "Kendinize zaman ayırın",
+    "title": "Kendinize ayıracağınız bir saat, tüm gününüzün ritmini değiştirebilir.",
+    "description": "Masaj ve spa hizmetleri hakkında bilgi almak, uygun saatleri öğrenmek veya randevu oluşturmak için doğrudan iletişime geçebilirsiniz."
   },
   "aboutPage": {
     "hero": {
-      "badge": "İzmir’de Luna Den Spa",
-      "title": "İzmir’de lüksü ve dinginliği bir arada sunan özel spa deneyimi",
-      "description": "Lüksü ve dinginliği bir arada sunan Luna Den Spa, şehir hayatına incelikle düşünülmüş bir mola vermek isteyenleri İzmir şubelerinde bekliyor. İzmir’de hem medikal bakımlarıyla hem doğal bakımlarıyla öne çıkan Luna Den Spa’da, misafirler için özel olarak hazırlanmış yağlarla yapılan masajların, taze ürünlerle uygulanan cilt ve vücut bakımlarının yanı sıra lüks ve geleneksel Türk hamamı hizmetini de deneyimleyebilirsiniz.",
+      "eyebrow": "Hakkımızda",
+      "title": "İzmir’de lüksü ve dinginliği bir arada sunan spa deneyimi",
+      "description": "Luna Den Spa, Balçova Ege Park AVM şubesinde şehir hayatına incelikle düşünülmüş bir mola vermek isteyenleri bekliyor.",
       "imageAlt": "Luna Den Spa hakkımızda görseli"
     },
-    "why": {
-      "badge": "İzmir’de Neden Luna Den Spa?",
-      "title": "İzmir şubelerimizde her detayında konfor, hijyen ve profesyonellik",
-      "description": "İzmir’de masajları, farklı ihtiyaçlara göre vücut ve yüz bakımları, vücut maskesi seçenekleri, özel içeriklerle hazırlanan banyo terapileri ve bu rahatlatıcı deneyimi sevdiklerinizle birlikte yaşamanızı sağlayan çift kişilik paketler bunlardan sadece bazıları.",
-      "itemDescription": "İzmir’deki Luna Den Spa deneyiminin sürdürülebilir ve güven veren standartlarla ilerlemesi için her adımı özenle planlıyoruz.",
-      "items": {
-        "quality": {
-          "title": "Luna Den Spa olarak İzmir şubelerimizde misafir memnuniyeti için kalite standartlarımızı en üst seviyede tutuyoruz"
+    "story": {
+      "badge": "Bizi Tanıyın",
+      "title": "Medikal ve doğal bakımları aynı çatı altında buluşturan bir spa",
+      "description": "İzmir’de hem medikal bakımlarıyla hem doğal bakımlarıyla öne çıkan Luna Den Spa’da, misafirler için özel olarak hazırlanmış yağlarla yapılan masajların, taze ürünlerle uygulanan cilt ve vücut bakımlarının yanı sıra lüks ve geleneksel Türk hamamı hizmetini de deneyimleyebilirsiniz.",
+      "imageAlt": "Luna Den Spa bakım alanı görseli",
+      "points": {
+        "oils": {
+          "title": "Özel hazırlanan yağlar",
+          "description": "Masajlar, misafirler için özel olarak hazırlanan yağlarla uygulanır."
         },
-        "safety": {
-          "title": "İzmir masaj salonu deneyimi için alınması gereken tüm tedbirleri alıyor, alanında uzman eğitimli masaj terapistleri ile çalışıyoruz"
+        "care": {
+          "title": "Taze ürünlerle bakım",
+          "description": "Cilt ve vücut bakımlarında taze ürünler tercih edilir."
         },
-        "contact": {
-          "title": "Kolay iletişim için ilgili İzmir şubelerimizdeki WhatsApp ve telefon numaraları üzerinden randevunuzu kolaylıkla oluşturabilirsiniz"
+        "hammam": {
+          "title": "Geleneksel Türk hamamı",
+          "description": "Lüks ve geleneksel Türk hamamı deneyimi şubemizde sunulur."
         }
       }
-    }
-  },
-  "contactPage": {
-    "badge": "İletişim",
-    "title": "Luna Den Spa ile iletişim için İzmir şubenizi seçin.",
-    "description": "Randevu ve bilgi almak için size en uygun İzmir şubesinin iletişim bilgilerine ulaşabilirsiniz.",
-    "note": "Her şubenin WhatsApp ve telefon bilgileri kendi sayfasında yer alır. Size yakın şubeyi seçerek doğrudan iletişime geçebilirsiniz.",
-    "cta": "İzmir şubelerini görüntüle",
-    "options": {
-      "whatsapp": {
-        "title": "WhatsApp ile hızlı iletişim",
-        "description": "İlgili şube üzerinden randevu ve müsaitlik bilgisi alın."
-      },
-      "phone": {
-        "title": "Telefonla görüşme",
-        "description": "Tercih ettiğiniz İzmir şubesini doğrudan arayın."
+    },
+    "why": {
+      "badge": "Neden Luna Den Spa?",
+      "title": "Her detayında konfor, hijyen ve profesyonellik",
+      "description": "Farklı ihtiyaçlara göre vücut ve yüz bakımları, vücut maskesi seçenekleri, özel içeriklerle hazırlanan banyo terapileri ve bu rahatlatıcı deneyimi sevdiklerinizle birlikte yaşamanızı sağlayan çift kişilik paketler bunlardan sadece bazıları.",
+      "itemDescription": "Luna Den Spa deneyiminin sürdürülebilir ve güven veren standartlarla ilerlemesi için her adımı özenle planlıyoruz.",
+      "items": {
+        "quality": {
+          "title": "Misafir memnuniyeti için kalite standartlarımızı en üst seviyede tutuyoruz"
+        },
+        "safety": {
+          "title": "Alınması gereken tüm tedbirleri alıyor, alanında uzman eğitimli masaj terapistleriyle çalışıyoruz"
+        },
+        "contact": {
+          "title": "WhatsApp ve telefon üzerinden randevunuzu kolaylıkla oluşturabilirsiniz"
+        }
       }
     }
   },
   "servicesPage": {
-    "badge": "Hizmetlerimiz",
-    "title": "İzmir’de bedeninizi dinlendiren masaj ve spa deneyimleri",
-    "description": "Luna Den Spa’da ihtiyaçlarınıza göre şekillenen masaj seçenekleriyle rahatlayabilir, İzmir’de sakin ve profesyonel bir bakım deneyimi yaşayabilirsiniz.",
-    "listTitle": "Masaj Hizmetlerimiz",
-    "listDescription": "Hizmet açıklamalarını incelemek için ilgili masaj başlığını açabilirsiniz.",
-    "images": {
-      "primaryAlt": "Luna Den Spa hizmetlerimiz görseli",
-      "secondaryAlt": "Luna Den Spa masaj hizmetleri görseli"
+    "hero": {
+      "eyebrow": "Hizmetlerimiz",
+      "title": "Bedeninizi dinlendiren masaj ve spa deneyimleri",
+      "description": "Luna Den Spa Balçova Ege Park AVM şubesinde ihtiyaçlarınıza göre şekillenen masaj seçenekleriyle rahatlayabilir, sakin ve profesyonel bir bakım deneyimi yaşayabilirsiniz.",
+      "imageAlt": "Luna Den Spa hizmetlerimiz görseli"
     },
+    "listBadge": "Masaj Hizmetlerimiz",
+    "listTitle": "Size iyi gelecek uygulamayı birlikte seçelim.",
+    "listDescription": "Hizmet açıklamalarını inceleyip WhatsApp üzerinden doğrudan o hizmet için randevu bilgisi alabilirsiniz.",
+    "cta": "Bu hizmet için bilgi al",
+    "whatsappMessage": "Merhaba, Luna Den Spa Balçova Ege Park AVM şubesinde {service} hakkında bilgi almak ve randevu oluşturmak istiyorum.",
     "items": {
       "swedish": {
         "title": "İsveç (Klasik) Masajı",
@@ -188,9 +265,11 @@
     }
   },
   "branchesPage": {
-    "badge": "Şubelerimiz",
-    "title": "İzmir’de size en yakın Luna Den Spa şubesini seçin.",
-    "description": "Randevu, iletişim ve konum bilgileri için aktif şubemizi inceleyebilir; yakında açılacak lokasyonlarımızı takip edebilirsiniz.",
+    "hero": {
+      "eyebrow": "Şubelerimiz",
+      "title": "İzmir’de Luna Den Spa şubeleri",
+      "description": "Balçova Ege Park AVM şubemizin randevu, iletişim ve konum bilgilerini inceleyebilir; yakında açılacak lokasyonlarımızı takip edebilirsiniz."
+    },
     "status": {
       "open": "Açık",
       "comingSoon": "Yakında"
@@ -201,12 +280,8 @@
     },
     "items": {
       "balcovaEgePark": {
-        "description": "Balçova Ege Park şubemizde masaj, spa ve wellness hizmetleri için WhatsApp, telefon ve konum bilgilerine ulaşabilirsiniz.",
-        "imageAlt": "Luna Den Spa Balçova Ege Park şubesi"
-      },
-      "cocosTheClubSoltoHotel": {
-        "description": "Alaçatı’daki Cocos The Club Solto Hotel içinde yer alan şubemizde masaj, spa ve wellness hizmetleri için WhatsApp, telefon ve konum bilgilerine ulaşabilirsiniz.",
-        "imageAlt": "Luna Den Spa Cocos The Club Solto Hotel Alaçatı şubesi"
+        "description": "Balçova Ege Park AVM şubemizde masaj, spa, hamam ve wellness hizmetleri için WhatsApp, telefon ve konum bilgilerine ulaşabilirsiniz.",
+        "imageAlt": "Luna Den Spa Balçova Ege Park AVM şubesi"
       },
       "gaziemir": {
         "description": "Gaziemir şubemiz için hazırlıklarımız devam ediyor. Çok yakında İzmir’de yeni bir Luna Den Spa deneyimiyle hizmetinizdeyiz.",
@@ -215,20 +290,9 @@
     }
   },
   "branchDetailPage": {
-    "backToBranches": "Tüm şubelerimiz",
-    "actions": {
-      "whatsapp": "WhatsApp ile randevu al",
-      "call": "Telefonla ara",
-      "directions": "Yol tarifi al",
-      "instagram": "Instagram"
-    },
     "balcovaEgePark": {
       "heroDescription": "Balçova Ege Park AVM içerisinde yer alan Luna Den Spa şubemizde masaj, spa, hamam ve wellness hizmetleri için hızlıca iletişime geçebilir, randevunuzu WhatsApp veya telefon üzerinden kolaylıkla oluşturabilirsiniz.",
       "locationDescription": "Luna Den Spa, Ege Park AVM içerisinde, 2. katta hizmet vermektedir. AVM ana girişinden içeri girdikten sonra yönlendirme tabelalarını takip ederek asansör ile 2. kata ulaşabilirsiniz."
-    },
-    "cocosTheClubSoltoHotel": {
-      "heroDescription": "Çeşme Alaçatı’da, Cocos The Club Solto Hotel içerisinde yer alan Luna Den Spa şubemizde masaj, spa ve wellness hizmetleri için hızlıca iletişime geçebilir, randevunuzu WhatsApp veya telefon üzerinden kolaylıkla oluşturabilirsiniz.",
-      "locationDescription": "Luna Den Spa, Alaçatı Liman Mevkii’nde, 2. Çark Plajı’nda bulunan Cocos The Club Solto Hotel içerisinde hizmet vermektedir. Açık adres: Alaçatı Mahallesi 8000 Sk. No: 8/A, 35950 Çeşme/İzmir. Yol tarifi için aşağıdaki konum bağlantısını kullanabilirsiniz."
     },
     "location": {
       "title": "Konum ve ulaşım",
@@ -247,19 +311,24 @@
     },
     "contact": {
       "title": "Hızlı randevu",
-      "description": "WhatsApp veya telefon araması ile ilgili şubemizden hızlı geri dönüş alabilirsiniz."
+      "description": "WhatsApp veya telefon araması ile şubemizden hızlı geri dönüş alabilirsiniz."
     },
     "services": {
+      "badge": "Hizmetler",
       "title": "Bu şubede sunulan hizmetler",
-      "description": "İlgili şubemizde ihtiyaçlarınıza göre şekillenen masaj ve spa hizmetlerinden yararlanabilirsiniz."
+      "description": "Şubemizde ihtiyaçlarınıza göre şekillenen masaj ve spa hizmetlerinden yararlanabilirsiniz."
     },
     "gallery": {
       "title": "Şubemizden görseller",
       "imageAlt": "şube görseli"
-    },
-    "finalCta": {
-      "title": "Randevu ve bilgi almak için bizimle iletişime geçin",
-      "description": "Masaj ve spa hizmetleri hakkında bilgi almak, uygun saatleri öğrenmek veya randevu oluşturmak için şubemizle doğrudan iletişime geçebilirsiniz."
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "eyebrow": "Randevu & Bilgi",
+      "title": "İletişim",
+      "description": "Telefon veya WhatsApp üzerinden hizmet kapsamını sorabilir, uygun randevu saatini birlikte planlayabilirsiniz.",
+      "imageAlt": "Luna Den Spa iletişim görseli"
     }
   },
   "errorPage": {

@@ -1,111 +1,56 @@
-import Image from "next/image";
-import { Moon } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/layout/primitives/container";
 import { Section } from "@/components/layout/primitives/section";
+import { PageHero } from "@/components/shared/page-hero";
+import { SectionHeading } from "@/components/shared/section-heading";
+import { Button } from "@/components/ui/button";
+import { getBranchConversionProps, primaryBranch } from "@/data/branches";
+import { createWhatsAppUrl } from "@/lib/whatsapp";
 
-const services = [
-  "swedish",
-  "bali",
-  "deepTissue",
-  "medical",
-  "aromatherapy",
-  "thaiMix",
-  "sultan",
-] as const;
+const services = primaryBranch.services ?? [];
 
 export function ServicesOverview() {
   const t = useTranslations("servicesPage");
+  const tCommon = useTranslations("common");
+  const tNavigation = useTranslations("navigation");
 
   return (
     <>
-      <Section
-        spacing="none"
-        className="bg-background pt-8 pb-14 md:pt-12 md:pb-20 lg:pt-16"
-      >
+      <PageHero
+        eyebrow={t("hero.eyebrow")}
+        title={t("hero.title")}
+        description={t("hero.description")}
+        breadcrumbLabel={tCommon("breadcrumbLabel")}
+        breadcrumbs={[
+          { label: tNavigation("home"), href: "/" },
+          { label: tNavigation("services") },
+        ]}
+        image={{
+          src: "/hizmetlerimiz/hizmetlerimiz-1.jpg",
+          alt: t("hero.imageAlt"),
+        }}
+      />
+
+      <Section className="border-t border-border bg-background">
         <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-            <div>
-              <p className="eyebrow flex items-center gap-3 text-primary">
-                <span aria-hidden="true" className="h-px w-10 bg-primary/50" />
-                {t("badge")}
-              </p>
-
-              <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight text-foreground md:text-6xl">
-                {t("title")}
-              </h1>
-
-              <div
-                aria-hidden="true"
-                className="mt-8 h-px w-24 bg-primary/40"
-              />
-
-              <p className="mt-8 max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
-                {t("description")}
-              </p>
-            </div>
-
-            <div className="relative mx-auto mb-10 w-full max-w-md sm:mb-14 lg:max-w-none">
-              <div className="arch-frame relative aspect-4/5 overflow-hidden">
-                <Image
-                  src="/hizmetlerimiz/hizmetlerimiz-1.jpg"
-                  alt={t("images.primaryAlt")}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 42vw, (min-width: 640px) 28rem, 100vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-image-overlay/10" />
-              </div>
-
-              <div className="absolute -bottom-10 -left-4 w-2/5 overflow-hidden rounded-2xl border-4 border-background shadow-lg sm:-bottom-14 sm:-left-8">
-                <div className="relative aspect-square">
-                  <Image
-                    src="/hizmetlerimiz/hizmetlerimiz-2.jpg"
-                    alt={t("images.secondaryAlt")}
-                    fill
-                    sizes="(min-width: 1024px) 17vw, 40vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-image-overlay/10" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      <Section className="border-t border-border bg-secondary/30">
-        <Container>
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <h2 className="flex items-center gap-3 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-                <Moon aria-hidden="true" className="size-5 text-primary" />
-                {t("listTitle")}
-              </h2>
-              <p className="mt-5 text-base leading-8 text-muted-foreground">
-                {t("listDescription")}
-              </p>
-            </div>
-
-            <span
-              aria-hidden="true"
-              className="font-heading text-2xl font-medium italic text-primary/45"
-            >
-              01 — {String(services.length).padStart(2, "0")}
-            </span>
-          </div>
+          <SectionHeading
+            eyebrow={t("listBadge")}
+            title={t("listTitle")}
+            description={t("listDescription")}
+          />
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {services.map((key, index) => (
               <article
                 key={key}
-                className="group relative flex flex-col overflow-hidden rounded-3xl border border-primary/12 bg-card p-7 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
+                id={key}
+                className="group relative flex scroll-mt-32 flex-col overflow-hidden rounded-3xl border border-primary/12 bg-card p-7 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-elevated motion-reduce:transform-none"
               >
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute -right-6 -top-8 font-heading text-8xl font-medium italic text-primary/6 transition-colors duration-300 group-hover:text-primary/10"
+                  className="pointer-events-none absolute -top-8 -right-6 font-heading text-8xl font-medium italic text-primary/6 transition-colors duration-300 group-hover:text-primary/10"
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -120,13 +65,39 @@ export function ServicesOverview() {
                   />
                 </div>
 
-                <h3 className="mt-5 font-heading text-2xl font-medium tracking-tight text-foreground md:text-[1.75rem]">
+                <h2 className="mt-5 font-heading text-card-title font-medium leading-snug tracking-tight text-foreground">
                   {t(`items.${key}.title`)}
-                </h3>
+                </h2>
 
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
                   {t(`items.${key}.description`)}
                 </p>
+
+                <div className="mt-auto pt-7">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="h-11 w-full rounded-full border-primary/30 bg-transparent text-sm hover:border-primary/50 hover:bg-secondary/60"
+                  >
+                    <a
+                      href={createWhatsAppUrl(
+                        t("whatsappMessage", {
+                          service: t(`items.${key}.title`),
+                        }),
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      {...getBranchConversionProps(
+                        primaryBranch.slug,
+                        "whatsapp",
+                        `services-${key}`,
+                      )}
+                    >
+                      <MessageCircle className="size-4" />
+                      {t("cta")}
+                    </a>
+                  </Button>
+                </div>
               </article>
             ))}
           </div>

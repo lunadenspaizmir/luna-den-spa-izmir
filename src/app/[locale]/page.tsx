@@ -24,12 +24,12 @@ export async function generateMetadata({
     locale,
     title:
       normalizedLocale === "en"
-        ? "Luna Den Spa Izmir | Massage, Spa & Wellness"
-        : "Luna Den Spa İzmir | Masaj, Spa ve Wellness",
+        ? "Luna Den Spa Balçova Ege Park AVM | Massage & Spa in Izmir"
+        : "Luna Den Spa Balçova Ege Park AVM | İzmir Masaj ve Spa",
     description:
       normalizedLocale === "en"
-        ? "Discover Luna Den Spa in Izmir for massage, spa, hammam, and wellness services with a relaxing premium experience."
-        : "Luna Den Spa İzmir şubelerinde masaj, spa, hamam ve wellness hizmetleriyle rahatlatıcı ve premium bir deneyim sunar.",
+        ? "Massage, spa, Turkish hammam, and wellness services at Luna Den Spa inside Balçova Ege Park AVM in Izmir. Book instantly via WhatsApp."
+        : "Luna Den Spa Balçova Ege Park AVM şubesinde masaj, spa, Türk hamamı ve wellness hizmetleri. WhatsApp üzerinden hemen randevu oluşturun.",
     path: localizedPath(locale, "/", ""),
     image: "/hero/hero.png",
   });

@@ -1,19 +1,32 @@
-import { BrandMarquee } from "@/features/anasayfa/components/BrandMarquee";
+import { FaqSection } from "@/components/sections/faq-section";
+import { FinalCtaSection } from "@/components/sections/final-cta-section";
+import { LocationSection } from "@/components/sections/location-section";
+import { TrustBar } from "@/components/sections/trust-bar";
+import {
+  BusinessJsonLd,
+  FaqJsonLd,
+} from "@/components/shared/structured-data";
 import { HomeAbout } from "@/features/anasayfa/components/HomeAbout";
-import { HomeBranches } from "@/features/anasayfa/components/HomeBranches";
-import { HomeContact } from "@/features/anasayfa/components/HomeContact";
+import { HomeExperience } from "@/features/anasayfa/components/HomeExperience";
+import { HomeGallery } from "@/features/anasayfa/components/HomeGallery";
 import { HomeHero } from "@/features/anasayfa/components/HomeHero";
 import { HomeServices } from "@/features/anasayfa/components/HomeServices";
 
 export default function HomePageWrapper() {
   return (
     <>
+      <BusinessJsonLd />
+      <FaqJsonLd />
+
       <HomeHero />
-      <BrandMarquee />
+      <TrustBar />
       <HomeAbout />
       <HomeServices />
-      <HomeBranches />
-      <HomeContact />
+      <HomeExperience />
+      <HomeGallery />
+      <FaqSection />
+      <LocationSection conversionLocation="home-location" />
+      <FinalCtaSection conversionLocation="home-final-cta" />
     </>
   );
 }

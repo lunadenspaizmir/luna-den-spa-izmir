@@ -9,6 +9,8 @@ type SectionProps = Readonly<{
   className?: string;
   spacing?: SectionSpacing;
   as?: ElementType;
+  /** Sayfa içi bağlantı hedefi (ör. `#hizmetler`). */
+  id?: string;
 }>;
 
 const sectionSpacingClasses: Record<SectionSpacing, string> = {
@@ -24,9 +26,10 @@ export function Section({
   className,
   spacing = "lg",
   as: Component = "section",
+  id,
 }: SectionProps) {
   return (
-    <Component className={cn(sectionSpacingClasses[spacing], className)}>
+    <Component id={id} className={cn(sectionSpacingClasses[spacing], className)}>
       {children}
     </Component>
   );

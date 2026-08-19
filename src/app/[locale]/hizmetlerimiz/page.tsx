@@ -24,12 +24,12 @@ export async function generateMetadata({
     locale,
     title:
       normalizedLocale === "en"
-        ? "Massage and Spa Services | Luna Den Spa Izmir"
-        : "Hizmetlerimiz | Luna Den Spa İzmir Masaj ve Spa",
+        ? "Massage & Spa Services | Balçova"
+        : "Masaj ve Spa Hizmetleri | Balçova",
     description:
       normalizedLocale === "en"
-        ? "Review Swedish, Bali, deep tissue, medical, aromatherapy, Thai mix, and Sultan massage services at Luna Den Spa Izmir."
-        : "Luna Den Spa İzmir’de İsveç, Bali, derin doku, medikal, aromaterapi, Thai mix ve Sultan masajı hizmetlerini inceleyin.",
+        ? "Swedish, Bali, deep tissue, medical, aromatherapy, Thai mix, and Sultan massage services at Luna Den Spa Balçova Ege Park AVM."
+        : "Luna Den Spa Balçova Ege Park AVM’de İsveç, Bali, derin doku, medikal, aromaterapi, Thai mix ve Sultan masajı hizmetlerini inceleyin.",
     path: localizedPath(locale, "/hizmetlerimiz", "/services"),
     image: "/hizmetlerimiz/hizmetlerimiz-1.jpg",
   });

@@ -59,6 +59,11 @@ export function buildPageMetadata({
   const normalizedLocale = normalizeLocale(locale);
   const canonical = absoluteUrl(path);
   const imageUrl = absoluteUrl(image);
+  // `title` sayfa şablonu (`%s | Luna Den Spa`) ile tamamlanır; sosyal kartlar
+  // şablondan geçmediği için marka adını burada açıkça ekliyoruz.
+  const socialTitle = title.includes(siteConfig.name)
+    ? title
+    : `${title} | ${siteConfig.name}`;
 
   return {
     title,
@@ -74,7 +79,7 @@ export function buildPageMetadata({
         : undefined,
     },
     openGraph: {
-      title,
+      title: socialTitle,
       description,
       url: canonical,
       siteName: siteConfig.name,
@@ -89,7 +94,7 @@ export function buildPageMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: socialTitle,
       description,
       images: [imageUrl],
     },

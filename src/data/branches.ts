@@ -92,64 +92,6 @@ export const branches: ReadonlyArray<Branch> = [
     ],
   },
   {
-    slug: "cocos-the-club-solto-hotel",
-    name: "Cocos The Club Solto Hotel",
-    fullName: "Cocos The Club Solto Hotel Alaçatı",
-    district: "Alaçatı",
-    image: "/subelerimiz/cocos-the-club-solto-hotel.webp",
-    status: "open",
-    translationKey: "cocosTheClubSoltoHotel",
-    phone: "+90 532 013 01 34",
-    phoneHref: "tel:+905320130134",
-    whatsappHref: "https://wa.me/905320130134",
-    instagramHref: "https://www.instagram.com/lunadenspa_alacati/",
-    mapsUrl: "https://maps.app.goo.gl/ntJ16BAnKYkYUQSS8",
-    mapsEmbedUrl:
-      "https://www.google.com/maps?q=Luna%20Den%20Spa%20Cocos%20The%20Club%20Solto%20Hotel%20Ala%C3%A7at%C4%B1%20%C3%87e%C5%9Fme&output=embed",
-    workingHours: [
-      {
-        key: "weekday",
-        hours: "09:00-20:00",
-      },
-      {
-        key: "weekend",
-        hours: "09:00-20:00",
-      },
-    ],
-    gallery: [
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-1.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-2.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-3.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-4.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-5.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-6.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-7.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-8.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-9.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-10.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-11.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-12.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-13.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-14.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-15.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-16.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-17.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-18.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-19.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-20.webp",
-      "/subelerimiz/cocos-the-club-solto-hotel/cocos-the-club-solto-hotel-21.webp",
-    ],
-    services: [
-      "swedish",
-      "bali",
-      "deepTissue",
-      "medical",
-      "aromatherapy",
-      "thaiMix",
-      "sultan",
-    ],
-  },
-  {
     slug: "gaziemir",
     name: "Gaziemir",
     fullName: "Luna Den Spa Gaziemir",
@@ -159,6 +101,9 @@ export const branches: ReadonlyArray<Branch> = [
     translationKey: "gaziemir",
   },
 ];
+
+/** Tek aktif şube; site genelindeki iletişim ve konum bilgilerinin kaynağı. */
+export const primaryBranch = branches[0];
 
 export function getBranchBySlug(slug: string) {
   return branches.find((branch) => branch.slug === slug);
